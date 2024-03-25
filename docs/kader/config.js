@@ -18,7 +18,7 @@ var respecConfig = {
       company: "DigiGO",
     },
   ],
-  github: "https://github.com/nl-digigo/beheerplan",
+  github: "https://github.com/nl-digigo/kadersinformatiemodellen",
   license: "cc-by",
   lint: { "no-unused-dfns": false },
   localBiblio: {
