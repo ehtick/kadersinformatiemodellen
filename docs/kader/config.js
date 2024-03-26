@@ -8,14 +8,14 @@ var respecConfig = {
     // alleen `name` is verplicht, https://respec.org/docs/#person
     {
       name: "Niels Vossebeld",
-      company: "DigiGO",
+      company: "digiGO",
     },
   ],
   authors: [
     // alleen `name` is verplicht, https://respec.org/docs/#person
     {
       name: "Wouter Klein Wolterink",
-      company: "DigiGO",
+      company: "digiGO",
     },
   ],
   github: "https://github.com/nl-digigo/kadersinformatiemodellen",
