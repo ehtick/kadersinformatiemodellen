@@ -22,11 +22,12 @@ var respecConfig = {
   license: "cc-by",
   lint: { "no-unused-dfns": false },
   localBiblio: {
-  BOMOS_fundament: {
-    title: "BOMOS, het fundament",
-    href: "https://gitdocumentatie.logius.nl/publicatie/bomos/fundament/",
-    status: "Actueel",
-    publisher: "Logius",
+    BOMOS_fundament: {
+      title: "BOMOS, het fundament",
+      href: "https://gitdocumentatie.logius.nl/publicatie/bomos/fundament/",
+      status: "Actueel",
+      publisher: "Logius",
+    },
   },
-  },
+  maxTocLevel: 3,
 };
