@@ -63,7 +63,7 @@ Een OTL beschrijft welke objecttypen er bestaan maar bevat geen informatie over 
 De vastgelegde definities, relaties en kenmerken uit de OTL kunnen gebruikt worden om de specifieke objecten altijd op dezelfde manier op te bouwen. 
 
 <figure id="OTL-voorbeeld">
-  <img src="figures/draaiboek/OTL-voorbeeld.png"/>
+  <img src="figures/draaiboek/B&U OTL-voorbeeld.png"/>
 </figure>
 
 #### Waarvoor is een OTL
@@ -80,10 +80,10 @@ Tot hier werkt het
 
 De OTLs (hun doel) worden door beheerders/opdrachtgevers gebruikt om:
 
-1.	Hun databehoefte per asset (fysiek of ruimtelijk) aan te verbinden (linken) en hiermee uit te vragen in projecten
-2.	Hun functionele en technische eisen per asset aan te verbinden
-3.	Hun asset management (soms GIS-) en document management-systeem mee te structuren
-4.	Om gestructureerde geleverde data van projecten te verdelen over verschillende Asset management beheersystemen
+1. Hun databehoefte per asset (fysiek of ruimtelijk) aan te verbinden (linken) en hiermee uit te vragen in projecten
+2. Hun functionele en technische eisen per asset aan te verbinden
+3. Hun asset management (soms GIS-) en document management-systeem mee te structuren
+4. Om gestructureerde geleverde data van projecten te verdelen over verschillende Asset management beheersystemen
 
 Inmiddels is duidelijk geworden dat in de gebouwde omgeving ook opdrachtnemers OTLs gebruiken om hun werkzaamheden/activiteiten te organiseren en de data te structuren in projecten (BAM, Dura en VolkerWessels).
 
