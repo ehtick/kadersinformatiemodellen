@@ -24,10 +24,12 @@ De doelgroep van dit document zijn organisaties binnen de gebouwde omgeving die 
 De richtlijnen worden gebaseerd op bestaande standaarden, normen en praktijkervaringen. Dit zijn onder andere:
 - het Beheer- en OntwikkelModel voor Open Standaarden (BOMOS);
 - de <a href="https://www.go-fair.org/fair-principles/">FAIR</a>Q-principes (Findability, Accessibility, Interoperability, Reusability en Quality);
-- de NEN-2660 serie, "Modelleringsregels voor informatie in de gebouwde omgeving";
+- de <a href="https://www.nen.nl/modellering-integratie-en-interoperabiliteit-van-informatie-in-de-gebouwde-omgeving-en-procesindustrie">NEN-2660 serie</a>, "Modelleringsregels voor informatie in de gebouwde omgeving";
 - Geonovums <a href="https://profielstelselcatalogus.pldn.nl/">Standaard voor het beschrijven van begrippen (SBB)</a>;
 - CROWs <a href="https://docs.crow.nl/ontology-alignment/whitepaper/">Ontology Matching trough alignment and extension: a Best Practice</a>;
-- federatief data delen.
+- <a href="https://www.digigo.nu/digitaal-stelsel/waarom-dsgo">federatief data delen</a>.
+
+Rijkswaterstaat, Provincie Gelderland en digiGO hebben de NEN 2660 afgekocht en deze NEN norm is tot eind 2025 gratis te downloaden. Dit kan gedaan worden op de website van de NEN, <a href="https://urldefense.com/v3/__https://connect.nen.nl/Home/Detail__;!!NFFV0PM8bbqw!M5JuU5t0-AzxNzYr1PWA33tQIbT0IAFveLFdgD24P66VGyfZjurAmpzO2mWRs4Rc_B1BtfGe_fAWwVKIUU-TlKVXS0RZtntAGvtxKpM$">NEN Connect - Home</a>. Op deze website dient u wel eerst een account aan te maken. 
 
 ## Status van dit document
 
