@@ -174,8 +174,6 @@ Het domein IFC building heeft een grote hoeveelheid aan kenmerkensets voor gebou
 
 <a href="https://www.etim-international.com/">ETIM</a> is een internationale classificatiestandaard voor technische producten. Deze classificatie kan helpen om de kenmerken van specifieke producten te linken aan een internationale database van producten.
 
-<section id="draaboek-bijlage1">
-
 ### Bijlage 1. Format use-case uitwerking
 
 #### Use Case OTL: *Titel formuleren*
@@ -231,7 +229,6 @@ Deze activiteiten dienen ook om zelf na te gaan met welke onderdelen rekening ge
 
 1. ...
 2. ...
-</section>
 
 ### Bijlage 2. Voorbeeld Use Case OTL - Biobased Isoleren
 
