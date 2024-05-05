@@ -29,7 +29,7 @@ Versies
 | Bijlage 1 | |
 | Bijlage 2 | |
 
-<!-- ### Inleiding
+### Inleiding
 
 In dit draaiboek wordt stapsgewijs beschreven hoe tot de ontwikkeling van een OTL of Ontologie te komen en hoe deze vervolgens voor een bepaalde toepassing te implementeren.  
 
@@ -94,7 +94,7 @@ De ervaringen om tot een beknopte use-case beschrijving te komen staan hieronder
 3.	Vraag hen wat ze met de uitvoering van die verbeterwens willen bereiken (hun doel).
 4.	Baken de use-case af ofwel geef aan binnen welke begrenzing je een OTL wil toepassen.
 
-In [[draaboek-bijlage1]] is de template opgenomen die in een dergelijke bijeenkomst gebruikt kan worden om een use-case te ontwikkelen en te beschrijven.
+In **bijlage 1** is de template opgenomen die in een dergelijke bijeenkomst gebruikt kan worden om een use-case te ontwikkelen en te beschrijven.
 
 **Ad 1. Bijeenkomst rolhouders/doelgroep**
 
@@ -254,7 +254,7 @@ Deze activiteiten dienen ook om zelf na te gaan met welke onderdelen rekening ge
 
 <figure id="B&U voorbeelduitwerking 2">
   <img src="figures/draaiboek/B&U voorbeelduitwerking 2.png"/>
-</figure> -->
+</figure>
 
 ## Handleiding OTL | IMBOR-LD
 
