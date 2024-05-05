@@ -29,7 +29,7 @@ Versies
 | Bijlage 1 | |
 | Bijlage 2 | |
 
-### Inleiding
+<!-- ### Inleiding
 
 In dit draaiboek wordt stapsgewijs beschreven hoe tot de ontwikkeling van een OTL of Ontologie te komen en hoe deze vervolgens voor een bepaalde toepassing te implementeren.  
 
@@ -131,15 +131,13 @@ Voor de aanpak van de uitvoering van de use-case worden hieronder diverse activi
 7.	Een toelichting geven aan stakeholders over wat een OTL is en een reeds ontwikkelde OTL en het gebruik hiervan tonen.
 8.	Ontologie inrichten of aanpassen met benodigde links, regelsets en eventueel aanvullende concepten voor de use-case op basis van voorgaande stappen.
 9.	De ontologie inrichten/modelleren conform NEN-2660 met een dataset.
-10.	Uitzoeken welke tools/software<a href="#fn1">[1]</a> we willen gebruiken om de OTL-toepassing demonstreerbaar te maken.
+10.	Uitzoeken welke tools/software[1] we willen gebruiken om de OTL-toepassing demonstreerbaar te maken.
 11.	Beschrijven wat we in de use-case willen laten zien in de tool(s) voor de demo en functionaliteiten testen in de toolset.
 12.	Benodigde aanpassingen maken in de toolset en demo-tools.
 13.	Tools en OTL op elkaar aansluiten om de werking van de use-case aantoonbaar te maken.
 14.	De ontwikkelde OTL op het digiGO open OTL-platform beschikbaar maken voor een ieder, samen met de tools om het voorbeeld van de use-case te illustreren.
 
-<aside id="fn1" role="note">
-    Bij voorkeur tools gebruiken die al op basis van een OTL ingericht zijn, of flexibele tools gebruiken, waar een OTL gemakkelijk implementeerbaar is.
-</aside>
+[1] Bij voorkeur tools gebruiken die al op basis van een OTL ingericht zijn, of flexibele tools gebruiken, waar een OTL gemakkelijk implementeerbaar is.
 
 ### Randvoorwaarden voor het opstellen van een OTL 
 
@@ -256,7 +254,7 @@ Deze activiteiten dienen ook om zelf na te gaan met welke onderdelen rekening ge
 
 <figure id="B&U voorbeelduitwerking 2">
   <img src="figures/draaiboek/B&U voorbeelduitwerking 2.png"/>
-</figure>
+</figure> -->
 
 ## Handleiding OTL | IMBOR-LD
 
@@ -264,4 +262,4 @@ Link: <a href="https://docs.crow.nl/imbor/handleiding-otl/">Handleiding OTL | IM
 
 Deze handleiding van CROW beschrijft hoe er op basis van IMBOR-LD een eigen ontologie gemaakt kan worden ten behoeve van uitwisseling tussen opdrachtnemer en opdrachtgever. Hoewel de handleiding dus gericht is op hergebruik van de IMBOR OTL, zijn een aantal van de stappen in deze handleiding zodanig generiek dat ze ook van toepassing zijn bij het opzetten van een algemene OTL.
 
-De originele vraag voor deze handleiding komt voor uit het BIM Pro-programma van de Provincies. Men wil een OTL kunnen samenstellen die aan de opdrachtgever gegeven kan worden, die deze vervolgens 'invult' en teruglevert. Waarop de Provincie de gegevens kan valideren en inlezen in hun systemen. Het doel (en daarmee de scope) van deze handleiding is dat hiermee een Provincie in staat moet zijn om een OTL op te zetten in een spreadsheet (conventioneel) of LinkedData (duurzaam) formaat.
+De originele vraag voor deze handleiding komt voor uit het BIM Pro-programma van de Provincies. Men wil een OTL kunnen samenstellen die aan de opdrachtgever gegeven kan worden, die deze vervolgens 'invult' en teruglevert. Waarop de Provincie de gegevens kan valideren en inlezen in hun systemen. Het doel (en daarmee de scope) van deze handleiding is dat hiermee een Provincie in staat moet zijn om een OTL op te zetten in een spreadsheet (conventioneel) of LinkedData (duurzaam) formaat. -->
