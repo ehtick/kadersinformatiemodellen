@@ -51,9 +51,7 @@ Daarnaast worden de  kaders en richtlijnen ontwikkeld voor de standaarden in de 
 
 ### Object Type Bibliotheek (OTL)
 
-tot hier werkt het
-
-<!-- #### Wat is een OTL
+#### Wat is een OTL
 
 Een Object Type Bibliotheek (OTL) is een conceptueel datamodel waarin de opbouw van assets en objecttypen wordt vastgelegd. Het doel van een OTL is om binnen en buiten een bedrijf definities en mogelijke relaties van te leggen van concepten (objecttypes) die verwijzen naar de echte wereld. 
 
@@ -143,6 +141,9 @@ Voor de aanpak van de uitvoering van de use-case worden hieronder diverse activi
 
 ### Randvoorwaarden voor het opstellen van een OTL 
 
+tot hier werkt het
+
+<!--
 #### Gebruik van marktconforme standaarden
 
 Het opstellen van een goede OTL heeft als randvoorwaarde dat de opgenomen concepten/objecttypes, definities en kenmerken herkenbaar zijn, binnen en buiten de eigen organisatie. Om dit te bewerkstelligen is het belangrijk om zoveel mogelijk gebruik te maken van marktconforme standaarden. Het wiel is vaak voor een groot deel al uitgevonden. 
