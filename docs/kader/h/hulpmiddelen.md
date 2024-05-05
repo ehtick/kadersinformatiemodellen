@@ -131,13 +131,13 @@ Voor de aanpak van de uitvoering van de use-case worden hieronder diverse activi
 7.	Een toelichting geven aan stakeholders over wat een OTL is en een reeds ontwikkelde OTL en het gebruik hiervan tonen.
 8.	Ontologie inrichten of aanpassen met benodigde links, regelsets en eventueel aanvullende concepten voor de use-case op basis van voorgaande stappen.
 9.	De ontologie inrichten/modelleren conform NEN-2660 met een dataset.
-10.	Uitzoeken welke tools/software[1] we willen gebruiken om de OTL-toepassing demonstreerbaar te maken.
+10.	Uitzoeken welke tools/software** we willen gebruiken om de OTL-toepassing demonstreerbaar te maken.
 11.	Beschrijven wat we in de use-case willen laten zien in de tool(s) voor de demo en functionaliteiten testen in de toolset.
 12.	Benodigde aanpassingen maken in de toolset en demo-tools.
 13.	Tools en OTL op elkaar aansluiten om de werking van de use-case aantoonbaar te maken.
 14.	De ontwikkelde OTL op het digiGO open OTL-platform beschikbaar maken voor een ieder, samen met de tools om het voorbeeld van de use-case te illustreren.
 
-[1] Bij voorkeur tools gebruiken die al op basis van een OTL ingericht zijn, of flexibele tools gebruiken, waar een OTL gemakkelijk implementeerbaar is.
+** Bij voorkeur tools gebruiken die al op basis van een OTL ingericht zijn, of flexibele tools gebruiken, waar een OTL gemakkelijk implementeerbaar is.
 
 ### Randvoorwaarden voor het opstellen van een OTL 
 
@@ -184,7 +184,7 @@ Graag elementen hiervoor gebruiken waarmee userstories beschreven kunnen worden 
 
 | Als gebruiker     | Verbeterwens / Gewenst gedrag | Waarvoor ? Welk doel?  | Afbakening            |
 |-------------------|-------------------------------|-------------------------|-----------------------|
-| Als [Rol] wil ik | Wat kunnen doen?             | Om wat te bereiken ?    | Binnen welke afgrenzing? |
+| Als \[Rol\] wil ik | Wat kunnen doen?             | Om wat te bereiken ?    | Binnen welke afgrenzing? |
 
 Afgeleide behoefte:
 
