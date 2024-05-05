@@ -1,10 +1,6 @@
-<section id="richtlijnen">
-
 # Richtlijnen
 
 Dit hoofstuk beschrijft de richtlijnen, verdeeld naar onderwerp. Per richtlijn is aangegeven welke van de FAIRQ-eigenschappen het invult. De F en A gaan voornamelijk over toegang tot en beschikbaarheid van het informatiemodel, de I en R over technische operabiliteit en de Q voornamelijk over de kwaliteit van de beheerorganisatie.
-
-<section id="richtlijn-ontwikkelen">
 
 ## Richtlijnen om een OTL te ontwikkelen
 
@@ -24,9 +20,6 @@ Het ontwikkelen van een OTL is meer dan een technisch project. Een succesvolle O
 | F/A     | Publicatie                | Publiceer je OTL online, voorzien van een goede beschrijving en documentatie. Voor meer details hierover zie de richtlijnen voor publicatie.                                                                                                                            |
 | Q       | Beheer                    | Beheer je OTL. Maak een planning voor nieuwe versies en houd de planning van onderliggende standaarden/OTLlen in de gaten. Organiseer ondersteuning voor gebruikers. Voor meer details hierover zie de richtlijnen voor beheer.                                         |
 
-</section>
-<section id="richtlijn-woordenboek">
-
 ## Richtlijnen om een woordenboek op te zetten
 
 **Waarom**
@@ -43,15 +36,9 @@ Een woordenboek is een lijst van termen voorzien een definities, waar mogelijk h
 | I     | Bronverwijzing             | Waar mogelijk wordt verwezen naar openbare bronnen waar een begrip op is gebaseerd, zoals standaarden, wetgeving, etc. |
 | I     | Thesaurus                  | Begrippen zijn aan elkaar gerelateerd, zoals in een thesaurus.                                        |
 
-</section>
-<section id="richtlijn-ontologie">
-
 ## Richtlijnen om een ontologie op te zetten
 
 Op dit moment ontbreken er nog richtlijnen om een ontologie op te zetten. Er wordt door de NEN-normcommissie <a href="https://www.nen.nl/modellering-integratie-en-interoperabiliteit-van-informatie-in-de-gebouwde-omgeving-en-procesindustrie">Modellering, integratie en interoperabiliteit van informatie in de gebouwde omgeving en procesindustrie</a> gewerkt aan een praktijkrichtlijn voor de NEN 2660. De verwachting is dat deze in 2024 wordt gepubliceerd.
-
-</section>
-<section id="richtlijn-registreren">
 
 ## Richtlijnen voor eenmalig registeren, meervoudig gebruik.
 
@@ -84,9 +71,6 @@ Het volgende is een incomplete lijst van bestaande standaarden en OTLlen:
 | R     | Benoemen relaties          | Relaties met andere OTLlen worden (kort) benoemd in de algemene beschrijving van de OTL.               |
 | R     | Documenteren relaties      | Relaties met andere OTLlen zijn uitgebreid gedocumenteerd in de technische documentatie, inclusief verwijzing naar de bron-OTLlen en de gebruikte versies.  |
 
-</section>
-<section id="richtlijn-identificeren">
-
 ## Richtlijnen voor uniek identificeren
 
 **Waarom**
@@ -103,9 +87,6 @@ Om de betekenis van objecten en gegevens mogelijk te maken is het van belang dat
 - objecttypen, hun eigenschappen en hun relaties;
 - begrippen, hun eigenschappen en hun relaties;
 - waardenlijsten de individuele waarden. |
-
-</section>
-<section id="richtlijn-informatiemodellering">
 
 ## Richtlijnen voor informatiemodellering
 
@@ -124,9 +105,6 @@ De richtlijnen voor informatiemodellering hebben als doel interoperabiliteit, d.
 | I     | Formaat                    | De gebruikte formaten voor uitwisseling zijn conform de NEN 2660: RDF-XML, Turtle of JSON-LD                            |
 | R     | Documentatie               | De OTL is gedocumenteerd en de documentatie is vindbaar en toegankelijk.                              |
 
-</section>
-<section id="richtlijn-harmonisatie">
-
 ## Richtlijnen voor harmonisatie tussen OTLlen
 
 **Waarom**
@@ -142,9 +120,6 @@ Bij harmonisatie wordt er een mapping gemaakt tussen twee woordenboeken of tusse
 | R     | Externe harmonisatie       | Harmonisatie tussen OTLlen van verschillende organisaties moet als een aparte OTL met een aparte beheeropgave worden opgepakt. |
 | R     | Benoemen relaties          | Relaties met andere OTLlen worden (kort) benoemd in de algemene beschrijving van de OTL.               |
 | R     | Documenteren relaties      | Relaties met andere OTLlen zijn uitgebreid gedocumenteerd in de technische documentatie, inclusief verwijzing naar de bron-OTLlen en de gebruikte versies.  |
-
-</section>
-<section id="richtlijn-publicatie">
 
 ## Richtlijnen voor publicatie
 
@@ -174,9 +149,6 @@ Dit is gevat in onderstaande richtlijnen.
 | A     | Nederlandse taal           | De OTL en alle informatie eromheen zijn in het Nederlands opgesteld.                                  |
 | A     | Engelse taal               | De OTL en alle informatie eromheen zijn in het Engels opgesteld.                                      |
 
-</section>
-<section id="richtlijn-beheer">
-
 ## Richtlijnen voor beheer
 
 **Waarom**
@@ -196,6 +168,3 @@ Dit is gevat in onderstaande richtlijnen.
 | Q     | Versieverschillen          | Verschillen tussen versies zijn toegelicht.                                                           |
 | Q     | Releasekalender            | Er is een planning beschikbaar voor toekomstige versies, inclusief een indicatie van verwachte wijzigingen per wijziging. Op zijn minst wordt aangegeven of en wanneer er een nieuwe versie verwacht wordt. |
 | Q     | Feedback                   | De beheerder kan benaderd worden, bijvoorbeeld om bugs te melden en features te verzoeken.            |
-
-</section>
-</section>
