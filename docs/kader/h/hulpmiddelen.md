@@ -14,7 +14,7 @@
 - Versienummer: 0.3
 - Contact:
 
-Versies
+**Versies**
 
 | Versie | Datum | Status | Samenvatting wijzigingen | Initialen |
 |--------|-------|--------|--------------------------|-----------|
@@ -51,7 +51,9 @@ Daarnaast worden de  kaders en richtlijnen ontwikkeld voor de standaarden in de 
 
 ### Object Type Bibliotheek (OTL)
 
-#### Wat is een OTL
+tot hier werkt het
+
+<!-- #### Wat is een OTL
 
 Een Object Type Bibliotheek (OTL) is een conceptueel datamodel waarin de opbouw van assets en objecttypen wordt vastgelegd. Het doel van een OTL is om binnen en buiten een bedrijf definities en mogelijke relaties van te leggen van concepten (objecttypes) die verwijzen naar de echte wereld. 
 
@@ -262,4 +264,4 @@ Link: <a href="https://docs.crow.nl/imbor/handleiding-otl/">Handleiding OTL | IM
 
 Deze handleiding van CROW beschrijft hoe er op basis van IMBOR-LD een eigen ontologie gemaakt kan worden ten behoeve van uitwisseling tussen opdrachtnemer en opdrachtgever. Hoewel de handleiding dus gericht is op hergebruik van de IMBOR OTL, zijn een aantal van de stappen in deze handleiding zodanig generiek dat ze ook van toepassing zijn bij het opzetten van een algemene OTL.
 
-De originele vraag voor deze handleiding komt voor uit het BIM Pro-programma van de Provincies. Men wil een OTL kunnen samenstellen die aan de opdrachtgever gegeven kan worden, die deze vervolgens 'invult' en teruglevert. Waarop de Provincie de gegevens kan valideren en inlezen in hun systemen. Het doel (en daarmee de scope) van deze handleiding is dat hiermee een Provincie in staat moet zijn om een OTL op te zetten in een spreadsheet (conventioneel) of LinkedData (duurzaam) formaat.
+De originele vraag voor deze handleiding komt voor uit het BIM Pro-programma van de Provincies. Men wil een OTL kunnen samenstellen die aan de opdrachtgever gegeven kan worden, die deze vervolgens 'invult' en teruglevert. Waarop de Provincie de gegevens kan valideren en inlezen in hun systemen. Het doel (en daarmee de scope) van deze handleiding is dat hiermee een Provincie in staat moet zijn om een OTL op te zetten in een spreadsheet (conventioneel) of LinkedData (duurzaam) formaat. -->
