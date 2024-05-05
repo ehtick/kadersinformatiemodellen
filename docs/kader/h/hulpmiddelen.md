@@ -76,6 +76,8 @@ Ontologieën of objecttype bibliotheken (OTL’s) zijn semantische data structur
 2. In de OTL wordt de informatiebehoefte van een beheerder/opdrachtgever gedurende de levensduur van de objecttypen vastgelegd
 3. In de OTL zelf wordt geen informatie opgeslagen over instanties (meerdere objecten op verschillende plekken van hetzelfde asset/objecttype)
 
+<!--
+
 #### Hoe worden OTLs toegepast
 
 De OTLs (hun doel) worden door beheerders/opdrachtgevers gebruikt om:
@@ -86,6 +88,7 @@ De OTLs (hun doel) worden door beheerders/opdrachtgevers gebruikt om:
 4.	Om gestructureerde geleverde data van projecten te verdelen over verschillende Asset management beheersystemen
 
 Inmiddels is duidelijk geworden dat in de gebouwde omgeving ook opdrachtnemers OTLs gebruiken om hun werkzaamheden/activiteiten te organiseren en de data te structuren in projecten (BAM, Dura en VolkerWessels).
+
 Er zijn nog veel meer toepassingen of use-cases te bedenken om een OTL te gaan toepassen in de gebouwde omgeving. Om hiertoe te komen is in dit versnellingsproject een standaard methodiek ontwikkeld, die in dit draaiboek stapsgewijs wordt toegelicht. Ook zijn inmiddels 3 uitgewerkte nieuwe usecases met gebruikers bedacht en beschreven.
 
 ### Use Cases opstellen
@@ -98,7 +101,7 @@ De ervaringen om tot een beknopte use-case beschrijving te komen staan hieronder
 
 In **bijlage 1** is de template opgenomen die in een dergelijke bijeenkomst gebruikt kan worden om een use-case te ontwikkelen en te beschrijven.
 
-<!--
+hier werkt het niet
 
 **Ad 1. Bijeenkomst rolhouders/doelgroep**
 
