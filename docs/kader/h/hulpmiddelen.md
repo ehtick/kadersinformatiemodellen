@@ -122,6 +122,8 @@ Dit is een zeer belangrijk onderdeel, want hiermee maak je de use-case specifiek
 #### De aanpak van de OTL-ontwikkeling voor een use-case
 Voor de aanpak van de uitvoering van de use-case worden hieronder diverse activiteiten benoemd, om het gewenste eindresultaat voor het knelpunt te kunnen behalen. Deze activiteiten dienen ook om zelf na te gaan met welke onderdelen rekening gehouden dient te worden. Ook de volgordelijkheid is hierbij belangrijk om het team te helpen om de use-case succesvol uit te voeren.
 
+<!--
+
 1.	Voer een uitgebreide inventarisatie uit op basis van eerder gestelde vragen en laat je uitgeschreven use-case reviewen door anderen.
 2.	Inventariseer welke informatiebronnen je nodig hebt om de use-case af te dekken.
 3.	Inventariseer welke datasets er beschikbaar zijn en welke data ontbreekt om de use-case te kunnen uitvoeren.
@@ -141,9 +143,6 @@ Voor de aanpak van de uitvoering van de use-case worden hieronder diverse activi
 
 ### Randvoorwaarden voor het opstellen van een OTL 
 
-tot hier werkt het
-
-<!--
 #### Gebruik van marktconforme standaarden
 
 Het opstellen van een goede OTL heeft als randvoorwaarde dat de opgenomen concepten/objecttypes, definities en kenmerken herkenbaar zijn, binnen en buiten de eigen organisatie. Om dit te bewerkstelligen is het belangrijk om zoveel mogelijk gebruik te maken van marktconforme standaarden. Het wiel is vaak voor een groot deel al uitgevonden. 
