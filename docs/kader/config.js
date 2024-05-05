@@ -17,6 +17,10 @@ var respecConfig = {
       name: "Wouter Klein Wolterink",
       company: "digiGO",
     },
+    {
+      name: "Henk Hutink",
+      company: "digiGO",
+    },
   ],
   github: "https://github.com/nl-digigo/kadersinformatiemodellen",
   license: "cc-by",
