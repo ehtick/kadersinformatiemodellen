@@ -66,7 +66,7 @@ De vastgelegde definities, relaties en kenmerken uit de OTL kunnen gebruikt word
   <img src="figures/draaiboek/OTL-voorbeeld.png"/>
 </figure>
 
-<!--
+Tot hier werkt het
 
 #### Waarvoor is een OTL
 
@@ -97,6 +97,8 @@ De ervaringen om tot een beknopte use-case beschrijving te komen staan hieronder
 4.	Baken de use-case af ofwel geef aan binnen welke begrenzing je een OTL wil toepassen.
 
 In **bijlage 1** is de template opgenomen die in een dergelijke bijeenkomst gebruikt kan worden om een use-case te ontwikkelen en te beschrijven.
+
+<!--
 
 **Ad 1. Bijeenkomst rolhouders/doelgroep**
 

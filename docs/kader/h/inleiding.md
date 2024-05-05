@@ -1,6 +1,6 @@
 # Inleiding
 
-.20
+.30
 
 Interoperabiliteit in de Ontwerp,- Bouw,- en Technieksector (OBT) is noodzakelijk zodat ICT-opdrachtgevers en -opdrachtnemers eenduidig informatie vastleggen en digitaal kunnen uitwisselen. En daarom is het ook van belang dat Object Type Libraries (OTL) op een eenduidige manier worden opgezet zodat gegevensuitwisseling mogelijk wordt. Voor het ontwikkelen en beheren van OTLlen is het wenselijk om, met alle partijen die een OTL hebben opgezet of gaan ontwikkelen, dezelfde richtlijnen te hanteren.
 
