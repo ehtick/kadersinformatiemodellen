@@ -66,6 +66,8 @@ De vastgelegde definities, relaties en kenmerken uit de OTL kunnen gebruikt word
   <img src="figures/draaiboek/OTL-voorbeeld.png"/>
 </figure>
 
+<!--
+
 #### Waarvoor is een OTL
 
 Ontologieën of objecttype bibliotheken (OTL’s) zijn semantische data structuren of modellen, die voor meerdere toepassingen geschikt blijken. Zoals de titel al aangeeft zijn deze structuren vorm gegeven rondom objecten of assets van een gebouw of een infrastructuur (netwerk van assets). Deze structuren worden enerzijds vaak opgebouwd als taxonomie (ofwel families van objecten) en anderzijds uit decompositie (ofwel onderdelen van objecten). Richtlijnen die vaak van toepassing zijn (zie ook ontwerpnotitie OTL Gelderland):
@@ -122,8 +124,6 @@ Dit is een zeer belangrijk onderdeel, want hiermee maak je de use-case specifiek
 #### De aanpak van de OTL-ontwikkeling voor een use-case
 Voor de aanpak van de uitvoering van de use-case worden hieronder diverse activiteiten benoemd, om het gewenste eindresultaat voor het knelpunt te kunnen behalen. Deze activiteiten dienen ook om zelf na te gaan met welke onderdelen rekening gehouden dient te worden. Ook de volgordelijkheid is hierbij belangrijk om het team te helpen om de use-case succesvol uit te voeren.
 
-<!--
-
 1.	Voer een uitgebreide inventarisatie uit op basis van eerder gestelde vragen en laat je uitgeschreven use-case reviewen door anderen.
 2.	Inventariseer welke informatiebronnen je nodig hebt om de use-case af te dekken.
 3.	Inventariseer welke datasets er beschikbaar zijn en welke data ontbreekt om de use-case te kunnen uitvoeren.
@@ -133,13 +133,11 @@ Voor de aanpak van de uitvoering van de use-case worden hieronder diverse activi
 7.	Een toelichting geven aan stakeholders over wat een OTL is en een reeds ontwikkelde OTL en het gebruik hiervan tonen.
 8.	Ontologie inrichten of aanpassen met benodigde links, regelsets en eventueel aanvullende concepten voor de use-case op basis van voorgaande stappen.
 9.	De ontologie inrichten/modelleren conform NEN-2660 met een dataset.
-10.	Uitzoeken welke tools/software** we willen gebruiken om de OTL-toepassing demonstreerbaar te maken.
+10.	Uitzoeken welke tools/software we willen gebruiken om de OTL-toepassing demonstreerbaar te maken. Bij voorkeur tools gebruiken die al op basis van een OTL ingericht zijn, of flexibele tools gebruiken, waar een OTL gemakkelijk implementeerbaar is.
 11.	Beschrijven wat we in de use-case willen laten zien in de tool(s) voor de demo en functionaliteiten testen in de toolset.
 12.	Benodigde aanpassingen maken in de toolset en demo-tools.
 13.	Tools en OTL op elkaar aansluiten om de werking van de use-case aantoonbaar te maken.
 14.	De ontwikkelde OTL op het digiGO open OTL-platform beschikbaar maken voor een ieder, samen met de tools om het voorbeeld van de use-case te illustreren.
-
-** Bij voorkeur tools gebruiken die al op basis van een OTL ingericht zijn, of flexibele tools gebruiken, waar een OTL gemakkelijk implementeerbaar is.
 
 ### Randvoorwaarden voor het opstellen van een OTL 
 
