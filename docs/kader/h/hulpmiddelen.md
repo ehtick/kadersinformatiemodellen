@@ -66,8 +66,6 @@ De vastgelegde definities, relaties en kenmerken uit de OTL kunnen gebruikt word
   <img src="figures/draaiboek/OTL-voorbeeld.png"/>
 </figure>
 
-Tot hier werkt het
-
 #### Waarvoor is een OTL
 
 Ontologieën of objecttype bibliotheken (OTL’s) zijn semantische data structuren of modellen, die voor meerdere toepassingen geschikt blijken. Zoals de titel al aangeeft zijn deze structuren vorm gegeven rondom objecten of assets van een gebouw of een infrastructuur (netwerk van assets). Deze structuren worden enerzijds vaak opgebouwd als taxonomie (ofwel families van objecten) en anderzijds uit decompositie (ofwel onderdelen van objecten). Richtlijnen die vaak van toepassing zijn (zie ook ontwerpnotitie OTL Gelderland):
@@ -76,7 +74,7 @@ Ontologieën of objecttype bibliotheken (OTL’s) zijn semantische data structur
 2. In de OTL wordt de informatiebehoefte van een beheerder/opdrachtgever gedurende de levensduur van de objecttypen vastgelegd
 3. In de OTL zelf wordt geen informatie opgeslagen over instanties (meerdere objecten op verschillende plekken van hetzelfde asset/objecttype)
 
-<!--
+Tot hier werkt het
 
 #### Hoe worden OTLs toegepast
 
@@ -90,6 +88,8 @@ De OTLs (hun doel) worden door beheerders/opdrachtgevers gebruikt om:
 Inmiddels is duidelijk geworden dat in de gebouwde omgeving ook opdrachtnemers OTLs gebruiken om hun werkzaamheden/activiteiten te organiseren en de data te structuren in projecten (BAM, Dura en VolkerWessels).
 
 Er zijn nog veel meer toepassingen of use-cases te bedenken om een OTL te gaan toepassen in de gebouwde omgeving. Om hiertoe te komen is in dit versnellingsproject een standaard methodiek ontwikkeld, die in dit draaiboek stapsgewijs wordt toegelicht. Ook zijn inmiddels 3 uitgewerkte nieuwe usecases met gebruikers bedacht en beschreven.
+
+<!--
 
 ### Use Cases opstellen
 De ervaringen om tot een beknopte use-case beschrijving te komen staan hieronder kort weergegeven; er is voor gekozen om samen tot een goede userstory te komen:
