@@ -4,7 +4,7 @@
 
 Link: zie bijlage 1.
 
-digiGO heeft een draaiboeklaten opstellen waarin stapsgewijs wordt beschreven hoe tot de ontwikkeling van een OTL te komen en hoe deze vervolgens voor een bepaalde toepassing te implementeren. Het draaiboek is opgezet als onderdeel van het digiGO-versnelleingsproject Draaiboek en beproeving OTL-implementatie.
+digiGO heeft een draaiboeklaten opstellen waarin stapsgewijs wordt beschreven hoe tot de ontwikkeling van een OTL te komen en hoe deze vervolgens voor een bepaalde toepassing te implementeren. Het draaiboek is opgezet als onderdeel van het digiGO-versnellingsproject Draaiboek en beproeving OTL-implementatie.
 
 ## Handleiding OTL | IMBOR-LD
 

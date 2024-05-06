@@ -1,4 +1,4 @@
-# Bijlage: Draaiboek OTL voor B&U sectoren
+# Draaiboek OTL voor B&U sectoren
 
 ## Documentbeheer
 
@@ -6,7 +6,7 @@
 
 - Titel: Draaiboek OTL voor B&U sectoren
 - Opgesteld door: BIMW en Gobar Adviseurs
-- Status: concept
+- Status: Concept
 - Vastgesteld door: Rijksvastgoedbedrijf en digiGO
 - Datum vaststelling:
 - Versienummer: 0.3
@@ -88,10 +88,10 @@ Er zijn nog veel meer toepassingen of use-cases te bedenken om een OTL te gaan t
 ## Use Cases opstellen
 De ervaringen om tot een beknopte use-case beschrijving te komen staan hieronder kort weergegeven; er is voor gekozen om samen tot een goede userstory te komen:
 
-1.	Breng een groep rolhouders/gebruikers met vergelijkbare belangen bijeen, die de toepassing van een OTL voor hun vraagstuk als mogelijkheid willen onderzoeken.
-2.	Breng de verbeterwens in beeld van de verschillende gebruikers/rolhouders
-3.	Vraag hen wat ze met de uitvoering van die verbeterwens willen bereiken (hun doel).
-4.	Baken de use-case af ofwel geef aan binnen welke begrenzing je een OTL wil toepassen.
+1. Breng een groep rolhouders/gebruikers met vergelijkbare belangen bijeen, die de toepassing van een OTL voor hun vraagstuk als mogelijkheid willen onderzoeken.
+2. Breng de verbeterwens in beeld van de verschillende gebruikers/rolhouders
+3. Vraag hen wat ze met de uitvoering van die verbeterwens willen bereiken (hun doel).
+4. Baken de use-case af ofwel geef aan binnen welke begrenzing je een OTL wil toepassen.
 
 In **bijlage 1** is de template opgenomen die in een dergelijke bijeenkomst gebruikt kan worden om een use-case te ontwikkelen en te beschrijven.
 
