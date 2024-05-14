@@ -16,6 +16,6 @@ De originele vraag voor deze handleiding komt voor uit het BIM Pro-programma van
 
 ## Ontwerpnotitie OTL, Provincie Gelderland
 
-Link naar document: <a href="docs/Ontwerpnotitie OTL-1.10_20230303-geredigeerd" download>Ontwerpnotitie OTL, Provincie Gelderland</a>
+Link naar document: <a href="docs/Ontwerpnotitie OTL-1.10_20230303-geredigeerd.pdf" download>Ontwerpnotitie OTL, Provincie Gelderland</a>
 
 Dit document is opgezet ter verduidelijking van de totstandkoming van de Object Type Library (OTL) voor de Provincie Gelderland. Hierin wordt beschreven welke ontwerpuitgangspunten, keuzes & raakvlakken aan de basis staan van de OTL.
