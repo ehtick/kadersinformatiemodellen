@@ -4,7 +4,7 @@
 
 Link naar document: <a href="docs/Concept draaiboek ontwikkeling en beproeving OTL 4-4-2024.docx" download>Draaiboek OTL voor B&U sectoren</a>.
 
-digiGO heeft een draaiboeklaten opstellen waarin stapsgewijs wordt beschreven hoe tot de ontwikkeling van een OTL te komen en hoe deze vervolgens voor een bepaalde toepassing te implementeren. Het draaiboek is opgezet als onderdeel van het digiGO-versnellingsproject Draaiboek en beproeving OTL-implementatie.
+digiGO heeft een draaiboek laten opstellen waarin stapsgewijs wordt beschreven hoe tot de ontwikkeling van een OTL te komen en hoe deze vervolgens voor een bepaalde toepassing te implementeren. Het draaiboek is opgezet als onderdeel van het digiGO-versnellingsproject Draaiboek en beproeving OTL-implementatie.
 
 ## Handleiding OTL | IMBOR-LD
 
@@ -16,6 +16,6 @@ De originele vraag voor deze handleiding komt voor uit het BIM Pro-programma van
 
 ## Ontwerpnotitie OTL, Provincie Gelderland
 
-Link naar document: <a href="docs/Ontwerpnotitie OTL-1.10_20230303.docx" download>Ontwerpnotitie OTL, Provincie Gelderland</a>
+Link naar document: <a href="docs/Ontwerpnotitie OTL-1.10_20230303-geredigeerd" download>Ontwerpnotitie OTL, Provincie Gelderland</a>
 
 Dit document is opgezet ter verduidelijking van de totstandkoming van de Object Type Library (OTL) voor de Provincie Gelderland. Hierin wordt beschreven welke ontwerpuitgangspunten, keuzes & raakvlakken aan de basis staan van de OTL.
