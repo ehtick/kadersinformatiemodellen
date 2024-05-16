@@ -1,30 +1,30 @@
 # Richtlijnen
 
-Dit hoofstuk beschrijft de richtlijnen, verdeeld naar onderwerp. Per richtlijn is aangegeven welke van de FAIRQ-eigenschappen het invult. De F en A gaan voornamelijk over toegang tot en beschikbaarheid van het informatiemodel, de I en R over technische operabiliteit en de Q voornamelijk over de kwaliteit van de beheerorganisatie.
+Dit hoofdstuk beschrijft de richtlijnen, verdeeld naar onderwerp. Per richtlijn is aangegeven welke van de FAIRQ-eigenschappen het invult. De F en A gaan voornamelijk over toegang tot en beschikbaarheid van het informatiemodel, de I en R over technische operabiliteit en de Q voornamelijk over de kwaliteit van de beheerorganisatie.
 
-## Richtlijnen om een OTL te ontwikkelen
+## Richtlijnen voor het ontwikkelen van een OTL
 
 **Waarom**
 
-Het ontwikkelen van een OTL is meer dan een technisch project. Een succesvolle OTL is een OTL die het doel dient waarvoor hij ontwikkeld is, die wordt gevonden, die veel wordt toegepast en hergebruikt, die meebeweegt met de wensen van de gebruikers, waarvoor ondersteuning wordt gegeven, en die langjarig wordt beheerd. Om dit te bereiken is het van belang dat er op het niveau van organisatie en proces de juiste stappen worden gezet. 
+Het ontwikkelen van een OTL is meer dan een technisch project. Een succesvolle OTL dient het doel waarvoor hij ontwikkeld is, wordt gevonden, wordt veel toegepast en hergebruikt, beweegt mee met de wensen van de gebruikers, wordt ondersteund, en langjarig beheerd. Om dit te bereiken is het van belang om op organisatie- en procesniveau de juiste stappen te zetten. 
 
 **Richtlijnen**
 
 | FAIRQ   |          Kenmerk          | Beschrijving                                                                                                                                                                                                                                                         |
 |---------|---------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Q       | Organisatie               | Breng de juiste stakeholders bij elkaar en organiseer samenwerking. Regel mandaat en budget en stel een planning op, en neem hier de beheerfase ook in mee. Zorg dat iedereen die input wil leveren dit ook kan doen, maar regel tegelijkertijd een heldere procedure om tot beslissingen te komen. Voor meer informatie hierover lees [het hoofdstuk over de ontwikkel- en beheerorganisatie](https://gitdocumentatie.logius.nl/publicatie/bomos/verdieping/#de-ontwikkel-en-beheerorganisatie-activiteit-governance) van [BOMOS](https://www.logius.nl/domeinen/infrastructuur/bomos/documentatie). |
-| Q       | Doel                      | Formuleer een duidelijk en (liefst) meetbaar doel. Vaak zijn dit doelen als tijds- of kostenbesparing, efficiency, hergebruik van data, automatisering van handelingen, fouten voorkomen, e.d.                                                                 |
-| Q       | Scope                     | Kies een realistische scope die binnen de planning en budget past. Houd de scope beperkt tot bijv. één asset of domein. Maak de scope concreet, praktisch en uitvoerbaar. Formuleer use cases.                                                                       |
+| Q       | Organisatie               | Breng de juiste stakeholders bij elkaar en organiseer samenwerking. Regel mandaat en budget en stel een planning op, en neem hier de beheerfase ook in mee. Zorg dat iedereen die input wil leveren dit ook kan doen, maar zorg tegelijkertijd voor een heldere procedure om tot beslissingen te komen. Voor meer informatie hierover lees [het hoofdstuk over het opzetten van een ontwikkel- en beheerorganisatie](https://gitdocumentatie.logius.nl/publicatie/bomos/verdieping/#de-ontwikkel-en-beheerorganisatie-activiteit-governance) van [BOMOS](https://www.logius.nl/domeinen/infrastructuur/bomos/documentatie). |
+| Q       | Doel                      | Formuleer een duidelijk en (liefst) meetbaar doel. Vaak zijn dit doelen als tijds- of kostenbesparing, efficiency, hergebruik van data, automatisering van handelingen, voorkomen van fouten, e.d.                                                                 |
+| Q       | Scope                     | Kies een realistische scope die binnen de planning en het budget past. Houd de scope beperkt tot bijv. één asset of domein. Maak de scope concreet, praktisch en uitvoerbaar. Formuleer use cases.                                                                       |
 | R       | Inventariseer informatiebronnen | Inventariseer welke informatiebronnen je nodig hebt om de use case af te dekken. Denk aanbijvoorbeeld wetgeving, normen, domeinstandaarden en referentietabellen.                                                                                                     |
-| R       | Inventariseer bestaande standaarden | Inventariseer welke OTLen en andere standaarden als basis kunnen dienen voor de OTL en bouw hierop voort. Probeer niet het wiel zelf uit te vinden. Zie ook de richtlijnen over eenmaklig registreren.                                                                          |
+| R       | Inventariseer bestaande standaarden | Inventariseer welke OTLen en andere standaarden als basis kunnen dienen voor de OTL en bouw hierop voort. Probeer niet het wiel zelf uit te vinden. Zie ook de richtlijnen over eenmalig registreren.                                                                          |
 | F/A     | Publicatie                | Publiceer je OTL online, voorzien van een goede beschrijving en documentatie. Voor meer details hierover zie de richtlijnen voor publicatie.                                                                                                                            |
 | Q       | Beheer                    | Beheer je OTL. Maak een planning voor nieuwe versies en houd de planning van onderliggende standaarden/OTLlen in de gaten. Organiseer ondersteuning voor gebruikers. Voor meer details hierover zie de richtlijnen voor beheer.                                         |
 
-## Richtlijnen om een woordenboek op te zetten
+## Richtlijnen voor het opzetten van een woordenboek
 
 **Waarom**
 
-Een woordenboek is een lijst van termen voorzien een definities, waar mogelijk hierarchisch opgezet en aangevuld met relaties tussen begrippen. Een woordenboek is bedoeld voor mensen om tot overeenstemming te komen over de betekenis van termen en begrippen. Om effectief te kunnen worden gebruikt moet een woordenboek bovendien goed doorzoekbaar zijn. Het is daarom belangrijk dat (i) een woordenboek altijd op dezelfde manier is opgezet en (ii) een woordenboek zo volledig mogelijk is ingevuld, inclusief bijvoorbeeld synoniemen en (niet zichtbare) zoektermen waar op gezocht kan worden.
+Een woordenboek is een lijst van termen en definities, waar mogelijk hiërarchisch opgezet en aangevuld met relaties tussen begrippen. Een woordenboek is bedoeld voor gebruikers om tot overeenstemming te komen over de betekenis van termen en begrippen. Om effectief te kunnen worden gebruikt moet een woordenboek bovendien goed doorzoekbaar zijn. Het is daarom belangrijk dat (i) een woordenboek altijd op dezelfde manier is opgezet en (ii) een woordenboek zo volledig mogelijk is ingevuld, inclusief bijvoorbeeld synoniemen en (niet zichtbare) zoektermen waar op gezocht kan worden.
 
 **Richtlijnen**
 
@@ -32,19 +32,19 @@ Een woordenboek is een lijst van termen voorzien een definities, waar mogelijk h
 |-------|----------------------------|-------------------------------------------------------------------------------------------------------|
 | I     | SBB                        | Het woordenboek is opgezet volgens de <a href="https://profielstelselcatalogus.pldn.nl/">Standaard voor het beschrijven van begrippen (SBB)</a> van Geonovum. |
 | I     | Volledigheid               | Het woordenboek wordt zo volledig mogelijk ingevuld waarbij bijvoorbeeld gebruikt wordt gemaakt van synoniemen, zoektermen, en wijzigingsnotities. |
-| I     | Taxonomie                  | Het woordenboek is hierarchisch opgezet, als taxonomie.                                               |
+| I     | Taxonomie                  | Het woordenboek is hiërarchisch opgezet, als taxonomie.                                               |
 | I     | Bronverwijzing             | Waar mogelijk wordt verwezen naar openbare bronnen waar een begrip op is gebaseerd, zoals standaarden, wetgeving, etc. |
 | I     | Thesaurus                  | Begrippen zijn aan elkaar gerelateerd, zoals in een thesaurus.                                        |
 
-## Richtlijnen om een ontologie op te zetten
+## Richtlijnen voor het opzetten van een ontologie
 
-Op dit moment ontbreken er nog richtlijnen om een ontologie op te zetten. Er wordt door de NEN-normcommissie <a href="https://www.nen.nl/modellering-integratie-en-interoperabiliteit-van-informatie-in-de-gebouwde-omgeving-en-procesindustrie">Modellering, integratie en interoperabiliteit van informatie in de gebouwde omgeving en procesindustrie</a> gewerkt aan een praktijkrichtlijn voor de NEN 2660. De verwachting is dat deze in 2024 wordt gepubliceerd.
+Op dit moment ontbreken nog richtlijnen om een ontologie op te zetten. De NEN-normcommissie <a href="https://www.nen.nl/modellering-integratie-en-interoperabiliteit-van-informatie-in-de-gebouwde-omgeving-en-procesindustrie">Modellering, integratie en interoperabiliteit van informatie in de gebouwde omgeving en procesindustrie</a> werkt aan een praktijkrichtlijn voor de NEN 2660. De verwachting is dat deze in 2024 wordt gepubliceerd.
 
 ## Richtlijnen voor eenmalig registeren, meervoudig gebruik.
 
 **Waarom**
 
-Dubbele registraties, overtypen van gegevens en dubbele softwareontwikkelingen zijn een bekend probleem. Daarom is het van belang om gezamenlijk te werken met dezelfde gegevens en definities. Daarmee wordt het mogelijk om eenmalig te registreren en meervoudig gebruik mogelijk te maken. 
+Dubbele registraties, overtypen van gegevens en dubbele softwareontwikkelingen zijn een bekend probleem. Daarom is het van belang om gezamenlijk te werken met dezelfde gegevens en definities. Daarmee wordt het mogelijk om eenmalig te registreren en meervoudig te gebruiken. 
 
 Het opstellen van een goede OTL heeft als randvoorwaarde dat de opgenomen concepten/objecttypes, definities en kenmerken herkenbaar zijn, binnen en buiten de eigen organisatie. Om dit te bewerkstelligen is het belangrijk om zoveel mogelijk gebruik te maken van marktconforme standaarden. Het wiel is vaak voor een groot deel al uitgevonden.
 
@@ -125,7 +125,7 @@ Bij harmonisatie wordt er een mapping gemaakt tussen twee woordenboeken of tusse
 
 **Waarom**
 
-Om een OTL te kunnen gebruiken moet allereerst:
+Om een OTL te kunnen gebruiken, moet:
 - de OTL makkelijk te vinden zijn;
 - de OTL makkelijk te begrijpen zijn; er moet zijn beschreven voor wie en voor wat deze bedoeld is;
 - de OTL makkelijk beschikbaar zijn; d.w.z. te bekijken en te downloaden;
@@ -153,7 +153,7 @@ Dit is gevat in onderstaande richtlijnen.
 
 **Waarom**
 
-Gebruikers van een OTL stemmen hun processen en systemen af op de OTL en zijn daarmee op een hele directe manier afhankelijk van hoe de OTL beheerd wordt. Goed beheer is daarom er belangrijk. Versiebeheer moet op orde zijn; er moet bewust worden omgegaan met de impact die wijzigingen kunnen hebben voor gebruiker; (grote) wijzigingen moeten worden aangekondigd; en wijzigingen tussen versies moeten goed zijn gedocumenteerd.
+Gebruikers van een OTL stemmen hun processen en systemen af op de OTL en zijn daarmee op een hele directe manier afhankelijk van hoe de OTL beheerd wordt. Goed beheer is daarom er belangrijk. Versiebeheer moet op orde zijn; er moet bewust worden omgegaan met de impact die wijzigingen kunnen hebben voor gebruikers; (grote) wijzigingen moeten worden aangekondigd; en wijzigingen tussen versies moeten goed zijn gedocumenteerd.
 
 Dit is gevat in onderstaande richtlijnen.
 

@@ -10,9 +10,9 @@ digiGO heeft een draaiboek laten opstellen waarin stapsgewijs wordt beschreven h
 
 Link: <a href="https://docs.crow.nl/imbor/handleiding-otl/">Handleiding OTL | IMBOR-LD</a>.
 
-Deze handleiding van CROW beschrijft hoe er op basis van IMBOR-LD een eigen ontologie gemaakt kan worden ten behoeve van uitwisseling tussen opdrachtnemer en opdrachtgever. Hoewel de handleiding dus gericht is op hergebruik van de IMBOR OTL, zijn een aantal van de stappen in deze handleiding zodanig generiek dat ze ook van toepassing zijn bij het opzetten van een algemene OTL.
+Deze handleiding van CROW beschrijft hoe op basis van IMBOR-LD een eigen ontologie gemaakt kan worden ten behoeve van uitwisseling tussen opdrachtnemer en opdrachtgever. Hoewel de handleiding gericht is op hergebruik van de IMBOR OTL, zijn een aantal van de stappen in deze handleiding zodanig generiek dat ze ook van toepassing zijn bij het opzetten van een algemene OTL.
 
-De originele vraag voor deze handleiding komt voor uit het BIM Pro-programma van de Provincies. Men wil een OTL kunnen samenstellen die aan de opdrachtgever gegeven kan worden, die deze vervolgens 'invult' en teruglevert. Waarop de Provincie de gegevens kan valideren en inlezen in hun systemen. Het doel (en daarmee de scope) van deze handleiding is dat hiermee een Provincie in staat moet zijn om een OTL op te zetten in een spreadsheet (conventioneel) of LinkedData (duurzaam) formaat.
+De originele vraag voor deze handleiding komt voor uit het BIM Pro-programma van de Provincies. Men wil een OTL kunnen samenstellen die aan de opdrachtgever gegeven kan worden, die deze vervolgens 'invult' en teruglevert. Waarop de Provincie de gegevens kan valideren en inlezen in hun systemen. Het doel (en daarmee de scope) van deze handleiding om een Provincie in staat te stellen moet zijn om een OTL op te zetten in een spreadsheet (conventioneel) of LinkedData (duurzaam) formaat.
 
 ## Ontwerpnotitie OTL, Provincie Gelderland
 
@@ -30,7 +30,7 @@ Dit document is opgezet ter verduidelijking van de totstandkoming van de Object 
 ## Samenvatting van de Standaard voor het beschrijven van begrippen (SBB)
 Voor het opstellen van een woordenboek volgen we de <a href="https://docs.geostandaarden.nl/nl-sbb/nl-sbb/">SBB</a>. In dit hoofdstuk geven we een korte samenvatting van de SBB. 
 
-Merk op dat de SBB voldoet aan de NEN 2660. Een woordenboek opgezet volgens de SBB is dus comform hoe woordenboeken volgens de NEN 2660 moeten worden opgezet.
+Merk op dat de SBB voldoet aan de NEN 2660. Een woordenboek opgezet volgens de SBB is dus conform hoe woordenboeken volgens de NEN 2660 moeten worden opgezet.
 
 ### Inleiding
 
@@ -39,7 +39,7 @@ De SBB onderscheidt verschillende vormen van woordenboeken:
 - een taxonomie is een begrippenlijst met hiërarchische relaties. Dit geeft structuur aan het woordenboek en maakt het makkelijker begrippen te vinden;
 - een thesaurus is een taxonomie met relaties tussen begrippen. Hiermee wordt duidelijk hoe begrippen met elkaar samenhangen. Daarnaast vergroot het de vindbaarheid van begrippen omdat op gerelateerde begrippen kan worden gezocht.
 
-Er zijn geen verplichtingen aan de vorm van een woordenboek. Over het algemeen geldt dat een "rijkere" vorm (dus met meer informatie) meer begrip geeft aan lezers en beter doorzoekbaar is. Het geeft echter ook mogelijk een grotere beheerlast.
+Er zijn geen verplichtingen aan de vorm van een woordenboek. Over het algemeen geldt dat een "rijkere" vorm (dus met meer informatie) meer begrip geeft aan lezers en beter doorzoekbaar is. Het geeft echter mogelijk ook een grotere beheerlast.
 
 Een woordenboek wordt in de SBB een begrippenkader genoemd. Een begrippenkader is een verzameling van begrippen die in een bepaalde context relevant zijn. Een begrip is een eenheid van denken -- een idee, betekenis of categorisering. Begrippen hebben eigenschappen en onderlinge relaties, o.a. naar brondocumenten. Een brondocument is een resource op het web of een fysiek document dat relevant is voor een begrip. Tot slot zijn er collecties. Een collectie is een verzameling van begrippen die voor een bepaalde situatie betekenisvol bij elkaar passen.
 
@@ -47,21 +47,23 @@ Het gebruik van begrippen en begrippenkaders is verplicht en redelijk evident. E
 
 ### Specificatie
 
-De concepten begrip, begrippenkader, brondocument en collectie hebben elk eigenschappen en relaties tot elkaar. Een begrippenkader heeft bijvoorbeeld een naam, een uitleg en een of meer topbegrippen. Deze eigenschappen en relaties zijn uitgebreid beschreven in de SBB. Het model is daarnaast uitgewerkt in RDF, zie onderstaande figuur. 
+De concepten begrip, begrippenkader, brondocument en collectie hebben elk eigenschappen en relaties tot elkaar. Een begrippenkader heeft bijvoorbeeld een naam en uitleg, en optioneel één of meer topbegrippen. Deze eigenschappen en relaties zijn uitgebreid beschreven in de SBB. Het model is daarnaast uitgewerkt in RDF, zie onderstaande figuur. 
 
 <figure id="figure">
   <img src="figures/skos-ap-nl.png"/>
   <figcaption>Toepassingsprofiel van het SBB in SKOS.</figcaption>
 </figure>
 
-Zoals kan worden gezien wordt gebruik gemaakt van de volgende taalbinding:
+Hierbij wordt gebruik gemaakt van de volgende taalbinding:
 
 | SBB-entiteit | Taalbinding in RDF |
 |--------------|--------------------|
 | begrippenkader | `skos:ConceptScheme` |
 | begrip       | `skos:Concept`|
-| brondocument | `foaf:Document` |
+| brondocument | `foaf:Document`** |
 | collectie | `skos:Collection` |
+
+** Dit ontbreekt in het figuur.
 
 Het figuur laat ook zien welke eigenschappen of relaties verplicht zijn via de cardinaliteit `[1..*]`. Dit lichten we nog eens toe in de volgende subsecties. 
 
@@ -73,13 +75,13 @@ Het aangeven van topbegrippen via de relatie "heeft topbegrip" (`skos:HasTopConc
 
 #### Begrip
 
-Een begrip (`skos:Concept`) moet minimaal een Nederlandse (`@nl`) voorkeursterm (`skos:prefLabel`) en een definitie (`skos:definition`) hebben. Een begrip moet tot een of meer begrippenkaders behoren via de relatie "in kader" (`skos:inScheme`). Het wordt afgeraden om een naam (`rdfs:label`) te specificeren omdat deze te algemeen is. 
+Een begrip (`skos:Concept`) moet minimaal een Nederlandse (`@nl`) voorkeursterm (`skos:prefLabel`) en een definitie (`skos:definition`) hebben. Een begrip moet tot één of meer begrippenkaders behoren via de relatie "in kader" (`skos:inScheme`). Het wordt afgeraden om een naam (`rdfs:label`) te specificeren omdat deze te algemeen is. 
 
 Voor hiërarchische relaties geldt dat deze minimaal vanuit het onderliggende begrip naar het bovenliggende begrip moeten worden aangegeven via de relatie "heeft bovenliggend begrip" (`skos:broader`).
 
-Het aangeven van topbegrippen via de realtie "is topbegrip van" (`skos:topConceptOf`) is niet verplicht omdat deze automatisch kunnen worden afgeleid.
+Het aangeven van topbegrippen via de relatie "is topbegrip van" (`skos:topConceptOf`) is niet verplicht omdat deze automatisch kunnen worden afgeleid.
 
-In een thesaurus moeten begrippen een elkaar worden gerelateerd via "is gerelateerd aan" (`skos:related`), "is specialisatie van" (`isothes:broaderGeneric`), "is generalisatie van" (`isothes:narrowerGeneric`), "is onderdeel van" (`isothes:broaderPartitive`), "omvat" (`isothes:narrowerPartitive`), "is exemplaar van" (`isothes:broaderInstantial`) en "is categorie van" (`isothes:narrowerInstantial`). Relatie "is gerelateerd aan" is een generieke vorm van deze relaties, de overige zijn specialisaties van deze relatie. De specialisaties kunnen als "is gerelateerd aan" worden geïnterpreteerd; omgekeerd is dit niet het geval. Het is aan de ontwikkelaar van een woordenboek om de keuze te maken welke relaties hij wil gebruiken: generieke of gespecialiseerde. Het zou goed zijn als de ontwikkelaar deze keuze consequent doorvoert, en niet generieke en gespecialiseerde door elkaar heen gebruikt.
+In een thesaurus moeten begrippen aan elkaar worden gerelateerd via "is gerelateerd aan" (`skos:related`), "is specialisatie van" (`isothes:broaderGeneric`), "is generalisatie van" (`isothes:narrowerGeneric`), "is onderdeel van" (`isothes:broaderPartitive`), "omvat" (`isothes:narrowerPartitive`), "is exemplaar van" (`isothes:broaderInstantial`) en "is categorie van" (`isothes:narrowerInstantial`). Relatie "is gerelateerd aan" is een generieke vorm van deze relaties, de overige zijn specialisaties van deze relatie. De specialisaties kunnen als "is gerelateerd aan" worden geïnterpreteerd; omgekeerd is dit niet het geval. Het is aan de ontwikkelaar van een woordenboek om de keuze te maken welke relaties hij wil gebruiken: generieke of gespecialiseerde. Het zou goed zijn als de ontwikkelaar deze keuze consequent doorvoert, en niet generieke en gespecialiseerde door elkaar heen gebruikt.
 
 #### Brondocument
 
@@ -87,7 +89,7 @@ Een brondocument (`foaf:Document`) moet minimaal een naam (`dct:title`) hebben. 
 
 #### Collectie
 
-Een collectie (`skos:Collection`) moet een voorkeursterm (`skos:prefLabel`) hebben. Het gebruik van collecties is volledig optioneel. Een collectie bevat nul of meer begrippen via de relatie "bevat" (`skos:member`). Merk op dat een collectie bepaalt of een begrip lid is van de collectie of niet. Er is geen omgekeerde relatie, d.w.z., een begrip kan zichzelf geen lid maken van een collectie.
+Een collectie (`skos:Collection`) moet een voorkeursterm (`skos:prefLabel`) hebben. Het gebruik van collecties is volledig optioneel. Een collectie bevat nul of meer begrippen via de relatie "bevat" (`skos:member`). Merk op dat een collectie bepaalt of een begrip lid is van de collectie of niet. Er is geen omgekeerde relatie, d.w.z. een begrip kan zichzelf geen lid maken van een collectie.
 
 ### Voorbeelden
 
@@ -126,7 +128,7 @@ digigo:Bron1 a foaf:Document ;
 
 #### Taxonomie
 
-In dit voorbeeld wordt hierarchie gedefinieerd met behulp van `skos:broader`. De topbegrippen zijn aangegeven met `skos:topConceptOf`.
+In dit voorbeeld wordt hiërarchie gedefinieerd met behulp van `skos:broader`. De topbegrippen zijn aangegeven met `skos:topConceptOf`, hoewel dit niet verplicht is.
 
 ```
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
