@@ -1,6 +1,6 @@
 var respecConfig = {
   // => https://github.com/stichting-crow/respec/wiki
-  specStatus: "IR", // Was: DRAFT
+  specStatus: "DRAFT",
   shortName: "kadersinformatiemodellen/kader",
   specType: "technische documentatie", // vrije tekst, kleine letter
   imprint: "digigo",
@@ -23,8 +23,6 @@ var respecConfig = {
     },
   ],
   github: "https://github.com/nl-digigo/kadersinformatiemodellen",
-  hypothesisComments: "true", // Te verwijderen
-  reviewDateEnd: "2024-06-30", // Te verwijderen
   license: "cc-by",
   lint: { "no-unused-dfns": false },
   localBiblio: {
