@@ -7,7 +7,7 @@ var respecConfig = {
   editors: [
     // alleen `name` is verplicht, https://respec.org/docs/#person
     {
-      name: "Niels Vossebeld",
+      name: "digiGO",
       company: "digiGO",
     },
   ],
