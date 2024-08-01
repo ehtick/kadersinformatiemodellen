@@ -12,19 +12,24 @@ Het ontwikkelen van een OTL is meer dan een technisch project. Een succesvolle O
 
 | FAIRQ   |          Kenmerk          | Beschrijving                                                                                                                                                                                                                                                         |
 |---------|---------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Q       | Organisatie               | Breng de juiste stakeholders bij elkaar en organiseer samenwerking. Regel mandaat en budget en stel een planning op, en neem hier de beheerfase ook in mee. Zorg dat iedereen die input wil leveren dit ook kan doen, maar zorg tegelijkertijd voor een heldere procedure om tot beslissingen te komen. Voor meer informatie hierover lees [het hoofdstuk over het opzetten van een ontwikkel- en beheerorganisatie](https://gitdocumentatie.logius.nl/publicatie/bomos/verdieping/#de-ontwikkel-en-beheerorganisatie-activiteit-governance) van [BOMOS](https://www.logius.nl/domeinen/infrastructuur/bomos/documentatie). |
-| Q       | Doel                      | Formuleer een duidelijk en (liefst) meetbaar doel. Vaak zijn dit doelen als tijds- of kostenbesparing, efficiency, hergebruik van data, automatisering van handelingen, voorkomen van fouten, e.d.                                                                 |
-| Q       | Scope                     | Kies een realistische scope die binnen de planning en het budget past. Houd de scope beperkt tot bijv. één asset of domein. Maak de scope concreet, praktisch en uitvoerbaar. Formuleer use cases.                                                                       |
+| Q       | Organisatie               | Breng de juiste stakeholders bij elkaar en organiseer samenwerking. Regel mandaat en budget en stel een planning op, en neem hier de beheerfase ook in mee. Zorg dat iedereen die input wil leveren dit ook kan doen, maar zorg tegelijkertijd voor een heldere procedure om tot beslissingen te komen. [BOMOS](https://www.logius.nl/domeinen/infrastructuur/bomos/documentatie) is een hulpmiddel voor het opzetten van een beheer- en ontwikkelorganisatie voor open standaarden en kan hierbij als inspiratie dienen, vooral [het hoofdstuk over het opzetten van een ontwikkel- en beheerorganisatie](https://gitdocumentatie.logius.nl/publicatie/bomos/verdieping/#de-ontwikkel-en-beheerorganisatie-activiteit-governance). |
+| Q       | Doel                      | Formuleer een duidelijk en (liefst) meetbaar doel met een afgebakende scope. Het kan hierbij helpen om concrete use cases op te stellen of een beoogd gebruik. Voorbeelden zijn:
+- één taal spreken binnen een project of organisatie;
+- data-uitwisseling met een (specifieke) opdrachtnemer ondersteunen;
+- handelingen automatiseren;
+- etc. |
 | R       | Inventariseer informatiebronnen | Inventariseer welke informatiebronnen je nodig hebt om de use case af te dekken. Denk aanbijvoorbeeld wetgeving, normen, domeinstandaarden en referentietabellen.                                                                                                     |
 | R       | Inventariseer bestaande standaarden | Inventariseer welke OTLen en andere standaarden als basis kunnen dienen voor de OTL en bouw hierop voort. Probeer niet het wiel zelf uit te vinden. Zie ook de richtlijnen over eenmalig registreren.                                                                          |
 | F/A     | Publicatie                | Publiceer je OTL online, voorzien van een goede beschrijving en documentatie. Voor meer details hierover zie de richtlijnen voor publicatie.                                                                                                                            |
-| Q       | Beheer                    | Beheer je OTL. Maak een planning voor nieuwe versies en houd de planning van onderliggende standaarden/OTLlen in de gaten. Organiseer ondersteuning voor gebruikers. Voor meer details hierover zie de richtlijnen voor beheer.                                         |
+| Q       | Beheer                    | Beheer je OTL. Maak een planning voor nieuwe versies en houd de planning van onderliggende standaarden/OTL'en in de gaten. Beschrijf de verschillende rollen in het beheerproces. Organiseer ondersteuning voor gebruikers. Voor meer details hierover zie de richtlijnen voor beheer.                                         |
 
 ## Richtlijnen voor het opzetten van een woordenboek
 
 **Waarom**
 
 Een woordenboek is een lijst van termen en definities, waar mogelijk hiërarchisch opgezet en aangevuld met relaties tussen begrippen. Een woordenboek is bedoeld voor gebruikers om tot overeenstemming te komen over de betekenis van termen en begrippen. Om effectief te kunnen worden gebruikt moet een woordenboek bovendien goed doorzoekbaar zijn. Het is daarom belangrijk dat (i) een woordenboek altijd op dezelfde manier is opgezet en (ii) een woordenboek zo volledig mogelijk is ingevuld, inclusief bijvoorbeeld synoniemen en (niet zichtbare) zoektermen waar op gezocht kan worden.
+
+Het doel van een woordenboek is om dezelfde taal te spreken, binnen en buiten de eigen organisatie. Een woordenboek zou daarom in principe altijd open moeten worden gepubliceerd. 
 
 **Richtlijnen**
 
@@ -48,8 +53,11 @@ Dubbele registraties, overtypen van gegevens en dubbele softwareontwikkelingen z
 
 Het opstellen van een goede OTL heeft als randvoorwaarde dat de opgenomen concepten/objecttypes, definities en kenmerken herkenbaar zijn, binnen en buiten de eigen organisatie. Om dit te bewerkstelligen is het belangrijk om zoveel mogelijk gebruik te maken van marktconforme standaarden. Het wiel is vaak voor een groot deel al uitgevonden.
 
-Het volgende is een incomplete lijst van bestaande standaarden en OTLlen:
+Het volgende is een incomplete lijst van bestaande standaarden en OTL'en:
 
+- de <a href="https://amsterdam.otl-viewer.com/">Gemeente Amsterdam OTL</a>;
+- de <a href="https://otl.waternet.nl/">Waternet OTL</a>;
+- de <a href="https://otl.prorail.nl/otl/">ProRail OTL</a>;
 - <a href="https://www.crow.nl/thema-s/management-openbare-ruimte/imbor/over-imbor-1">het informatiemodel beheer openbare ruimte (IMBOR)</a> van CROW;
 - het <a href="https://www.riool.net/applicaties/gegevenswoordenboek-stedelijk-water">gegevenswoordenboek stedelijk water (GWSW)</a> van RioNed;
 - Geonovum beheer een groot aantal informatiemodellen, waaronder:
@@ -66,7 +74,7 @@ Het volgende is een incomplete lijst van bestaande standaarden en OTLlen:
 | FAIRQ | Kenmerk | Beschrijving                       |
 |-------|---------|------------------------------------|
 | R     | Hergebruik vóór creatie    | Nieuwe OTLlen bouwen voort op bestaande OTLlen. Bestaande OTLlen worden zoveel mogelijk hergebruikt. Het introduceren van nieuwe concepten wordt tot een minimum beperkt. |
-| R     | Hergebruik door verwijzing | Hergebruik van elementen gebeurt door te verwijzen naar het bronelement via zijn UUID (zie ook de richtlijnen voor uniek identificeren). Bestaande elementen of eigenschappen worden niet herhaald in de nieuwe OTL. |
+| R     | Hergebruik door verwijzing | Hergebruik van elementen gebeurt door te verwijzen naar het bronelement via zijn URI (zie ook de richtlijnen voor uniek identificeren). Bestaande elementen of eigenschappen worden niet herhaald in de nieuwe OTL. |
 | R     | Hergebruik faciliteren | Indien organisaties zelf objecttypes, begrippen en definities hebben ontwikkeld, dan is het van belang om deze eenduidig te definiëren en om deze middels een woordenboek beschikbaar te stellen volgens de richtlijnen die hier voorgesteld worden. |
 | R     | Benoemen relaties          | Relaties met andere OTLlen worden (kort) benoemd in de algemene beschrijving van de OTL.               |
 | R     | Documenteren relaties      | Relaties met andere OTLlen zijn uitgebreid gedocumenteerd in de technische documentatie, inclusief verwijzing naar de bron-OTLlen en de gebruikte versies.  |
@@ -75,18 +83,19 @@ Het volgende is een incomplete lijst van bestaande standaarden en OTLlen:
 
 **Waarom**
 
-Om de betekenis van objecten en gegevens mogelijk te maken is het van belang dat de objecten en gegevensdefinities ‘machine readable’ zijn. Machine readable betekent dat de gegevens door ICT systemen worden begrepen. Hiervoor is het van belang dat de structuur en betekenis van de gegevens eenduidig gecodeerd zijn. 
+Om de betekenis van objecten en gegevens mogelijk te maken is het van belang dat de objecten en gegevensdefinities ‘machine readable’ zijn. Machine readable betekent dat de gegevens door ICT systemen worden gevonden en begrepen. Hiervoor is het van belang dat de structuur, betekenis en identificatie van gegevens eenduidig zijn opgezet.
 
 **Richtlijnen**
 
 | FAIRQ | Kenmerk | Beschrijving                       |
 |-------|---------|------------------------------------|
-| R     | Unieke codering    | Elementen op alle niveaus hebben een unieke codering:
-
-- de OTL zelf (dus het woordenboek of de ontologie)
-- objecttypen, hun eigenschappen en hun relaties;
-- begrippen, hun eigenschappen en hun relaties;
-- waardenlijsten de individuele waarden. |
+| R     | RDF     | Publiceer bij voorkeur in RDF. Zie ook het <a href="https://5stardata.info/en/">vijfsterrenmodel voor open data</a>. |
+| R     | Unieke identifiers op alle niveaus    | Elementen op alle niveaus hebben een unieke identifier:
+- de dataset in zijn geheel (dus het woordenboek of de ontologie)
+- de individuele concepten, hun eigenschappen en hun relaties;
+- waardenlijsten alsmede de individuele waarden. |
+| R     | Consistente identifiers | Identifiers mogen niet wijzigen gedurende de levensduur van een element. |
+| R     | Betekenisloze identifiers | Identifiers moeten een betekenisloze naam hebben, om te voorkomen dat een naam gewijzigd wordt gedurende de levensduur van een element. |
 
 ## Richtlijnen voor informatiemodellering
 
