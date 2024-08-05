@@ -32,3 +32,24 @@ De richtlijnen worden gebaseerd op bestaande standaarden, normen en praktijkerva
 Rijkswaterstaat, Provincie Gelderland en digiGO hebben de NEN 2660 afgekocht en deze NEN norm is tot eind 2025 gratis te downloaden op de website van de NEN, <a href="https://urldefense.com/v3/__https://connect.nen.nl/Home/Detail__;!!NFFV0PM8bbqw!M5JuU5t0-AzxNzYr1PWA33tQIbT0IAFveLFdgD24P66VGyfZjurAmpzO2mWRs4Rc_B1BtfGe_fAWwVKIUU-TlKVXS0RZtntAGvtxKpM$">NEN Connect - Home</a>. Op deze website dien je wel eerst een account aan te maken.
 
 Op dit moment hebben we het <a href="https://www.geonovum.nl/geo-standaarden/metamodel-informatiemodellering-mim">Metamodel Informatiemodellering (MIM)</a> van Geonovum en de <a href="https://www.nen.nl/nen-3610-2022-nl-296137">NEN 3610</a> nog niet meegenomen in de richtlijnen. In de toekomst zal dit wel gebeuren.
+
+## Terminologie
+
+In dit document gebruiken we de volgende terminologie. We blijven daarbij zo dicht mogelijk bij de NEN 2660.
+
+We onderscheiden types en instanties. Types zijn semi-statische termen, definities en klasses. Hier vallen woordenboeken en ontologieën onder. Wanneer een type geïnstantieerd wordt, noemen we dit een individu of een instantie. Deze zijn verzameld in informatieverzamelingen of datasets.
+
+Een **woordenboek** is een lijst van termen voorzien een definities, eventueel aangevuld met (hiërarchische) relaties. Een woordenboek is bedoeld voor mensen om tot overeenstemming te komen over de betekenis van termen en begrippen.
+
+Een **ontologie** is een conceptueel model van een domein. Een ontologie bestaat uit klasses die eigenschappen hebben en onderlingen (hiërarchische) relaties, en lijsten van standaard domeinwaardes (enumeraties). Een ontologie is bedoeld voor machines om de structuur van gegevens vast te leggen. Om goed begrepen te worden door mensen, help het als klasses verwijzen naar de begrippen in een woordenboek.
+
+Een **informatieverzameling** is de verzameling van projectdata die gecommuniceerd of opgeslagen moet worden. Bijvoorbeeld een set aan facturen of een materiaalijst. Om geïnterpreteerd te kunnen worden door een machine is er altijd een (impliciete) verwijzing naar de ontologie die de structuur bepaalt van de data.
+
+Een **OTL** tot slot omvat alles wat op typeniveau is gedefinieerd. 
+
+Onderstaande figuur visualiseert hoe de verschillende concepten samenhangen. Tekst tussen aanhalingstekens ("typelaag") worden niet gebruikt in de NEN 2660. Tekst tussen haken `<<skos:Concept>>` toont de linkeddata-taalbinding die in de NEN 2660 is gedefinieerd voor dat concept. Merk hierbij op dat er meerdere taalbindingen zijn maar dat er hier slechts één wordt getoond.
+
+<figure id="otl-componenten">
+  <img src="figures/otl-componenten.png"/>
+  <figcaption>Terminologie.</figcaption>
+</figure>
