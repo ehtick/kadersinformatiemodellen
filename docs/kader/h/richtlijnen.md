@@ -13,12 +13,8 @@ Het ontwikkelen van een OTL is meer dan een technisch project. Een succesvolle O
 | FAIRQ   |          Kenmerk          | Beschrijving                                                                                                                                                                                                                                                         |
 |---------|---------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Q       | Organisatie               | Breng de juiste stakeholders bij elkaar en organiseer samenwerking. Regel mandaat en budget en stel een planning op, en neem hier de beheerfase ook in mee. Zorg dat iedereen die input wil leveren dit ook kan doen, maar zorg tegelijkertijd voor een heldere procedure om tot beslissingen te komen. [BOMOS](https://www.logius.nl/domeinen/infrastructuur/bomos/documentatie) is een hulpmiddel voor het opzetten van een beheer- en ontwikkelorganisatie voor open standaarden en kan hierbij als inspiratie dienen, vooral [het hoofdstuk over het opzetten van een ontwikkel- en beheerorganisatie](https://gitdocumentatie.logius.nl/publicatie/bomos/verdieping/#de-ontwikkel-en-beheerorganisatie-activiteit-governance). |
-| Q       | Doel                      | Formuleer een duidelijk en (liefst) meetbaar doel met een afgebakende scope. Het kan hierbij helpen om concrete use cases op te stellen of een beoogd gebruik. Voorbeelden zijn:
-- één taal spreken binnen een project of organisatie;
-- data-uitwisseling met een (specifieke) opdrachtnemer ondersteunen;
-- handelingen automatiseren;
-- etc. |
-| R       | Inventariseer informatiebronnen | Inventariseer welke informatiebronnen je nodig hebt om de use case af te dekken. Denk aanbijvoorbeeld wetgeving, normen, domeinstandaarden en referentietabellen.                                                                                                     |
+| Q       | Doel                      | Formuleer een duidelijk en (liefst) meetbaar doel met een afgebakende scope. Het kan hierbij helpen om concrete use cases op te stellen of een beoogd gebruik. Voorbeelden zijn bijvoorbeeld het spreken van één taal binnen een project of organisatie, data-uitwisseling met een (specifieke) opdrachtnemer ondersteunen of het maken van een kostenraming automatiseren. |
+| R       | Inventariseer informatiebronnen | Inventariseer welke informatiebronnen je nodig hebt om de use case af te dekken. Denk aanbijvoorbeeld wetgeving, normen, domeinstandaarden en referentietabellen.                                                                                                    |
 | R       | Inventariseer bestaande standaarden | Inventariseer welke OTLen en andere standaarden als basis kunnen dienen voor de OTL en bouw hierop voort. Probeer niet het wiel zelf uit te vinden. Zie ook de richtlijnen over eenmalig registreren.                                                                          |
 | F/A     | Publicatie                | Publiceer je OTL online, voorzien van een goede beschrijving en documentatie. Voor meer details hierover zie de richtlijnen voor publicatie.                                                                                                                            |
 | Q       | Beheer                    | Beheer je OTL. Maak een planning voor nieuwe versies en houd de planning van onderliggende standaarden/OTL'en in de gaten. Beschrijf de verschillende rollen in het beheerproces. Organiseer ondersteuning voor gebruikers. Voor meer details hierover zie de richtlijnen voor beheer.                                         |
@@ -58,9 +54,9 @@ Het volgende is een incomplete lijst van bestaande standaarden en OTL'en:
 - de <a href="https://amsterdam.otl-viewer.com/">Gemeente Amsterdam OTL</a>;
 - de <a href="https://otl.waternet.nl/">Waternet OTL</a>;
 - de <a href="https://otl.prorail.nl/otl/">ProRail OTL</a>;
-- <a href="https://www.crow.nl/thema-s/management-openbare-ruimte/imbor/over-imbor-1">het informatiemodel beheer openbare ruimte (IMBOR)</a> van CROW;
+- het <a href="https://www.crow.nl/thema-s/management-openbare-ruimte/imbor/over-imbor-1">informatiemodel beheer openbare ruimte (IMBOR)</a> van CROW;
 - het <a href="https://www.riool.net/applicaties/gegevenswoordenboek-stedelijk-water">gegevenswoordenboek stedelijk water (GWSW)</a> van RioNed;
-- Geonovum beheer een groot aantal informatiemodellen, waaronder:
+- Geonovum beheert een groot aantal informatiemodellen, waaronder:
     - de <a href="https://www.geonovum.nl/geo-standaarden/informatiemodellen-nen3610-familie/gegevenscatalogus-basisregistratie-adressen-en">basisadministratie adressen en gebouwen (BAG)</a>;
     - de <a href="https://www.geonovum.nl/geo-standaarden/bgt-imgeo">basisregistratie grootschalige topografie (BGT)</a>;
     - de <a href="https://www.geonovum.nl/geo-standaarden/bro-basisregistratie-ondergrond/basisregistratie-ondergrond-imbro">basisregistratie ondergrond (BRO)</a>;
@@ -73,27 +69,23 @@ Het volgende is een incomplete lijst van bestaande standaarden en OTL'en:
 
 | FAIRQ | Kenmerk | Beschrijving                       |
 |-------|---------|------------------------------------|
-| R     | Hergebruik vóór creatie    | Nieuwe OTLlen bouwen voort op bestaande OTLlen. Bestaande OTLlen worden zoveel mogelijk hergebruikt. Het introduceren van nieuwe concepten wordt tot een minimum beperkt. |
+| R     | Hergebruik vóór creatie    | Nieuwe OTL'en bouwen voort op bestaande OTL'en. Bestaande OTL'en worden zoveel mogelijk hergebruikt. Het introduceren van nieuwe concepten wordt tot een minimum beperkt. |
 | R     | Hergebruik door verwijzing | Hergebruik van elementen gebeurt door te verwijzen naar het bronelement via zijn URI (zie ook de richtlijnen voor uniek identificeren). Bestaande elementen of eigenschappen worden niet herhaald in de nieuwe OTL. |
 | R     | Hergebruik faciliteren | Indien organisaties zelf objecttypes, begrippen en definities hebben ontwikkeld, dan is het van belang om deze eenduidig te definiëren en om deze middels een woordenboek beschikbaar te stellen volgens de richtlijnen die hier voorgesteld worden. |
-| R     | Benoemen relaties          | Relaties met andere OTLlen worden (kort) benoemd in de algemene beschrijving van de OTL.               |
-| R     | Documenteren relaties      | Relaties met andere OTLlen zijn uitgebreid gedocumenteerd in de technische documentatie, inclusief verwijzing naar de bron-OTLlen en de gebruikte versies.  |
+| R     | Benoemen relaties          | Relaties met andere OTL'en worden (kort) benoemd in de algemene beschrijving van de OTL.               |
+| R     | Documenteren relaties      | Relaties met andere OTL'en zijn uitgebreid gedocumenteerd in de technische documentatie, inclusief verwijzing naar de bron-OTL'en en de gebruikte versies.  |
 
 ## Richtlijnen voor uniek identificeren
 
 **Waarom**
 
-Om de betekenis van objecten en gegevens mogelijk te maken is het van belang dat de objecten en gegevensdefinities ‘machine readable’ zijn. Machine readable betekent dat de gegevens door ICT systemen worden gevonden en begrepen. Hiervoor is het van belang dat de structuur, betekenis en identificatie van gegevens eenduidig zijn opgezet.
+Zonder unieke identificatie kunnen de elementen van een OTL niet meervoudig worden gebruikt en kunnen ze niet door ICT-systemen worden gevonden en begrepen. Unieke identificatie is daarom een belangrijke voorwaarde voor interoperabiliteit. Daarbij is het ook van belang dat identificatie op een consistente manier is opgezet.
 
 **Richtlijnen**
 
 | FAIRQ | Kenmerk | Beschrijving                       |
 |-------|---------|------------------------------------|
-| R     | RDF     | Publiceer bij voorkeur in RDF. Zie ook het <a href="https://5stardata.info/en/">vijfsterrenmodel voor open data</a>. |
-| R     | Unieke identifiers op alle niveaus    | Elementen op alle niveaus hebben een unieke identifier:
-- de dataset in zijn geheel (dus het woordenboek of de ontologie)
-- de individuele concepten, hun eigenschappen en hun relaties;
-- waardenlijsten alsmede de individuele waarden. |
+| R     | Unieke identifiers op alle niveaus    | Elementen op alle niveaus hebben een unieke identifier: (i) de dataset in zijn geheel (dus het woordenboek of de ontologie), (ii) de individuele concepten, hun eigenschappen en hun relaties, en (iii) waardenlijsten alsmede de individuele waarden. |
 | R     | Consistente identifiers | Identifiers mogen niet wijzigen gedurende de levensduur van een element. |
 | R     | Betekenisloze identifiers | Identifiers moeten een betekenisloze naam hebben, om te voorkomen dat een naam gewijzigd wordt gedurende de levensduur van een element. |
 
@@ -101,34 +93,35 @@ Om de betekenis van objecten en gegevens mogelijk te maken is het van belang dat
 
 **Waarom**
 
-De richtlijnen voor informatiemodellering hebben als doel interoperabiliteit, d.w.z., OTLlen sluiten op elkaar aan en data kan tussen deze OTLlen worden gedeeld. Om tot interoperabele OTLlen te komen is het van belang dat ze ontwikkeld worden volgens dezelfde standaard, namelijk de <a href="https://www.nen.nl/nen-2660-2-2022-nl-291667">NEN 2660</a>.
+De richtlijnen voor informatiemodellering hebben als doel interoperabiliteit en hergebruik te bewerkstelligen. OTL'en moeten daarom volgens dezelfde technische standaarden worden ontwikkeld. We schrijven daarom voor dat een OTL wordt ontwikkeld (of anders gepubliceerd) in RDF (linked data), volgens de <a href="https://www.nen.nl/nen-2660-2-2022-nl-291667">NEN 2660-2</a>.
 
-<!-- De richtlijnen in deze sectie gelden voor alle soorten OTLlen. Daarnaast zijn er aanvullende richtlijnen specifiek voor woordenboeken en de relaties tussen OTLlen. Deze worden toegelicht in de volgende subsecties. Voor ontologieën zijn er nog geen praktische richtlijnen hoe deze het beste kunnen worden opgezet. Er is nog wel één richtlijn in de NEN 2660 die we hier expliciet benoemen en opnemen in de onderstaande tabel: in een ontologie moet een klasse verwijzen naar het woordenboekbegrip waar het op is gebaseerd. -->
+<!-- De richtlijnen in deze sectie gelden voor alle soorten OTL'en. Daarnaast zijn er aanvullende richtlijnen specifiek voor woordenboeken en de relaties tussen OTL'en. Deze worden toegelicht in de volgende subsecties. Voor ontologieën zijn er nog geen praktische richtlijnen hoe deze het beste kunnen worden opgezet. Er is nog wel één richtlijn in de NEN 2660 die we hier expliciet benoemen en opnemen in de onderstaande tabel: in een ontologie moet een klasse verwijzen naar het woordenboekbegrip waar het op is gebaseerd. -->
 
 **Richtlijnen**
 
 | FAIRQ | Kenmerk                    | Beschrijving                                                                                          |
 |-------|----------------------------|-------------------------------------------------------------------------------------------------------|
-| I     | NEN 2660                   | De OTL voldoet aan de <a href="https://www.nen.nl/nen-2660-2-2022-nl-291667">NEN 2660</a>.            |
-| I     | Taal                       | De gebruikte talen voor uitwisseling zijn conform de NEN 2660: (relaties tussen) woordenboeken zijn opgezet in SKOS; (relaties tussen) ontologieën in RDFS, RDFS+OWL of RDFS+SHACL. |
-| I     | Formaat                    | De gebruikte formaten voor uitwisseling zijn conform de NEN 2660: RDF-XML, Turtle of JSON-LD                            |
+| R     | RDF     | Ontwikkel de OTL in RDF (linked data). Zie ook het <a href="https://5stardata.info/en/">vijfsterrenmodel voor open data</a>. |
+| I     | NEN 2660                   | De OTL voldoet aan de <a href="https://www.nen.nl/nen-2660-2-2022-nl-291667">NEN 2660-2</a>.            |
+| I     | Taal                       | De gebruikte talen voor uitwisseling zijn conform de NEN 2660-2: (relaties tussen) woordenboeken zijn opgezet in SKOS; (relaties tussen) ontologieën in RDFS, OWL en/of SHACL. |
+| I     | Formaat                    | De gebruikte formaten voor uitwisseling zijn conform de NEN 2660-2: RDF-XML, Turtle of JSON-LD                            |
 | R     | Documentatie               | De OTL is gedocumenteerd en de documentatie is vindbaar en toegankelijk.                              |
 
-## Richtlijnen voor harmonisatie tussen OTLlen
+## Richtlijnen voor harmonisatie tussen OTL'en
 
 **Waarom**
 
-Bij harmonisatie wordt er een mapping gemaakt tussen twee woordenboeken of tussen twee ontologieën via harmonisatierelaties. Harmonisatie is noodzakelijk om tot gegevensuitwisseling tussen deze OTLlen te komen. Wanneer de OTLlen door verschillende organisaties worden beheerd, moet de harmonisatie als een aparte OTL met een aparte beheeropgave worden opgepakt.
+Bij harmonisatie wordt er een mapping gemaakt tussen twee woordenboeken of tussen twee ontologieën via harmonisatierelaties. Harmonisatie is noodzakelijk om tot gegevensuitwisseling tussen deze OTL'en te komen. Wanneer de OTL'en door verschillende organisaties worden beheerd, moet de harmonisatie als een aparte OTL met een aparte beheeropgave worden opgepakt.
 
-**Waarom**
+**Richtlijnen**
 
 | FAIRQ | Kenmerk                    | Beschrijving                                                                                          |
 |-------|----------------------------|-------------------------------------------------------------------------------------------------------|
-| I     | Matching through alignment | Relaties tussen OTLlen (voor hergebruik en harmonisatie) zijn conform <a href="https://docs.crow.nl/ontology-alignment/whitepaper/">"Ontology Matching trough alignment and extension: a Best Practice"</a> van CROW. | 
-| R     | Interne harmonisatie       | Bij harmonisatie tussen OTLlen die binnen dezelfde organisatie worden beheerd, kunnen de harmonisatierelaties impliciet onderdeel zijn van een van beide OTLlen. |
-| R     | Externe harmonisatie       | Harmonisatie tussen OTLlen van verschillende organisaties moet als een aparte OTL met een aparte beheeropgave worden opgepakt. |
-| R     | Benoemen relaties          | Relaties met andere OTLlen worden (kort) benoemd in de algemene beschrijving van de OTL.               |
-| R     | Documenteren relaties      | Relaties met andere OTLlen zijn uitgebreid gedocumenteerd in de technische documentatie, inclusief verwijzing naar de bron-OTLlen en de gebruikte versies.  |
+| I     | Matching through alignment | Relaties tussen OTL'en (voor hergebruik en harmonisatie) zijn conform <a href="https://docs.crow.nl/ontology-alignment/whitepaper/">"Ontology Matching trough alignment and extension: a Best Practice"</a> van CROW. | 
+| R     | Interne harmonisatie       | Bij harmonisatie tussen OTL'en die binnen dezelfde organisatie worden beheerd, kunnen de harmonisatierelaties impliciet onderdeel zijn van een van beide OTL'en. |
+| R     | Externe harmonisatie       | Harmonisatie tussen OTL'en van verschillende organisaties moet als een aparte OTL met een aparte beheeropgave worden opgepakt. |
+| R     | Benoemen relaties          | Relaties met andere OTL'en worden (kort) benoemd in de algemene beschrijving van de OTL.               |
+| R     | Documenteren relaties      | Relaties met andere OTL'en zijn uitgebreid gedocumenteerd in de technische documentatie, inclusief verwijzing naar de bron-OTL'en en de gebruikte versies.  |
 
 ## Richtlijnen voor publicatie
 
@@ -146,7 +139,7 @@ Dit is gevat in onderstaande richtlijnen.
 
 | FAIRQ | Kenmerk                    | Beschrijving                                                                                          |
 |-------|----------------------------|-------------------------------------------------------------------------------------------------------|
-| F     | Naam                       | De OTL heeft een eenduidige naam.                                                                    |
+| F     | Naam                       | De OTL heeft een duidelijk naam die consistent wordt gebruikt over versies heen.                                                                    |
 | F     | Beschrijving               | Er is een beschrijvende tekst waarin wordt toegelicht waarvoor en voor wie de OTL bedoeld is. |
 | F     | Zoektermen                 | Er zijn termen gedefinieerd (synoniemen, alternatieven, zoektermen) waarop kan worden gezocht.      |
 | F     | Eigenaar                   | Er is een eigenaar van de OTL. Naam en contactgegevens van het aanspreekpunt van de eigenaar zijn bekend. |
@@ -156,7 +149,7 @@ Dit is gevat in onderstaande richtlijnen.
 | A     | Viewer                     | De OTL kan online worden bekeken via een viewer.                                                     |
 | A     | Openheid van gebruik       | De OTL is, eventueel na betaling, voor iedereen beschikbaar om te gebruiken.                          |
 | A     | Nederlandse taal           | De OTL en alle informatie eromheen zijn in het Nederlands opgesteld.                                  |
-| A     | Engelse taal               | De OTL en alle informatie eromheen zijn in het Engels opgesteld.                                      |
+| A     | Engelse taal               | De OTL en alle informatie eromheen zijn liefst ook in het Engels opgesteld.                                      |
 
 ## Richtlijnen voor beheer
 
@@ -170,7 +163,7 @@ Dit is gevat in onderstaande richtlijnen.
 
 | FAIRQ | Kenmerk                    | Beschrijving                                                                                          |
 |-------|----------------------------|-------------------------------------------------------------------------------------------------------|
-| Q     | Versiebeheer               | Er wordt gebruik gemaakt van versienummering met daarbij een datum.                                   |
+| Q     | Versiebeheer               | Voor woordenboeken wordt versiebeheer toegepast zoals voorgeschreven door de SBB. Voor ontologieën bestaat nog geen standaard maar zijn wel <a href="https://docs.crow.nl/wp/ldversiebeheer">verschillende strategieën</a> beschreven.                                    |
 | Q     | Meest recente versie      | De meest recente versie is beschikbaar.                                                                |
 | Q     | Vorige versie              | De vorige versie moet minimaal beschikbaar zijn.                                                      |
 | Q     | Oudere versies             | Oudere versies zijn beschikbaar.                                                                      |
