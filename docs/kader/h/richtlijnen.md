@@ -145,7 +145,7 @@ Dit is gevat in onderstaande richtlijnen.
 | F     | Eigenaar                   | Er is een eigenaar van de OTL. Naam en contactgegevens van het aanspreekpunt van de eigenaar zijn bekend. |
 | F     | Beheerder                  | Er is een beheerder van de OTL. Naam en contactgegevens van het aanspreekpunt van de beheerder zijn bekend. |
 | F     | Vindbaar                   | De OTL is, inclusief toelichting en documentatie, online vindbaar en beschikbaar.                    |
-| A     | Beschikbaar                | De OTL is in zijn geheel te downloaden of kan direct worden benaderd via een REST of SPARQL endpoint. |
+| A     | Beschikbaar                | De OTL is in zijn geheel te downloaden of kan direct worden benaderd via eene URI. Dit geldt voor de gehele OTL en de individuele elementen. |
 | A     | Viewer                     | De OTL kan online worden bekeken via een viewer.                                                     |
 | A     | Openheid van gebruik       | De OTL is, eventueel na betaling, voor iedereen beschikbaar om te gebruiken.                          |
 | A     | Nederlandse taal           | De OTL en alle informatie eromheen zijn in het Nederlands opgesteld.                                  |

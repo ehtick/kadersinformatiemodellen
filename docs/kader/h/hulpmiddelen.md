@@ -1,8 +1,10 @@
 # Handige hulpmiddelen
 
+In dit hoofdstuk verwijzen we naar bestaande hulpmiddelen of voorbeelden die kunnen helpen bij het opstellen van een OTL. 
+
 ## Draaiboek OTL voor B&U sectoren
 
-Link naar document: <a href="docs/Concept draaiboek ontwikkeling en beproeving OTL 4-4-2024.docx" download>Draaiboek OTL voor B&U sector</a>.
+Link naar document: <a href="docs/Draaiboek ontwikkeling en beproeving OTL 1.0.pdf" download>Draaiboek OTL voor B&U sector</a>.
 
 digiGO heeft een draaiboek laten opstellen waarin stapsgewijs wordt beschreven hoe tot de ontwikkeling van een OTL te komen en hoe deze vervolgens voor een bepaalde toepassing te implementeren. Daarbij is ook een OTL uitgewerkt voor bio-based isoleren in de B&U-sector. Deze OTL is gebaseerd op onder andere de <a href="https://w3c-lbd-cg.github.io/bot/">W3C Building Topology Ontology</a>, de <a href="https://ketenstandaard.nl/nl-sfb-facts/viewer/">NL-SfB</a>, <a href="https://technical.buildingsmart.org/standards/ifc/">IFC</a> en de <a href="https://www.nen.nl/normcommissie-conditiemeting">NEN 2767-4</a>.
 
