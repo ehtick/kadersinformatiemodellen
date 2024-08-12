@@ -37,18 +37,23 @@ Op dit moment hebben we het <a href="https://www.geonovum.nl/geo-standaarden/met
 
 In deze sectie bepalen we de terminologie rondom OTL'en zoals we die in dit document gebruiken. Deze terminologie leidt vaak tot verwarring. De term OTL heeft geen formele betekenis en wordt daarom op verschillende manieren gebruikt. Tegelijkertijd is termonologie rondom informatiemodellering en linked data specialistisch van aard en bevat het ook wat tegenstrijdigheden. Omdat dit document niet bedoeld is voor specialisten, houden we een wat versimpelde terminologie aan die de onderliggende nuances van informatiemodellering en linked data niet te veel geweld aandoet.
 
-Een **woordenboek** is een lijst van termen voorzien een definities, eventueel aangevuld met (hiërarchische) relaties. Een woordenboek is bedoeld voor mensen om tot overeenstemming te komen over de betekenis van termen en begrippen. Een voorbeeld van een woordenboek is het <a href="https://www.begrippenxl.nl/ABDL/nl/index">ABDL</a>. Afhankelijk van hoe uitgebreid een woordenboek is opgesteld zijn er veel verschillende soorten woordenboeken (begrippenlijst, taxonomie, thesaurus, etc.). In dit document gebruiken we alleen de overkoepelende term woordenboek.
-
-Een **ontologie** is een conceptueel model van een domein. Een ontologie bestaat uit klasses die eigenschappen hebben en onderlinge (hiërarchische) relaties, en lijsten van standaard domeinwaardes (enumeraties). Een ontologie is bedoeld voor machines om de structuur van gegevens vast te leggen. Een ontologie kan ook logica bevatten ("Het uiteinde van een kabel kan niet met meer dan één entiteit zijn verbonden."). Hiermee kunnen machines de correctheid van gegevens verifiëren. Een voorbeeld van een ontologie is die van de <a href="https://amsterdam-otl.otl-viewer.com/">Gemeente Amsterdam</a>. Om goed begrepen te worden door mensen, help het als klasses verwijzen naar de begrippen in een woordenboek die de klasse beschrijft.
-
-Met een **OTL** (of **informatiemodel**) bedoelen we alles wat op het niveau van een woordenboek of ontologie zit.
-
-Een **informatieverzameling** bevat de eigenlijke instantiedata waarmee we doorgaans werken. Bijvoorbeeld een factuur of een materiaalijst. De structuur van deze instantiedata is vastgelegd door een ontologie. Om geïnterpreteerd te kunnen worden door een machine is er daarom altijd een (impliciete) verwijzing naar de ontologie nodig.
-
-Onderstaande figuur visualiseert hoe de verschillende concepten samenhangen. 
+Onderstaande figuur visualiseert alle concepten en hoe ze samenhangen. 
 
 <figure id="otl-componenten">
   <img src="figures/otl-componenten.png"/>
   <figcaption>Terminologie.</figcaption>
 </figure>
 
+Een **woordenboek** (synoniem: **begrippenkader**) is een lijst van termen voorzien een definities, eventueel aangevuld met (hiërarchische) relaties. Een woordenboek is bedoeld voor mensen om tot overeenstemming te komen over de betekenis van termen en begrippen. Een voorbeeld van een woordenboek is het <a href="https://www.begrippenxl.nl/ABDL/nl/index">ABDL</a>.
+
+Afhankelijk van hoe uitgebreid een woordenboek is opgesteld zijn er veel verschillende soorten woordenboeken (begrippenlijst, taxonomie, thesaurus, etc.). In dit document gebruiken we alleen de overkoepelende term woordenboek.
+
+Er zijn geen verplichtingen aan de vorm van een woordenboek. Over het algemeen geldt dat een "rijkere" vorm (dus met meer informatie) meer begrip geeft aan lezers en beter doorzoekbaar is. Het geeft echter mogelijk ook een grotere beheerlast.
+
+Een **ontologie** is een conceptueel model van een domein. Een ontologie bestaat uit klasses die eigenschappen hebben en onderlinge (hiërarchische) relaties, en lijsten van standaard domeinwaardes (enumeraties). Een ontologie is bedoeld voor machines om de structuur van gegevens vast te leggen. Een voorbeeld van een ontologie is die van de <a href="https://amsterdam-otl.otl-viewer.com/">Gemeente Amsterdam</a>.
+
+Om goed begrepen te worden door mensen, help het als klasses verwijzen naar de begrippen in een woordenboek die de klasse beschrijft (zie relatie `Beschrijft` in het figuur).
+
+Met een **OTL** (synoniem: **informatiemodel**) bedoelen we zowel woordenboeken als ontologieën.
+
+Een **informatieverzameling** bevat de eigenlijke instantiedata waarmee we doorgaans werken. Bijvoorbeeld een factuur of een materiaalijst. De structuur van deze instantiedata is vastgelegd door een ontologie. Om geïnterpreteerd te kunnen worden door een machine is er daarom altijd een (impliciete) verwijzing naar de ontologie nodig (zie relatie `isVanType` in het figuur).

@@ -39,7 +39,9 @@ Het doel van een woordenboek is om dezelfde taal te spreken, binnen en buiten de
 
 ## Richtlijnen voor het opzetten van een ontologie
 
-Op dit moment ontbreken nog richtlijnen om een ontologie op te zetten. De NEN-normcommissie <a href="https://www.nen.nl/modellering-integratie-en-interoperabiliteit-van-informatie-in-de-gebouwde-omgeving-en-procesindustrie">Modellering, integratie en interoperabiliteit van informatie in de gebouwde omgeving en procesindustrie</a> werkt aan een praktijkrichtlijn voor de NEN 2660. De verwachting is dat deze in 2024 wordt gepubliceerd.
+Op dit moment ontbreken nog richtlijnen om een ontologie op te zetten. 
+
+De NEN-normcommissie <a href="https://www.nen.nl/modellering-integratie-en-interoperabiliteit-van-informatie-in-de-gebouwde-omgeving-en-procesindustrie">Modellering, integratie en interoperabiliteit van informatie in de gebouwde omgeving en procesindustrie</a> werkt aan een praktijkrichtlijn voor de NEN 2660 met voorbeelden hoe een ontologie op te zetten. De praktijkrichtlijn zal geen complete modelleerrichtlijnen bevatten. De verwachting is dat de praktijkrichtlijn in 2024 wordt gepubliceerd.
 
 ## Richtlijnen voor eenmalig registeren, meervoudig gebruik.
 
@@ -95,8 +97,6 @@ Zonder unieke identificatie kunnen de elementen van een OTL niet meervoudig word
 
 De richtlijnen voor informatiemodellering hebben als doel interoperabiliteit en hergebruik te bewerkstelligen. OTL'en moeten daarom volgens dezelfde technische standaarden worden ontwikkeld. We schrijven daarom voor dat een OTL wordt ontwikkeld (of anders gepubliceerd) in RDF (linked data), volgens de <a href="https://www.nen.nl/nen-2660-2-2022-nl-291667">NEN 2660-2</a>.
 
-<!-- De richtlijnen in deze sectie gelden voor alle soorten OTL'en. Daarnaast zijn er aanvullende richtlijnen specifiek voor woordenboeken en de relaties tussen OTL'en. Deze worden toegelicht in de volgende subsecties. Voor ontologieën zijn er nog geen praktische richtlijnen hoe deze het beste kunnen worden opgezet. Er is nog wel één richtlijn in de NEN 2660 die we hier expliciet benoemen en opnemen in de onderstaande tabel: in een ontologie moet een klasse verwijzen naar het woordenboekbegrip waar het op is gebaseerd. -->
-
 **Richtlijnen**
 
 | FAIRQ | Kenmerk                    | Beschrijving                                                                                          |
@@ -107,21 +107,30 @@ De richtlijnen voor informatiemodellering hebben als doel interoperabiliteit en 
 | I     | Formaat                    | De gebruikte formaten voor uitwisseling zijn conform de NEN 2660-2: RDF-XML, Turtle of JSON-LD                            |
 | R     | Documentatie               | De OTL is gedocumenteerd en de documentatie is vindbaar en toegankelijk.                              |
 
-## Richtlijnen voor harmonisatie tussen OTL'en
+## Richtlijnen voor het linken van OTL'en
 
 **Waarom**
 
-Bij harmonisatie wordt er een mapping gemaakt tussen twee woordenboeken of tussen twee ontologieën via harmonisatierelaties. Harmonisatie is noodzakelijk om tot gegevensuitwisseling tussen deze OTL'en te komen. Wanneer de OTL'en door verschillende organisaties worden beheerd, moet de harmonisatie als een aparte OTL met een aparte beheeropgave worden opgepakt.
+Het linken van OTL'en gaat over de technische invulling hoe OTL'en te hergebruiken (zie ook de sectie over eenmalig registeren, meervoudig gebruik) of met elkaar te alignen (uitlijnen). Alignment is noodzakelijk om tot gegevensuitwisseling te komen wanneer gegevens door verschillende OTL'en gedefinieerd worden.
+
+OTL'en (zowel woordenboeken als ontologieën) kunnen op twee manieren worden gelinkt:
+
+- via extensie (hergebruik): OTL `A` bouwt voort op OTL `B`. Het woordenboek van `A` neemt bijvoorbeeld het woordenboek van `B` als basis maar voegt hier eigen specifiekere termen aan toe;
+- via alignment: er wordt een mapping gecreëerd tussen OTL'en `A` en `B`. Begrippen in woordenboeken worden bijvoorbeeld gelijkgesteld ("Het begrip `Vleugelklep` in OTL `A` is gelijk aan het begrip `Vlinderklep` in OTL `B`.").
+
+Het linken gebeurt in beide gevallen d.m.v. RDF-metarelaties. 
+
+
 
 **Richtlijnen**
 
 | FAIRQ | Kenmerk                    | Beschrijving                                                                                          |
 |-------|----------------------------|-------------------------------------------------------------------------------------------------------|
-| I     | Matching through alignment | Relaties tussen OTL'en (voor hergebruik en harmonisatie) zijn conform <a href="https://docs.crow.nl/ontology-alignment/whitepaper/">"Ontology Matching trough alignment and extension: a Best Practice"</a> van CROW. | 
-| R     | Interne harmonisatie       | Bij harmonisatie tussen OTL'en die binnen dezelfde organisatie worden beheerd, kunnen de harmonisatierelaties impliciet onderdeel zijn van een van beide OTL'en. |
-| R     | Externe harmonisatie       | Harmonisatie tussen OTL'en van verschillende organisaties moet als een aparte OTL met een aparte beheeropgave worden opgepakt. |
-| R     | Benoemen relaties          | Relaties met andere OTL'en worden (kort) benoemd in de algemene beschrijving van de OTL.               |
-| R     | Documenteren relaties      | Relaties met andere OTL'en zijn uitgebreid gedocumenteerd in de technische documentatie, inclusief verwijzing naar de bron-OTL'en en de gebruikte versies.  |
+| I     | Linking | OTL'en worden gelinkt conform <a href="https://docs.crow.nl/ontology-alignment/whitepaper/">"Ontology Matching trough alignment and extension: a Best Practice"</a> van CROW. | 
+| R     | Interne links       | Links tussen OTL'en die binnen dezelfde organisatie worden beheerd, kunnen impliciet onderdeel zijn van een van beide OTL'en. |
+| R     | Externe links       | Links tussen OTL'en van verschillende organisaties kunnen beter als een aparte OTL met een aparte beheeropgave worden opgepakt. |
+| R     | Benoemen relaties          | Links met andere OTL'en worden (kort) benoemd in de algemene beschrijving van de OTL.               |
+| R     | Documenteren relaties      | Links met andere OTL'en zijn uitgebreid gedocumenteerd in de technische documentatie, inclusief verwijzing naar de bron-OTL'en en de gebruikte versies.  |
 
 ## Richtlijnen voor publicatie
 
@@ -163,7 +172,7 @@ Dit is gevat in onderstaande richtlijnen.
 
 | FAIRQ | Kenmerk                    | Beschrijving                                                                                          |
 |-------|----------------------------|-------------------------------------------------------------------------------------------------------|
-| Q     | Versiebeheer               | Voor woordenboeken wordt versiebeheer toegepast zoals voorgeschreven door de SBB. Voor ontologieën bestaat nog geen standaard maar zijn wel <a href="https://docs.crow.nl/wp/ldversiebeheer">verschillende strategieën</a> beschreven.                                    |
+| Q     | Versiebeheer               | Voor woordenboeken wordt versiebeheer toegepast zoals voorgeschreven door de SBB. Voor ontologieën bestaat er nog geen standaard maar zijn er wel <a href="https://docs.crow.nl/wp/ldversiebeheer">verschillende strategieën</a> beschreven.                                    |
 | Q     | Meest recente versie      | De meest recente versie is beschikbaar.                                                                |
 | Q     | Vorige versie              | De vorige versie moet minimaal beschikbaar zijn.                                                      |
 | Q     | Oudere versies             | Oudere versies zijn beschikbaar.                                                                      |
