@@ -58,9 +58,11 @@ Met een **OTL** (synoniem: **informatiemodel**) bedoelen we zowel woordenboeken 
 
 Een **informatieverzameling** bevat de eigenlijke instantiedata waarmee we doorgaans werken. Bijvoorbeeld een factuur of een materiaalijst. De structuur van deze instantiedata is vastgelegd door een ontologie. Om geïnterpreteerd te kunnen worden door een machine is er daarom altijd een (impliciete) verwijzing naar de ontologie nodig (zie relatie `isVanType` in het figuur).
 
-Ondergaande figuur geeft een schematisch, fictief voorbeeld van hoe een woordenboek, ontologie en informatieverzameling samenhangen, weergegeven als UML-diagram. In de ontologie zie je ook constructies als overerving (via de relatie `Subtype van`) en enumeraties. In de informatieverzameling zien we twee datainstanties. Deze worden gedefinieerd door de klasses Kogelklep en Vlinderklep. Klasses Kogelklep en Vlinderklep (en hun supertypes) leggen de structuur van de instanties vast. Om als mens te begrijpen wat een kogelklep en een vlinderklep precies zijn, verwijzen deze klasses naar de begrippen Kogelklep en Vlinderklep in het woordenboek. 
+Ondergaande figuur geeft een schematisch, fictief voorbeeld van hoe een woordenboek, ontologie en informatieverzameling samenhangen, weergegeven als UML-diagram. In de ontologie zie bovendien ook constructies als overerving (via de relatie `Subtype van`) en enumeraties. In de informatieverzameling zien we twee datainstanties. Deze worden gedefinieerd door de klasses Kogelklep en Vlinderklep. Klasses Kogelklep en Vlinderklep (en hun supertypes) leggen de structuur van de instanties vast. Om als mens te begrijpen wat een kogelklep en een vlinderklep precies zijn, verwijzen deze klasses naar de begrippen Kogelklep en Vlinderklep in het woordenboek. 
 
 <figure id="ontologievoorbeeld">
   <img src="figures/ontologievoorbeeld.png"/>
   <figcaption>Schematische voorbeeld van hoe woordenboek, ontologie en informatieverzameling samenhangen.</figcaption>
 </figure>
+
+Bovenstaande is een abstracte weergave. In de praktijk zul je alle individuen, klasses (incl. relaties, eigenschappen en enumeraties) en begrippen in specifieke software beheren. De twee individuen zijn dan bijvoorbeeld twee rijen in een tabel van kleppen.
