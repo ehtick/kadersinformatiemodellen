@@ -16,7 +16,7 @@ Het volgende is een incomplete lijst van bestaande informatiemodellen (zowel woo
 - de <a href="https://otl.waternet.nl/">Waternet OTL</a>;
 - de <a href="https://otl.prorail.nl/otl/">ProRail OTL</a>;
 - het <a href="https://www.crow.nl/thema-s/management-openbare-ruimte/imbor/over-imbor-1">informatiemodel beheer openbare ruimte (IMBOR)</a> van CROW;
-- het <a href="https://www.riool.net/applicaties/gegevenswoordenboek-stedelijk-water">gegevenswoordenboek stedelijk water (GWSW)</a> van RioNed;
+- het <a href="https://data.gwsw.nl/">gegevenswoordenboek stedelijk water (GWSW)</a> van Stichting RIONED;
 - Geonovum beheert een groot aantal informatiemodellen, waaronder:
     - de <a href="https://www.geonovum.nl/geo-standaarden/informatiemodellen-nen3610-familie/gegevenscatalogus-basisregistratie-adressen-en">basisadministratie adressen en gebouwen (BAG)</a>;
     - de <a href="https://www.geonovum.nl/geo-standaarden/bgt-imgeo">basisregistratie grootschalige topografie (BGT)</a>;
