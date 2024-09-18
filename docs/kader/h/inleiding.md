@@ -35,7 +35,7 @@ Op dit moment hebben we het <a href="https://www.geonovum.nl/geo-standaarden/met
 
 ## Terminologie
 
-In deze sectie bepalen we de terminologie rondom OTL'en zoals we die in dit document gebruiken. Deze terminologie leidt vaak tot verwarring. De term OTL heeft geen formele betekenis en wordt daarom op verschillende manieren gebruikt. Tegelijkertijd is termonologie rondom informatiemodellering en linked data specialistisch van aard en bevat het ook wat tegenstrijdigheden. Omdat dit document niet bedoeld is voor specialisten, houden we een wat versimpelde terminologie aan die de onderliggende nuances van informatiemodellering en linked data niet te veel geweld aandoet.
+De term OTL heeft geen formele betekenis en wordt in de praktijk op verschillende manieren gebruikt. In deze sectie bepalen we de terminologie rondom OTL'en zoals we die in dit document gebruiken. Termonologie rondom informatiemodellering en linked data is specialistisch van aard en bevat soms tegenstrijdigheden. Omdat dit document niet bedoeld is voor specialisten, houden we een wat versimpelde terminologie aan die de onderliggende nuances van informatiemodellering en linked data hopelijk niet te veel geweld aandoet.
 
 Onderstaande figuur visualiseert alle concepten en hoe ze samenhangen. 
 
@@ -44,13 +44,13 @@ Onderstaande figuur visualiseert alle concepten en hoe ze samenhangen.
   <figcaption>Terminologie.</figcaption>
 </figure>
 
-Een **woordenboek** (synoniem: **begrippenkader**) is een lijst van termen voorzien een definities, eventueel aangevuld met (hiërarchische) relaties. Een woordenboek is bedoeld voor mensen om tot overeenstemming te komen over de betekenis van termen en begrippen. Een voorbeeld van een woordenboek is het <a href="https://www.begrippenxl.nl/ABDL/nl/index">ABDL</a>.
+Een **woordenboek** (synoniem: **begrippenkader**) is een lijst van termen voorzien een definities, eventueel aangevuld met (hiërarchische) relaties. Een woordenboek is bedoeld voor mensen om tot overeenstemming te komen over de betekenis van termen en begrippen. Een voorbeeld van een woordenboek is de <a href="https://www.begrippenxl.nl/ABDL/nl/index">Algemene begrippen- en definitielijst (ABDL)</a> van Rijkswaterstaat (merk op dat dit woordenboek niet per se conform de hier geldende richtlijnen is opgesteld).
 
 Afhankelijk van hoe uitgebreid een woordenboek is opgesteld zijn er veel verschillende soorten woordenboeken (begrippenlijst, taxonomie, thesaurus, etc.). In dit document gebruiken we alleen de overkoepelende term woordenboek.
 
 Er zijn geen verplichtingen aan de vorm van een woordenboek. Over het algemeen geldt dat een "rijkere" vorm (dus met meer informatie) meer begrip geeft aan lezers en beter doorzoekbaar is. Het geeft echter mogelijk ook een grotere beheerlast.
 
-Een **ontologie** is een conceptueel model van een domein. Een ontologie bestaat uit klasses die eigenschappen hebben en onderlinge (hiërarchische) relaties, en lijsten van standaard domeinwaardes (enumeraties). Een ontologie is bedoeld voor machines om de structuur van gegevens vast te leggen. Een voorbeeld van een ontologie is die van de <a href="https://amsterdam-otl.otl-viewer.com/">Gemeente Amsterdam</a>.
+Een **ontologie** is een conceptueel model van een domein. Een ontologie bestaat uit klasses die eigenschappen hebben en onderlinge (hiërarchische) relaties, en lijsten van standaard domeinwaardes (enumeraties). Een ontologie is bedoeld voor machines om de structuur van gegevens vast te leggen. Voorbeelden van ontologieën zijn de <a href="https://otl.rws.nl/">Rijkswaterstaat OTL</a> en de <a href="https://amsterdam-otl.otl-viewer.com/">Gemeente Amsterdam OTL</a> (merk op dat deze ontologieën niet per se conform de hier geldende richtlijnen zijn opgesteld).
 
 Om goed begrepen te worden door mensen, help het als klasses verwijzen naar de begrippen in een woordenboek die de klasse beschrijft (zie relatie `Beschrijft` in het figuur).
 

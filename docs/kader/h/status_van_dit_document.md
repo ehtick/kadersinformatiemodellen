@@ -6,6 +6,6 @@ De vorm en inhoud van OTL’en zijn nog niet in een standaard vastgelegd, ook is
 
 De inhoud en inrichting van dit document wordt in de loop van de tijd gewijzigd en aangepast naargelang de ervaringen en praktijktoepassingen in de OBT. Op het moment dat deze richtlijnen stabiel, gedragen en algemeen geaccepteerd zijn, dan zullen deze richtlijnen aangeboden worden aan het afsprakenstelsel DSGO.
 
-Bij de opzet van deze richtlijnen gaan we uit van 'collectieve intelligentie' ('wisdom of the crowd'). Dit betekent dat expertise uit de sector gewenst is om tot betere resultaten te komen. Met een relatief kleine, losse bijdrage kun  je al meedoen en zijn we 'samen slimmer'. Je doet mee door voorstellen in te dienen om de richtlijnen te verbeteren.
+Bij de opzet van deze richtlijnen gaan we uit van 'collectieve intelligentie' ('wisdom of the crowd'). Dit betekent dat expertise uit de sector gewenst is om tot betere resultaten te komen. Met een relatief kleine, losse bijdrage kun  je al meedoen en zijn we 'samen slimmer'. Voel je vrij om verbeteringen aan te dragen via GitHub issues (zie de link bovenaan onder Feedback).
 
 <!-- GitHub Issues wordt gebruikt voor de discussie van dit document. Eén issue per onderwerp vereenvoudigt de verwerking. -->

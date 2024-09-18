@@ -33,15 +33,27 @@ Het doel van een woordenboek is om dezelfde taal te spreken, binnen en buiten de
 |-------|----------------------------|-------------------------------------------------------------------------------------------------------|
 | I     | SBB                        | Het woordenboek is opgezet volgens de <a href="https://profielstelselcatalogus.pldn.nl/">Standaard voor het beschrijven van begrippen (SBB)</a> van Geonovum. |
 | I     | Volledigheid               | Het woordenboek wordt zo volledig mogelijk ingevuld waarbij bijvoorbeeld gebruikt wordt gemaakt van synoniemen, zoektermen, en wijzigingsnotities. |
-| I     | Taxonomie                  | Het woordenboek is hiërarchisch opgezet, als taxonomie.                                               |
+| I     | Taxonomie                  | Het woordenboek is hierarchisch opgezet (A is een subtype van B) via de relaties `iso-thes:broaderGeneric` en `iso-thes:narrowerGeneric`.                                               |
 | I     | Bronverwijzing             | Waar mogelijk wordt verwezen naar openbare bronnen waar een begrip op is gebaseerd, zoals standaarden, wetgeving, etc. |
 | I     | Thesaurus                  | Begrippen zijn aan elkaar gerelateerd, zoals in een thesaurus.                                        |
 
 ## Richtlijnen voor het opzetten van een ontologie
 
-Op dit moment ontbreken nog richtlijnen om een ontologie op te zetten. 
+**Waarom**
 
-De NEN-normcommissie <a href="https://www.nen.nl/modellering-integratie-en-interoperabiliteit-van-informatie-in-de-gebouwde-omgeving-en-procesindustrie">Modellering, integratie en interoperabiliteit van informatie in de gebouwde omgeving en procesindustrie</a> werkt aan een praktijkrichtlijn voor de NEN 2660 met voorbeelden hoe een ontologie op te zetten. De praktijkrichtlijn zal geen complete modelleerrichtlijnen bevatten. De verwachting is dat de praktijkrichtlijn in 2024 wordt gepubliceerd.
+Gebruik, hergebruik en uiteindelijk harmonisatie van ontologieën is alleen mogelijk als deze op dezelfde manier zijn opgezet. Hiervoor hanteren we onderstaande richtlijnen. 
+
+Daarnaast werkt de NEN-normcommissie <a href="https://www.nen.nl/modellering-integratie-en-interoperabiliteit-van-informatie-in-de-gebouwde-omgeving-en-procesindustrie">Modellering, integratie en interoperabiliteit van informatie in de gebouwde omgeving en procesindustrie</a> aan een praktijkrichtlijn voor de NEN 2660 met voorbeelden hoe een ontologie op te zetten. De praktijkrichtlijn zal geen complete modelleerrichtlijnen bevatten. De verwachting is dat de praktijkrichtlijn in 2024 wordt gepubliceerd.
+
+**Richtlijnen**
+
+| FAIRQ | Kenmerk                    | Beschrijving                                                                                          |
+|-------|----------------------------|-------------------------------------------------------------------------------------------------------|
+| I     | Woordenboek eerst                        | Zet eerst een woordenboek op voordat je een ontologie opstelt. |
+| I     | Alles is gedefinieerd                        | Ieder element (entiteit, attribuut, relatie) in de ontologie dient een corresponderend begrip in het woordenboek te hebben. |
+| I     | Gelijke namen | Waar mogelijk heeft ieder element in de ontologie ook exact dezelfde naam als het begrip in het woordenboek. |
+| I     | Maak een selectie  | Niet alle begrippen uit het woordenboek hoeven terug te komen in de ontologie. Maak een selectie van woordenboekbegrippen: deze selectie weerspiegelt/specificeert de informatiebehoefte die je met de ontologie wil afdekken. |
+| I     | Spiegel de structuur | De taxonomische relaties van de geselecteerde concepten uit het woordenboek blijven in de ontologie intact. Indien er "gaten" zijn ontstaan t.o.v. de taxonomie in het woordenboek worden die gerepareerd op een manier die consistent is met de oorspronkelijke taxonomie in het woordenboek. | 
 
 ## Richtlijnen voor eenmalig registeren, meervoudig gebruik.
 
@@ -51,21 +63,7 @@ Dubbele registraties, overtypen van gegevens en dubbele softwareontwikkelingen z
 
 Het opstellen van een goede OTL heeft als randvoorwaarde dat de opgenomen concepten/objecttypes, definities en kenmerken herkenbaar zijn, binnen en buiten de eigen organisatie. Om dit te bewerkstelligen is het belangrijk om zoveel mogelijk gebruik te maken van marktconforme standaarden. Het wiel is vaak voor een groot deel al uitgevonden.
 
-Het volgende is een incomplete lijst van bestaande standaarden en OTL'en:
-
-- de <a href="https://amsterdam.otl-viewer.com/">Gemeente Amsterdam OTL</a>;
-- de <a href="https://otl.waternet.nl/">Waternet OTL</a>;
-- de <a href="https://otl.prorail.nl/otl/">ProRail OTL</a>;
-- het <a href="https://www.crow.nl/thema-s/management-openbare-ruimte/imbor/over-imbor-1">informatiemodel beheer openbare ruimte (IMBOR)</a> van CROW;
-- het <a href="https://www.riool.net/applicaties/gegevenswoordenboek-stedelijk-water">gegevenswoordenboek stedelijk water (GWSW)</a> van RioNed;
-- Geonovum beheert een groot aantal informatiemodellen, waaronder:
-    - de <a href="https://www.geonovum.nl/geo-standaarden/informatiemodellen-nen3610-familie/gegevenscatalogus-basisregistratie-adressen-en">basisadministratie adressen en gebouwen (BAG)</a>;
-    - de <a href="https://www.geonovum.nl/geo-standaarden/bgt-imgeo">basisregistratie grootschalige topografie (BGT)</a>;
-    - de <a href="https://www.geonovum.nl/geo-standaarden/bro-basisregistratie-ondergrond/basisregistratie-ondergrond-imbro">basisregistratie ondergrond (BRO)</a>;
-    - het <a href="https://www.geonovum.nl/geo-standaarden/informatiemodel-kabels-en-leidingen">informatiemodel kabels en leidingen (IMKL)</a>;
-    - het <a href="https://www.geonovum.nl/geo-standaarden/imx-geo-semantisch-model-basis-en-kernregistraties">semantisch model basis- en kernregistraties (IMX-Geo)</a>;
-    - zie voor de complete lijst het <a href="https://www.geonovum.nl/geo-standaarden">overzicht</a> van Geonovum;
-- een overzicht van meer standaarden kunt u vinden op de website van <a href="https://www.bimloket.nl/ictstandaarden/">digiGO</a>.
+Een overzicht van OTL'en en andere standaarden is te vinden op de website van <a href="https://www.bimloket.nl/ictstandaarden/">digiGO</a>.
 
 **Richtlijnen**
 
@@ -90,6 +88,8 @@ Zonder unieke identificatie kunnen de elementen van een OTL niet meervoudig word
 | R     | Unieke identifiers op alle niveaus    | Elementen op alle niveaus hebben een unieke identifier: (i) de dataset in zijn geheel (dus het woordenboek of de ontologie), (ii) de individuele concepten, hun eigenschappen en hun relaties, en (iii) waardenlijsten alsmede de individuele waarden. |
 | R     | Consistente identifiers | Identifiers mogen niet wijzigen gedurende de levensduur van een element. |
 | R     | Betekenisloze identifiers | Identifiers moeten een betekenisloze naam hebben, om te voorkomen dat een naam gewijzigd wordt gedurende de levensduur van een element. |
+| R     | Alles heeft een status | Ieder element in een woordenboek of ontologie moet een status hebben met de mogelijke waarden Planned, Actual en Deprecated. |
+| R     | Statuswijzigingen hebben een timestamp | Per element moet met een timestamp worden bijgehouden wanneer de status is gewijzigd. |
 
 ## Richtlijnen voor informatiemodellering
 
@@ -150,7 +150,6 @@ Dit is gevat in onderstaande richtlijnen.
 |-------|----------------------------|-------------------------------------------------------------------------------------------------------|
 | F     | Naam                       | De OTL heeft een duidelijk naam die consistent wordt gebruikt over versies heen.                                                                    |
 | F     | Beschrijving               | Er is een beschrijvende tekst waarin wordt toegelicht waarvoor en voor wie de OTL bedoeld is. |
-| F     | Zoektermen                 | Er zijn termen gedefinieerd (synoniemen, alternatieven, zoektermen) waarop kan worden gezocht.      |
 | F     | Eigenaar                   | Er is een eigenaar van de OTL. Naam en contactgegevens van het aanspreekpunt van de eigenaar zijn bekend. |
 | F     | Beheerder                  | Er is een beheerder van de OTL. Naam en contactgegevens van het aanspreekpunt van de beheerder zijn bekend. |
 | F     | Vindbaar                   | De OTL is, inclusief toelichting en documentatie, online vindbaar en beschikbaar.                    |

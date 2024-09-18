@@ -2,6 +2,31 @@
 
 In dit hoofdstuk verwijzen we naar bestaande hulpmiddelen of voorbeelden die kunnen helpen bij het opstellen van een OTL. 
 
+## Overzicht van woordenboeken en ontologiën
+
+Het volgende is een incomplete lijst van bestaande informatiemodellen (zowel woordenboeken als ontologieën):
+
+- Rijkswaterstaat heeft zijn woordenboek en ontologie apart van elkaar opgezet:
+    - woordenboek: <a href="https://www.begrippenxl.nl/ABDL/nl/index">Algemene begrippen- en definitielijst (ABDL)</a>;
+    - ontologie: <a href="https://otl.rws.nl/">Rijkswaterstaat OTL</a>;
+    - ieder OTL-element heeft een corresponderend ABDL-concept. Omgekeerd is dat niet het geval: de ABDL is (veel) omvangrijker dan de OTL;
+    - zowel de ABDL als OTL zijn gebaseerd op de NEN 2660. Daarnaast is de OTL nadrukkelijk opgebouwd rond de beheerobjecten, elementen en bouwdelen uit de NEN 2767-4-2;
+    - de huidige versie van de RWS OTL is nadrukkelijk niet ontworpen (en wordt ook niet toegepast of voorgeschreven) voor gegevens uitwisseling met externe partijen, maar uitsluitend voor intern gebruik.
+- de <a href="https://amsterdam.otl-viewer.com/">Gemeente Amsterdam OTL</a>;
+- de <a href="https://otl.waternet.nl/">Waternet OTL</a>;
+- de <a href="https://otl.prorail.nl/otl/">ProRail OTL</a>;
+- het <a href="https://www.crow.nl/thema-s/management-openbare-ruimte/imbor/over-imbor-1">informatiemodel beheer openbare ruimte (IMBOR)</a> van CROW;
+- het <a href="https://www.riool.net/applicaties/gegevenswoordenboek-stedelijk-water">gegevenswoordenboek stedelijk water (GWSW)</a> van RioNed;
+- Geonovum beheert een groot aantal informatiemodellen, waaronder:
+    - de <a href="https://www.geonovum.nl/geo-standaarden/informatiemodellen-nen3610-familie/gegevenscatalogus-basisregistratie-adressen-en">basisadministratie adressen en gebouwen (BAG)</a>;
+    - de <a href="https://www.geonovum.nl/geo-standaarden/bgt-imgeo">basisregistratie grootschalige topografie (BGT)</a>;
+    - de <a href="https://www.geonovum.nl/geo-standaarden/bro-basisregistratie-ondergrond/basisregistratie-ondergrond-imbro">basisregistratie ondergrond (BRO)</a>;
+    - het <a href="https://www.geonovum.nl/geo-standaarden/informatiemodel-kabels-en-leidingen">informatiemodel kabels en leidingen (IMKL)</a>;
+    - het <a href="https://www.geonovum.nl/geo-standaarden/imx-geo-semantisch-model-basis-en-kernregistraties">semantisch model basis- en kernregistraties (IMX-Geo)</a>;
+    - zie voor de complete lijst het <a href="https://www.geonovum.nl/geo-standaarden">overzicht</a> van Geonovum.
+
+Een overzicht van meer informatiemodellen is te vinden op de website van <a href="https://www.bimloket.nl/ictstandaarden/">digiGO</a>.
+
 ## Draaiboek OTL voor B&U sectoren
 
 Link naar document: <a href="docs/Draaiboek ontwikkeling en beproeving OTL 1.0.pdf" download>Draaiboek OTL voor B&U sector</a>.
