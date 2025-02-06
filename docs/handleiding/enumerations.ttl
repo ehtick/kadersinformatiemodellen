@@ -1,0 +1,63 @@
+# N.B. The use of human-readable identifiers is purely for reasons of readability. In a production environment it is strongly advised not to use such identifiers, but instead use non-significant identifiers such as UUIDs.
+
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix nen2660: <https://w3id.org/nen2660/def#> .
+@prefix digigo: <https://digigo.nu/rdf-example/def#> .
+
+# The enumeration itself
+
+digigo:digiGOColors
+	a rdfs:Class ;
+	a nen2660:EnumerationType ;
+	skos:prefLabel "Style guide colours"@en ;  # Plural
+	skos:prefLabel "Huisstijlkleuren"@nl ;  # Always try to include a prefLabel @en and @nl
+	skos:definition "The available colours in the digiGO style guide."@en
+	skos:definition "De beschikbare kleuren in de huisstijl van digiGO."@nl
+
+# The enumeration elements
+
+digigo:Yellow
+	a digigo:digiGOColors ;
+	skos:prefLabel "Yellow"@en ;
+	skos:prefLabel "Geel"@nl ;
+    
+    # Must an enumeration element have a skos:definition? Seems unnecessary. More generally speaking: do 
+.
+
+digigo:Black
+	a digigo:digiGOColors ;
+	skos:prefLabel "Black"@en ;
+	skos:prefLabel "Zwart"@nl ;
+.
+
+digigo:hasColor
+    a rdf:Property ;
+    rdfs:domain digigo:Building ;
+	rdfs:range digigo:digiGOColors ;
+    skos:prefLabel "Colour"@en ;
+    skos:prefLabel "Kleur"@nl ;
+.
+
+#
+# Individuals
+#
+
+# N.B. The use of human-readable identifiers is purely for reasons of readability. In a production environment it is strongly advised not to use such identifiers, but instead use non-significant identifiers such as UUIDs.
+
+@prefix digiID: <https://digigo.nu/example/id#> .
+@prefix digiDEF: <https://digigo.nu/example/def#> .
+
+# Simple example
+
+digiID:building1
+    a digiDEF:Building ;
+    digiDEF:hasColor digiDEF:Yellow ;
+.
+
+# Since there is no constraint, you can assign multiple colours.
+
+digiID:pres1
+    a digiDEF:Building ;
+    digiDEF:hasColor digiDEF:Yellow ;
+    digiDEF:hasColor digiDEF:Black ;
+.

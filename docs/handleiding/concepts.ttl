@@ -1,0 +1,236 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix nen2660: <https://w3id.org/nen2660/def#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix digico: <https://www.digico.nu/def#> .
+
+# Some general remarks:
+# - The use of human-readable identifiers is purely for reasons of readability. In a production environment it is strongly advised not to use such identifiers, but instead use non-significant identifiers such as UUIDs.
+# - We use RDFS to model structure and SHACL to model constraints. We do not consider reasoning or inference.
+# - Classes and properties are defined and bound separately. This modular appraoch makes it easier to add or remove properties.
+
+app:Project
+    a rdfs:Class ;
+    skos:prefLabel "Project"@en ;
+    skos:prefLabel "Project"@nl ;
+.
+
+
+
+# Example class
+digico:Building
+    rdfs:subClassOf nen2660:PhysicalObject ;  # Every top-level class must be a subclass of a nen2660 class
+    skos:prefLabel "Building"@en, "Gebouw"@nl ;  # Every class must have prefLabels @en and @nl
+    skos:definition "A structure with a roof and walls, typically intended to provide shelter or accommodation for human activities."@en ;  # Every class may have a definition @en
+    skos:definition "Een structuur met een dak en muren, doorgaans bedoeld om onderdak te bieden of accommodatie te verschaffen voor menselijke activiteiten."@nl ;  # Every class may have a definition @nl
+.
+digico:BuildingShape
+    a sh:NodeShape ;
+    sh:targetClass digico:Building ;
+.
+
+# Example child class
+digico:SpecificBuilding
+    rdfs:subClassOf digico:Building ;
+    skos:prefLabel "Specific Building"@en, "Specifiek gebouw"@nl ;
+    skos:definition "A specific type of building."@en, "Een specfiek type gebouw."@nl ;
+.
+digico:SpecificBuildingShape
+    a sh:NodeShape ;
+    sh:targetClass digico:SpecificBuilding ;
+.
+
+# Example decimal property (mm)
+digico:hasHeight
+    a rdf:Property ;
+    rdfs:domain digico:Building ;
+    rdfs:prefLabel "Building height"@en, "Gebouwhoogte"@nl ;
+    nen2660:hasUnit unit:MilliM ;  # Applications can use qudt:symbol (here: "mm") and rdfs:label @en (here: "Millimetre") to present this unit. There is no @nl label.
+.
+digico:hasHeightShape 
+    a sh:PropertyShape ;
+    sh:path digico:hasHeight ;
+    sh:datatype xsd:decimal ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+.
+digico:BuildingShape sh:property digico:hasHeightShape .
+
+# Example string property (unitless)
+digico:hasName
+    a rdf:Property ;
+    rdfs:domain digico:Building ;
+    rdfs:prefLabel "Building name"@en, "Gebouwnaam"@nl ;
+    nen2660:hasUnit unit:UNITLESS ;
+.
+digico:hasNameShape
+    a sh:PropertyShape ;
+    sh:path digico:hasName ;
+    sh:datatype xsd:string ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+.
+digico:BuildingShape sh:property digico:hasNumberOfDoorsShape .
+
+# Example enumeration of building colours (unitless)
+digico:BuildingColours
+    a rdfs:Class ;
+    a nen2660:EnumerationType ;
+    skos:prefLabel "Building colours"@en, "Gebouwkleuren"@nl ;  # Names are plural for groups
+    nen2660:hasUnit unit:UNITLESS ;
+.
+digico:Yellow
+	a digico:BuildingColours ;
+	skos:prefLabel "Yellow"@en , "Geel"@nl ;
+.
+digico:Black
+	a digico:BuildingColours ;
+	skos:prefLabel "Black"@en, "Zwart"@nl ;
+.
+
+# Example enumeration property
+digico:hasColor
+    a rdf:Property ;
+    rdfs:domain digico:Building ;
+    skos:prefLabel "Colour"@en, "Kleur"@nl ;
+.
+digico:hasColorShape
+    a sh:PropertyShape ;
+    sh:path digico:hasColor ;
+    sh:class digico:BuildingColours ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;  # Change this value to make it possible to store multiple enumeration values
+.
+digico:BuildingShape sh:property digico:hasColorShape .
+
+# Example simple association
+digico:hasNeighbour
+    a rdf:Property ;
+    rdfs:domain digico:Building ;
+    skos:prefLabel "Neighbouring building"@en, "Naastliggend gebouw" ;
+.
+digico:hasNeighbourShape
+    a sh:PropertyShape ;
+    sh:path digico:hasNeighbour ;
+    sh:class digico:Building ;
+    sh:minCount 0 ;  # By default an association does not exist
+    sh:maxCount 1 ;  # Change this value to make it possible to store multiple associations; leave out for cardinality 0..*
+.
+digico:BuildingShape sh:property digico:hasNeighbourShape .
+
+# Example association with properties
+
+
+
+
+# Instance data, metadata
+
+# Named graph with metadata
+ex:Building123
+    a digico:SpecificBuilding ;
+    digico:hasName "Central Plaza"@en ;
+    digico:hasHeight "15000"^^xsd:decimal ;
+    digico:hasColor digico:Yellow ;
+    digico:hasNeighbour ex:Building456 ;
+    digico:hasNeighbour ex:Building789 ;
+.
+
+ex:Building123_Metadata {
+    ex:Building123
+        prov:generatedAtTime "2025-01-01T10:00:00Z"^^xsd:dateTime ;
+        prov:modifiedAtTime "2025-01-02T12:00:00Z"^^xsd:dateTime .
+    digico:hasName
+        prov:generatedAtTime "2025-01-01T10:00:00Z"^^xsd:dateTime ;
+        prov:modifiedAtTime "2025-01-02T12:00:00Z"^^xsd:dateTime .
+    digico:hasHeight
+        prov:generatedAtTime "2025-01-01T10:00:00Z"^^xsd:dateTime ;
+        prov:modifiedAtTime "2025-01-02T12:00:00Z"^^xsd:dateTime .
+    digico:hasNeighbour
+
+}
+
+# Use an intermediary graph
+digico:Building123
+    a digico:SpecificBuilding ;
+    digico:metadata [
+        digico:status "Active" ;
+        digico:version 2 ;
+    ]
+    digico:hasName [
+        rdf:value "Central Plaza"@en ;
+        digico:status "Active" ;
+        prov:createdAt "2025-01-01T10:00:00Z"^^xsd:dateTime ;
+        prov:lastUpdatedAt "2025-01-02T12:00:00Z"^^xsd:dateTime ;
+    ] ;
+    digico:hasName [
+        rdf:value "Central Plza"@en ;
+        digico:status "Inactive" ;
+        prov:createdAt "2025-01-01T10:00:00Z"^^xsd:dateTime ;
+        prov:lastUpdatedAt "2025-01-02T12:00:00Z"^^xsd:dateTime ;
+        prov:deletedAt "2025-01-02T12:00:00Z"^^xsd:dateTime ;
+    ] ;
+    digico:hasHeight [
+        rdf:value "15000"^^xsd:decimal ;
+        prov:createdAt "2025-01-01T10:30:00Z"^^xsd:dateTime ;
+        prov:lastUpdatedAt "2025-01-02T14:00:00Z"^^xsd:dateTime ;
+    ] ;
+    digico:hasNeighbour [
+        rdf:value ex:Building456 ;
+        digico:status "Inactive" ;  # Associations can be inactivated
+        prov:createdAt "2025-01-01T10:30:00Z"^^xsd:dateTime ;
+        prov:lastUpdatedAt "2025-01-02T14:00:00Z"^^xsd:dateTime ;
+        prov:deletedAt "2025-01-02T12:00:00Z"^^xsd:dateTime ;
+    ] ;
+    digico:hasNeighbour [
+        rdf:value ex:Building789 ;
+        digico:status "Active" ;  # Associations can be inactivated
+        prov:createdAt "2025-01-01T10:30:00Z"^^xsd:dateTime ;
+        prov:lastUpdatedAt "2025-01-02T14:00:00Z"^^xsd:dateTime ;
+    ] ;
+.
+
+digico:Building123_v1 {
+
+}
+
+
+# Additional properties
+ex:Building123
+    a digico:SpecificBuilding ;
+    digico:hasName "Central Plaza"@en ;
+    ex:hasNameCreatedAt "2025-01-01T10:00:00Z"^^xsd:dateTime ;
+    ex:hasNameModifiedAt "2025-01-02T12:00:00Z"^^xsd:dateTime ;
+    digico:hasHeight "15000"^^xsd:decimal ;
+    ex:hasHeightCreatedAt "2025-01-01T10:30:00Z"^^xsd:dateTime ;
+    ex:hasHeightModifiedAt "2025-01-02T14:00:00Z"^^xsd:dateTime ;
+.
+
+# Named individuals
+ex:Building123
+    a digico:SpecificBuilding ;
+    digico:hasName ex:Building123_Name ;
+    digico:hasHeight ex:Building123_Height ;
+.
+
+ex:Building123_Name
+    a rdf:PropertyValue ;
+    rdf:value "Central Plaza"@en ;
+    prov:generatedAtTime "2025-01-01T10:00:00Z"^^xsd:dateTime ;
+    prov:modifiedAtTime "2025-01-02T12:00:00Z"^^xsd:dateTime ;
+.
+
+ex:Building123_Height
+    a rdf:PropertyValue ;
+    rdf:value "15000"^^xsd:decimal ;
+    prov:generatedAtTime "2025-01-01T10:30:00Z"^^xsd:dateTime ;
+    prov:modifiedAtTime "2025-01-02T14:00:00Z"^^xsd:dateTime ;
+.
+
+
+# Waarvoor gebruik je nen2660:QualityValue en nen2660:QuantityValue? Vooralsnog is mijn doel om de structuur van mijn ontologie vast te leggen en hier verificatieregels voor op te stellen. Daarvoor gebruik ik nu RDFS+SHACL. Heeft het dan nut nen2660:QualityValue/QuantityValue te gebruiken? Tot nu toe heb ik de indruk dat 1) het de boel complexer maakt en 2) de boel beperkt, omdat QualityValue alleen een rdf:value van type xsd:string kan hebben en QuantityValue van types xsd:decimal, xsd:float, xsd:double.
+
+# Hoe definieer ik een associatie met een of meer eigenschappen? Bijvoorbeeld van klasse Building naar klasse Window, met daarbij de eigenschap Number Of (Aantal). Hoe doe ik dit? Ik heb het voorbeeld van MatterPortion/RelationReference bestudeerd maar die methode ziet er niet erg aantrekkelijk uit. Met name dat de verwijzing naar het raam als een xsd:anyURI moet worden gecodeerd ziet er omslachtig uit. Ik wil hier beide zijdes getypeerd houden op Building/Window. 

@@ -1,0 +1,283 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix nen2660: <https://w3id.org/nen2660/def#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix appdef: <https://www.digico.nu/app/datamanager/def#>  # Application definitions
+@prefix appid: <https://www.digico.nu/app/datamanager/id#>  # Application instance data
+@prefix digidef: <https://www.digico.nu/def#> .  # Company-wide definitions
+@prefix digiid: <https://www.digico.nu/id#> .  # Company-wide instance data
+@prefix proj123def: <https://www.digico.nu/project/123/def#> .  # Definitions for project 123
+@prefix proj123id: <https://www.digico.nu/project/123/id#> .  # Instance data for project 123
+
+# App definitions
+appdef:User
+    a rdfs:Class ;
+    skos:prefLabel "User" ;
+.
+
+appdef:userName
+    a rdf:Property ;
+    rdfs:domain digidef:User ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "User name" ;
+.
+
+# App instance data
+appid:user1
+    a appdef:User ;
+    appdef:userName "Tori" ;
+.
+
+# digiCO metadata definitions
+digidef:active
+    a rdf:Property ;
+    rdfs:range xsd:boolean ;
+    skos:prefLabel "Active"@en ;
+    skos:definition "Whether a resource is active or not."@en ;
+.
+
+digidef:updatedAt
+    a rdf:Property ;
+    rdfs:range xsd:dateTimeStamp ;
+    skos:prefLabel "Updated at"@en ;
+.
+
+digidef:createdAt
+    a rdf:Property ;
+    rdfs:subPropertyOf ex:updatedAt ;
+    rdfs:range xsd:dateTimeStamp ;
+    skos:prefLabel "Created at"@en ;
+.
+
+digidef:deactivatedAt
+    a rdf:Property ;
+    rdfs:subPropertyOf ex:updatedAt ;
+    rdfs:range xsd:dateTimeStamp ;
+    skos:prefLabel "Deactivated at"@en ;
+.
+
+digidef:activatedAt
+    a rdf:Property ;
+    rdfs:subPropertyOf ex:updatedAt ;
+    rdfs:range xsd:dateTimeStamp ;
+    skos:prefLabel "Activated at"@en ;
+.
+
+digidef:ChangeDescription
+    a rdfs:Class ;
+    skos:prefLabel "Change description"@en ;
+.
+
+digidef:what
+    a rdf:Property ;
+    rdfs:domain digidef:Change ;
+    rdfs:range rdfs:Resource ;
+    skos:prefLabel "What" ;
+    skos:definition "What resource was changed." ;
+.
+
+digidef:when
+    a rdf:Property ;
+    rdfs:domain digidef:Change ;
+    rdfs:range xsd:dateTimeStamp ;
+    skos:prefLabel "When" ;
+    skos:definition "When the resource was changed." ;
+.
+
+digidef:who
+    a rdf:Property ;
+    rdfs:domain digidef:Change ;
+    skos:prefLabel "Who" ;
+    skos:definition "By whom the resource was changed." ;
+.
+
+digidef:how
+    a rdf:Property ;
+    rdfs:domain digidef:Change ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "How" ;
+    skos:definition "How the resource was changed." ;
+.
+
+# Project definitions and metadata
+
+# Create class
+proj123def:Building
+    a rdfs:Class ;
+    rdfs:subClassOf nen2660:PhysicalObject ;
+    skos:prefLabel "Building"@en ;
+    skos:definition "A structure with a roof and walls."@en ;
+    digidef:active true ;
+    digidef:createdAt digidef:changeDescription1 ;
+.
+
+proj123def:changeDescription1
+    a digidef:ChangeDescription ;
+    digidef:what proj123def:Building ;
+    digidef:when "2025-01-01T10:01:00Z"^^xsd:dateTimeStamp ;
+    digidef:who appdef:user1 ;
+    digidef:how "Created class Building." ;
+.
+
+# Update class (add subclass relation)
+proj123def:Building
+    a rdfs:Class ;
+    rdfs:subClassOf nen2660:PhysicalObject, nen2660:TechnicalEntity ;
+    skos:prefLabel "Building"@en ;
+    skos:definition "A structure with a roof and walls."@en ;
+    digidef:active true ;
+    digidef:createdAt digidef:changeDescription1 ;
+    digidef:updatedAt digidef:changeDescription2 ;
+.
+
+proj123def:changeDescription2
+    a digidef:ChangeDescription ;
+    digidef:what proj123def:Building ;
+    digidef:what nen2660:TechnicalEntity ;
+    digidef:when "2025-01-01T10:02:00Z"^^xsd:dateTimeStamp ;
+    digidef:who appdef:user1 ;
+    digidef:how "Made Building a subclass of TechnicalEntity." ;
+.
+
+# Deactivate class
+proj123def:Building
+    a rdfs:Class ;
+    rdfs:subClassOf nen2660:PhysicalObject, nen2660:TechnicalEntity ;
+    skos:prefLabel "Building"@en ;
+    skos:definition "A structure with a roof and walls."@en ;
+    digidef:active false ;
+    digidef:createdAt digidef:changeDescription1 ;
+    digidef:updatedAt digidef:changeDescription2 ;
+    digidef:deactivatedAt digidef:changeDescription3 ;
+.
+
+proj123def:changeDescription3
+    a digidef:ChangeDescription ;
+    digidef:what proj123def:Building ;
+    digidef:when "2025-01-01T10:03:00Z"^^xsd:dateTimeStamp ;
+    digidef:who appdef:user1 ;
+    digidef:how "Deactivated Building." ;
+.
+
+# Reactivate class
+proj123def:Building
+    a rdfs:Class ;
+    rdfs:subClassOf nen2660:PhysicalObject, nen2660:TechnicalEntity ;
+    skos:prefLabel "Building"@en ;
+    skos:definition "A structure with a roof and walls."@en ;
+    digidef:active false ;
+    digidef:createdAt digidef:changeDescription1 ;
+    digidef:updatedAt digidef:changeDescription2 ;
+    digidef:deactivatedAt digidef:changeDescription3 ;
+    digidef:activatedAt digidef:changeDescription4 ;
+.
+
+proj123def:changeDescription4
+    a digidef:ChangeDescription ;
+    digidef:what proj123def:Building ;
+    digidef:when "2025-01-01T10:04:00Z"^^xsd:dateTimeStamp ;
+    digidef:who appdef:user1 ;
+    digidef:how "Reactivated Building." ;
+.
+
+# Create property
+proj123def:buildingName
+    a rdf:Property ;
+    rdfs:domain proj123def:Building ;
+    rdfs:range rdf:langString ;
+    skos:prefLabel "Building naem"@en ;
+    digidef:createdAt digidef:changeDescription5 ;
+.
+
+proj123def:Building
+    a rdfs:Class ;
+    rdfs:subClassOf nen2660:PhysicalObject, nen2660:TechnicalEntity ;
+    skos:prefLabel "Building"@en ;
+    skos:definition "A structure with a roof and walls."@en ;
+    digidef:active false ;
+    digidef:createdAt digidef:changeDescription1 ;
+    digidef:updatedAt digidef:changeDescription2 ;
+    digidef:deactivatedAt digidef:changeDescription3 ;
+    digidef:activatedAt digidef:changeDescription4 ;
+    digidef:updatedAt digidef:changeDescription5 ;
+.
+
+proj123def:changeDescription5
+    a digidef:ChangeDescription ;
+    digidef:what proj123def:Building ;
+    digidef:what proj123def:buildingName ;
+    digidef:when "2025-01-01T10:05:00Z"^^xsd:dateTimeStamp ;
+    digidef:who appdef:user1 ;
+    digidef:how "Created property Building naem for class Building." ;
+.
+
+# Update property (update prefLabel)
+proj123def:buildingName
+    a rdf:Property ;
+    rdfs:domain proj123def:Building ;
+    rdfs:range rdf:langString ;
+    skos:prefLabel "Building name"@en ;
+    digidef:createdAt digidef:changeDescription5 ;
+    digidef:updatedAt digidef:changeDescription6 ;
+.
+
+proj123def:Building
+    a rdfs:Class ;
+    rdfs:subClassOf nen2660:PhysicalObject, nen2660:TechnicalEntity ;
+    skos:prefLabel "Building"@en ;
+    skos:definition "A structure with a roof and walls."@en ;
+    digidef:active false ;
+    digidef:createdAt digidef:changeDescription1 ;
+    digidef:updatedAt digidef:changeDescription2 ;
+    digidef:deactivatedAt digidef:changeDescription3 ;
+    digidef:activatedAt digidef:changeDescription4 ;
+    digidef:updatedAt digidef:changeDescription5 ;
+    digidef:updatedAt digidef:changeDescription6 ;
+.
+
+proj123def:changeDescription6
+    a digidef:ChangeDescription ;
+    digidef:what proj123def:Building ;
+    digidef:what proj123def:buildingName ;
+    digidef:when "2025-01-01T10:06:00Z"^^xsd:dateTimeStamp ;
+    digidef:who appdef:user1 ;
+    digidef:how "Renamed property Building naem to Building name." ;
+.
+
+# Project instance data
+proj123id:building1
+    a proj123def:Building ;
+    digidef:metadata [
+        digidef:active true ;
+        digidef:createdAt proj123id:changeDescription1 ;`
+        digidef:updatedAt proj123id:changeDescription2 ;
+        digidef:updatedAt proj123id:changeDescription2 ;
+        digidef:deactivatedAt proj123id:changeDescription3 ;
+    ]
+    proj123def:buildingName proj123id:property1 ;
+    digico:hasNeighbour proj123id:property2 ;
+    digico:hasNeighbour [
+        rdf:value ex:Building789 ;
+        digico:active false ;  # Associations can be inactivated
+        digidef:createdAt digidef:changeDescription1 ;
+        digidef:deactivatedAt digidef:changeDescription3 ;
+    ] ;
+.
+
+proj123id:property1
+    a proj123def:StringProperty ;
+    rdf:value "Bouwhuis" ;
+    digidef:createdAt digidef:changeDescription1 ;`
+    digidef:updatedAt digidef:changeDescription2 ;
+.
+
+proj123id:property2
+    a proj123def:AssociationProperty ;
+    rdf:value ex:Building456 ;
+    digidef:createdAt digidef:changeDescription1 ;`
+    digidef:updatedAt digidef:changeDescription2 ;
+.

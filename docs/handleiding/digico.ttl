@@ -1,0 +1,138 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix nen2660: <https://w3id.org/nen2660/def#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix digico: <https://www.digico.nu/def#> .
+
+# Some general remarks:
+# - The use of human-readable identifiers is purely for reasons of readability. In a production environment it is strongly advised not to use such identifiers, but instead use non-significant identifiers such as UUIDs.
+# - We use RDFS to model structure and SHACL to model constraints. We do not consider reasoning or inference.
+# - Classes and properties are defined and bound separately. This modular appraoch makes it easier to add or remove properties.
+
+### RIK: It is considered good practice to introduce the owl:Ontology in the beginning of the file. This is not mandatory. I would suggest someting like this:
+### <https://www.digico.nu/def> a owl:Ontology ;
+###     rdfs:label "Digico ontology"@en ;
+###     rdfs:comment "This ontology describes the Digico domain."@en ,
+###         "Deze ontologie beschrijft het Digico domein."@nl ;
+###     rdfs:seeAlso "https://www.digigo.nu"^^xsd:anyURI .
+
+# Example class
+digico:Building
+### RIK: Because you are not working with inferencing, I would suggest to type all classes as rdfs:Class. So: digico:Building a rdfs:Class ;
+    rdfs:subClassOf nen2660:PhysicalObject ;  # Every top-level class must be a subclass of a nen2660 class
+### RIK: nen2660:PhysicalObject has subclasses of it's own. If you mean to say that digico:Building is a 'mix' of SpatialObject and RealObject then its correct. Otherwise I would suggest to use nen2660:RealObject or nen2660:SpatialObject. 
+### RIK: In most usecases it is wise to also provide if this class is a subclass from nen2660:FunctionalEntity of nen2660:TechnicalEntity.
+    skos:prefLabel "Building"@en, "Gebouw"@nl ;  # Every class must have prefLabels @en and @nl
+    skos:definition "A structure with a roof and walls, typically intended to provide shelter or accommodation for human activities."@en ;  # Every class may have a definition @en
+    skos:definition "Een structuur met een dak en muren, doorgaans bedoeld om onderdak te bieden of accommodatie te verschaffen voor menselijke activiteiten."@nl ;  # Every class may have a definition @nl
+.
+digico:BuildingShape
+    a sh:NodeShape ;
+    sh:targetClass digico:Building ;
+.
+### RIK: Because the shape and the class are so closely related, you can/may combine them. It's easier in this case but there are cases that you want to separate them. For example: publishing the shapes in a different file or attaching metadata for the shape.
+### digico:Building a rdfs:Class, sh:NodeShape ;
+###     rdfs:subClassOf nen2660:PhysicalObject ;
+###     skos:prefLabel "Building"@en, "Gebouw"@nl ;
+###     skos:definition "A structure with a roof and walls, typically intended to provide shelter or accommodation for human activities."@en ,
+###         "Een structuur met een dak en muren, doorgaans bedoeld om onderdak te bieden of accommodatie te verschaffen voor menselijke activiteiten."@nl ;
+
+# Example child class
+digico:SpecificBuilding
+    rdfs:subClassOf digico:Building ;
+    skos:prefLabel "Specific Building"@en, "Specifiek gebouw"@nl ;
+    skos:definition "A specific type of building."@en, "Een specfiek type gebouw."@nl ;
+.
+digico:SpecificBuildingShape
+    a sh:NodeShape ;
+    sh:targetClass digico:SpecificBuilding ;
+.
+
+# Example decimal property (mm)
+### RIK: In the way you have defined this example. The data that can be validated is if there is a value for the height, and if the value is a decimal number. Not if it is defined in mm. The use of nen2660:hasUnit is purely metadata.
+digico:hasHeight
+    a rdf:Property ;
+    rdfs:domain digico:Building ;
+    rdfs:prefLabel "Building height"@en, "Gebouwhoogte"@nl ;
+### RIK: Moet skos:prefLabel zijn.    
+    nen2660:hasUnit unit:MilliM ;  # Applications can use qudt:symbol (here: "mm") and rdfs:label @en (here: "Millimetre") to present this unit. There is no @nl label.
+.
+digico:hasHeightShape 
+    a sh:PropertyShape ;
+    sh:path digico:hasHeight ;
+    sh:datatype xsd:decimal ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+.
+digico:BuildingShape sh:property digico:hasHeightShape .
+
+
+
+# Example string property (unitless)
+digico:hasName
+    a rdf:Property ;
+    rdfs:domain digico:Building ;
+    rdfs:prefLabel "Building name"@en, "Gebouwnaam"@nl ;
+    nen2660:hasUnit unit:UNITLESS ;
+.
+digico:hasNameShape
+    a sh:PropertyShape ;
+    sh:path digico:hasName ;
+    sh:datatype xsd:string ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+.
+digico:BuildingShape sh:property digico:hasNumberOfDoorsShape .
+### RIK: I think you mean to say digico:BuildingShape sh:property digico:hasNameShape .
+
+# Example enumeration of building colours (unitless)
+digico:BuildingColours
+    a rdfs:Class ;
+    a nen2660:EnumerationType ;
+    skos:prefLabel "Building colours"@en, "Gebouwkleuren"@nl ;  # Names are plural for groups
+    nen2660:hasUnit unit:UNITLESS ;
+.
+digico:Yellow
+### RIK: If you want to be strict the namespace digico: should not be used. This is because for individuals (there is only one) you should use a namespace that end with 'id' (instead of 'def'). 
+	a digico:BuildingColours ;
+	skos:prefLabel "Yellow"@en , "Geel"@nl ;
+.
+digico:Black
+### RIK: If you want to be strict the namespace digico: should not be used. This is because for individuals (there is only one) you should use a namespace that end with 'id' (instead of 'def'). 
+	a digico:BuildingColours ;
+	skos:prefLabel "Black"@en, "Zwart"@nl ;
+.
+
+# Example enumeration property
+digico:hasColor
+    a rdf:Property ;
+    rdfs:domain digico:Building ;
+    skos:prefLabel "Colour"@en, "Kleur"@nl ;
+.
+digico:hasColorShape
+    a sh:PropertyShape ;
+    sh:path digico:hasColor ;
+    sh:class digico:BuildingColours ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;  # Change this value to make it possible to store multiple enumeration values
+.
+digico:BuildingShape sh:property digico:hasColorShape .
+
+# Example simple association
+digico:hasNeighbour
+    a rdf:Property ;
+    rdfs:domain digico:Building ;
+    skos:prefLabel "Neighbouring building"@en, "Naastliggend gebouw" ;
+.
+digico:hasNeighbourShape
+    a sh:PropertyShape ;
+    sh:path digico:hasNeighbour ;
+    sh:class digico:Building ;
+    sh:minCount 0 ;  # By default an association does not exist
+    sh:maxCount 1 ;  # Change this value to make it possible to store multiple associations; leave out for cardinality 0..*
+.
+digico:BuildingShape sh:property digico:hasNeighbourShape .
