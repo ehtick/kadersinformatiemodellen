@@ -17,7 +17,7 @@ We gaan in dit document uit van automatische verwerking van RDF-data waarbij met
 - gebruiken we geen anonieme nodes;
 - gebruiken we betekenisvrije codes voor naamgeving.
 
-Merk op dat we in onze RDF-voorbeelden betekenisvolle namen gebruiken. Dit doen we enkel en alleen ten behoeve van de leesbaarheid in dit document. Bij naamgeving raden we altijd aan betekenisvrije codes te gebruiken.
+> Merk op dat we in dit document betekenisvolle namen gebruiken in de codevoorbeelden. Dit doen we enkel en alleen ten behoeve van de leesbaarheid in dit document. Bij naamgeving raden we altijd aan betekenisvrije codes te gebruiken.
 
 # URI-strategie
 
@@ -46,6 +46,8 @@ In Sectie 8.4 van de NEN 2660-2 worden meerdere opties beschreven voor naamgevin
 - we gebruiken betekenisvrije codes (zoals een gegenereerde UUID-code);
 - mensvriendelijke labels zijn verplicht in de vorm van een `skos:prefLabel` met taaltags @en en @nl (zie ook Sectie 'Annotaties').
 - labels van concepten zijn bij voorkeur in enkelvoud (behalve bij aanduidingen van groepen).
+
+> Merk op dat we in dit document betekenisvolle namen gebruiken in de codevoorbeelden. Dit doen we enkel en alleen ten behoeve van de leesbaarheid in dit document. Bij naamgeving raden we altijd aan betekenisvrije codes te gebruiken.
 
 # Annotaties
 
@@ -76,14 +78,15 @@ Voor elke resource geven we expliciet aan tot welke ontologie deze behoort door 
 
 # Klasses
 
-In de NEN 2660-2 zijn een aantal concepten voorgedefinieerd. Dit noemen we het (NEN 2660-)topmodel. Dit wordt beschreven in Hoofdstuk 6 van de NEN 2660-2. Sectie 6.14 geeft een overzicht van alle concepten.
+In de NEN 2660-2 zijn een aantal concepten voorgedefinieerd; dit wordt het topmodel genoemd. Dit wordt beschreven in Hoofdstuk 6 van de NEN 2660-2. Sectie 6.14 geeft een overzicht van alle concepten.
 
 Wil een ontologie conform zijn aan de NEN 2660-2 dan moeten alle klasses (indirect) een subtype zijn van het NEN 2660-topmodel.
 
+We modelleren een klasse als volgt.
+
 ```turtle
-# Ten behoeve van de leesbaarheid gebruiken we in onze voorbeelden semi-leesbare codes i.p.v. UUID.
 digidef:Gebouw a rdfs:Class ;
-	rdfs:isDefinedBy <https://www.digico.nu/rdf/def> ;
+    rdfs:isDefinedBy <https://www.digico.nu/rdf/def> ;
     rdfs:subClassOf nen2660:RealObject ;
     skos:prefLabel "Building"@en, "Gebouw"@nl ;
     skos:definition "A structure with a roof and walls, typically intended to provide shelter or accommodation for human activities."@en, "Een structuur met een dak en muren, doorgaans bedoeld om onderdak te bieden of accommodatie te verschaffen voor menselijke activiteiten."@nl ;
@@ -94,23 +97,31 @@ digidef:GebouwShape a sh:NodeShape ;
 .
 ```
 
+Het volgende is een voorbeeld van een instantie van een klasse (hier een gebouw).
+
+```turtle
+digiid:Gebouw_001 a digidef:Gebouw .
+```
+
 # Attributen
 
-Met een attribuut bedoelen we een eigenschap van een entiteit, zoals de naam of hoogte van een gebouw. Attributen kunnen worden toegewezen aan klasses en aan relaties. We onderscheiden de volgende types waardetypes voor attributen:
-- text;
-- numeriek:
-    - decimaal;
-	- geheel getal;
-- tijdstip;
-- enumeratie.
-
-Attributen kunnen volgens de NEN 2660-2 simpel en complex worden gedefinieerd; vanwege de wens om de metadata van een attribuut bij te houden kiezen we ervoor om dit complex te doen. Een attribuut wordt gemodelleerd als een `rdf:Property` met bijbehorende `sh:PropertyShape`. Textuele attributen hebben als `rdfs:range` een `nen2660:QualityValue`; numerieke attributen een `nen2660:QuantityValue`. Voor tijdstippen en enumeraties hebben we onze eigen constructen gecreëerd.
-
-Op instantieniveau stellen we dat een attribuut maximaal één keer mag voorkomen. Dit dwingen we af via `sh:maxCount` in de `sh:PropertyShape`. Dit is een aanvulling op de NEN 2660-2. We geven geen `sh:minCount`, dus een attribuut kan ontbreken.
-
-Een attribuutwaarde (dus op instantieniveau) wordt gemodelleerd met `rdf:value`. Een attribuut hoeft echter geen `rdf:value` te hebben.
+Met een attribuut bedoelen we een eigenschap van een entiteit, zoals de naam of hoogte van een gebouw. Attributen kunnen worden toegewezen aan klasses en aan relaties. De NEN 2660-2 geeft veel vrijheid bij het definiëren en instantiëren van attributen, hoewel het op sommige vlakken ook beperkingen kent. Deze sectie bevat dan ook vrij veel ontwerpkeuzes.
 
 Voor meer informatie over hoe de NEN 2660-2 attributen modelleert zie o.a. Sectie 6.12 en Sectie 8.2 van de NEN 2660-2.
+
+We onderscheiden de volgende types waardetypes voor attributen:
+- text: `xsd:string`;
+- numeriek:
+    - decimaal: `xsd:decimal`;
+	- geheel getal: `xsd:integer`;
+- tijdstip: `xsd:dateTimeStamp`;
+- enumeratie.
+
+Attributen kunnen volgens de NEN 2660-2 simpel en complex worden gedefinieerd; vanwege de wens om de metadata van een attribuut bij te houden kiezen we ervoor om dit complex te doen. Een attribuut wordt gemodelleerd als een `rdf:Property` met bijbehorende `sh:PropertyShape`. Textuele attributen hebben als `rdfs:range` een `nen2660:QualityValue`; numerieke attributen een `nen2660:QuantityValue`. Voor tijdstippen en enumeraties hebben we onze eigen concepten gecreëerd.
+
+Op instantieniveau stellen we dat een attribuut maximaal één keer mag voorkomen. Dit dwingen we af via `sh:maxCount` in de `sh:PropertyShape`. Dit is een aanvulling op de NEN 2660-2. We geven geen `sh:minCount`, dus een attribuut mag ontbreken.
+
+De aarde van een attribuut wordt gemodelleerd met `rdf:value`. Een attribuut hoeft echter geen `rdf:value` te hebben; deze mag ontbreken. Een ontbrekende waarde interpreteren we als een NULL-waarde.
 
 ## Text
 
@@ -119,18 +130,21 @@ Textuele attributen modelleren we als volgt.
 ```turtle
 # RDFS
 digidef:GebouwNaam a rdf:Property ;
+    rdfs:isDefinedBy <https://www.digico.nu/rdf/def> ;
     skos:prefLabel "Name"@en, "Naam"@nl ;
-	skos:definition "Commonly-used name."@en, "Veelgebruikte naam."@nl ;  # Volledige zin
+	skos:definition "Commonly-used name."@en, "Veelgebruikte naam."@nl ;
     rdfs:domain digidef:Gebouw ;
     rdfs:range nen2660:QualityValue ;
 .
 
 # SHACL
 digidef:GebouwNaamShape a sh:PropertyShape ;
+    rdfs:isDefinedBy <https://www.digico.nu/rdf/def> ;
     sh:path digidef:GebouwNaam ;
     sh:class nen2660:QualityValue ;
     sh:maxCount 1 ;
 .
+
 digidef:GebouwShape sh:property digidef:GebouwNaamShape .
 ```
 
@@ -140,18 +154,18 @@ Voor de volledigheid geven we hier ook de definitie van `nen2660:QualityValue`.
 # Definities uit de NEN 2660-2
 
 nen2660:QualityValue
-  a rdfs:Class ;
-  rdfs:seeAlso nen2660-term:QualityValue ;
-  rdfs:subClassOf nen2660:Objectification ;
-  skos:definition "The objectification of a value of a quality having a complex value like a simple value sec combined with other metadata or just a combination of simple values"@en ;
-  skos:prefLabel "Quality value"@en ;
+    a rdfs:Class ;
+    rdfs:seeAlso nen2660-term:QualityValue ;
+    rdfs:subClassOf nen2660:Objectification ;
+    skos:definition "The objectification of a value of a quality having a complex value like a simple value sec combined with other metadata or just a combination of simple values"@en ;
+    skos:prefLabel "Quality value"@en ;
 .
 
 nen2660:QualityValue
-  a sh:NodeShape ;
-  sh:property [
-      sh:path rdf:value ;
-      sh:datatype xsd:string ;
+    a sh:NodeShape ;
+    sh:property [
+        sh:path rdf:value ;
+        sh:datatype xsd:string ;
     ] ;
 .
 ```
@@ -159,9 +173,7 @@ nen2660:QualityValue
 Het volgende is een voorbeeld van een gebouwinstantie met een naam.
 
 ```turtle
-digiid:Gebouw_001 a digidef:Gebouw ;
-    digidef:GebouwNaam digiid:GebouwNaam_001 ;
-.
+digiid:Gebouw_001 digidef:GebouwNaam digiid:GebouwNaam_001 .
 digiid:GebouwNaam_001 rdf:value "Bouwhuis"^^xsd:string .
 ```
 
@@ -172,6 +184,7 @@ Een decimaal attribuut modelleren we als volgt.
 ```turtle
 # RDFS
 digidef:GebouwHoogte a rdf:Property ;
+    rdfs:isDefinedBy <https://www.digico.nu/rdf/def> ;
     skos:prefLabel "Height"@en, "Hoogte"@nl ;
 	skos:definition "The height in meters."@en, "De hoogte in meters."@nl ;
     rdfs:domain digidef:Gebouw ;
@@ -180,18 +193,20 @@ digidef:GebouwHoogte a rdf:Property ;
 
 # SHACL
 digidef:GebouwHoogteShape a sh:PropertyShape ;
+    rdfs:isDefinedBy <https://www.digico.nu/rdf/def> ;
     sh:path digidef:GebouwHoogte ;
     sh:class [
-	  a nen2660:QuantityValue ;
-      sh:path rdf:value ;
-      sh:datatype xsd:decimal ;
+        a nen2660:QuantityValue ;
+        sh:path rdf:value ;
+        sh:datatype xsd:decimal ;  # We beperken ons tot xsd:decimal
     ] ;
     sh:maxCount 1 ;
 .
+
 digidef:GebouwShape sh:property digidef:GebouwHoogteShape .
 ```
 
-Een `nen2660:QuantityValue` ondersteunt de datatypes `xsd:decimal`, `xsd:float` en `xsd:double`. Hier beperken we ons ten behoeve van eenduidigheid tot `xsd:decimal`.
+Een `nen2660:QuantityValue` ondersteunt de datatypes `xsd:decimal`, `xsd:float` en `xsd:double`. Hier beperken we ons ten behoeve van eenduidigheid tot `xsd:decimal` door een beperking toe te voegen in de property shape.
 
 Voor de volledigheid geven we hier ook de definitie van `nen2660:QuantityValue`.
 
@@ -199,18 +214,18 @@ Voor de volledigheid geven we hier ook de definitie van `nen2660:QuantityValue`.
 # Definities uit de NEN 2660-2
 
 nen2660:QuantityValue
-  a rdfs:Class ;
-  rdfs:seeAlso nen2660-term:QuantityValue ;
-  rdfs:subClassOf nen2660:Objectification ;
-  skos:definition "The objectification of a value of a quantity (typically involving a quantity kind and a unit) having a complex value like a simple value sec combined with other metadata or just a combination of simple values"@en ;
-  skos:prefLabel "Quantity value"@en ;
+    a rdfs:Class ;
+    rdfs:seeAlso nen2660-term:QuantityValue ;
+    rdfs:subClassOf nen2660:Objectification ;
+    skos:definition "The objectification of a value of a quantity (typically involving a quantity kind and a unit) having a complex value like a simple value sec combined with other metadata or just a combination of simple values"@en ;
+    skos:prefLabel "Quantity value"@en ;
 .
 
 nen2660:QuantityValue
-  a sh:NodeShape ;
-  sh:property [
-      sh:path rdf:value ;
-      sh:or ( [ sh:datatype xsd:decimal ] [sh:datatype xsd:float] [ sh:datatype xsd:double ] );
+    a sh:NodeShape ;
+    sh:property [
+        sh:path rdf:value ;
+        sh:or ( [ sh:datatype xsd:decimal ] [sh:datatype xsd:float] [ sh:datatype xsd:double ] );
     ] ;
 .
 ```
@@ -222,13 +237,14 @@ digiid:Gebouw_001 digidef:GebouwHoogte digiid:GebouwHoogte_001 .
 digiid:GebouwHoogte_001 rdf:value "4.2"^^xsd:decimal .
 ```
 
-## Gehele getallen
+## Geheel getal
 
-Attributen met gehele getallen modelleren we als volgt. We leggen een beperking op aan `nen2660:QuantityValue`.
+Attributen met een geheel getal als waardetype modelleren we als volgt. Net als bij decimalen leggen we een beperking op aan `nen2660:QuantityValue` in de property shape.
 
 ```turtle
 # RDFS
 digidef:GebouwHoogteInMM a rdf:Property ;
+    rdfs:isDefinedBy <https://www.digico.nu/rdf/def> ;
     skos:prefLabel "Height in mm"@en, "Hoogte in mm"@nl ;
 	skos:definition "The height in millimeters."@en, "De hoogte in millimeters."@nl ;
     rdfs:domain digidef:Gebouw ;
@@ -237,14 +253,16 @@ digidef:GebouwHoogteInMM a rdf:Property ;
 
 # SHACL
 digidef:GebouwHoogteInMMShape a sh:PropertyShape ;
+    rdfs:isDefinedBy <https://www.digico.nu/rdf/def> ;
     sh:path digidef:GebouwHoogteInMM ;
     sh:class [
-	  a nen2660:QuantityValue ;
-      sh:path rdf:value ;
-      sh:datatype xsd:integer ;
+        a nen2660:QuantityValue ;
+        sh:path rdf:value ;
+        sh:datatype xsd:integer ;  # We beperken ons tot xsd:integer
     ] ;
     sh:maxCount 1 ;
 .
+
 digidef:GebouwShape sh:property digidef:GebouwHoogteInMMShape .
 ```
 
@@ -255,99 +273,198 @@ digiid:Gebouw_001 digidef:GebouwHoogteInMM digiid:GebouwHoogteInMM_001 .
 digiid:GebouwHoogteInMM_001 rdf:value "4200"^^xsd:integer .
 ```
 
-## Tijdstippen
+## Tijdstip
+
+De NEN 2660-2 heeft geen concept om attributen met het waardetype `xsd:dateTimeStamp` te objectificeren. Daarom maken we ons eigen concept `digidef:DateTimeValue`, analoog aan `nen2660:QuantityValue`.
+
+```turtle
+digidef:DateTimeValue a rdfs:Class ;
+    rdfs:isDefinedBy <https://www.digico.nu/rdf/def> ;
+    rdfs:subClassOf nen2660:Objectification ;
+    skos:definition "The objectification of a datetime value."@en, "De objectificering van een datetime waarde."@en ;
+    skos:prefLabel "Datetime value"@en ;
+.
+
+digidef:DateTimeValue a sh:NodeShape ;
+    rdfs:isDefinedBy <https://www.digico.nu/rdf/def> ;
+    sh:property [
+        sh:path rdf:value ;
+        sh:datatype xsd:datetime ;
+    ] ;
+.
+```
+
+Attributen met een tijdstip als waardetype modelleren we als volgt. Merk op dat we een tijdstip als `xsd:dateTimeStamp` modelleren door middel van een extra beperking op `digidef:DateTimeValue`. We gebruiken `xsd:dateTimeStamp` omdat we in een databasesysteem altijd de tijdzone willen weten. We gebruiken deze constructie -- waarin `digidef:DateTimeValue` een gewone `xsd:datetime` als datatype heeft, en de extra beperking van `xsd:dateTimeStamp` wordt opgelegd via de property shape van het attribuut -- analoog aan hoe we dit hebben gedaan voor decimalen en gehele getallen ten aanzien van `nen2660:QuantityValue`. Dit vergroot de flexibiliteit van het concept `digidef:DateTimeValue`, dat kan worden hergebruikt voor scenarios waarin tijdzoneinformatie niet verplicht is.
+
+```turtle
+# RDFS
+digidef:GebouwOpening a rdf:Property ;
+    rdfs:isDefinedBy <https://www.digico.nu/rdf/def> ;
+    skos:prefLabel "Date of opening"@en, "Openingsdatum"@nl ;
+    rdfs:domain digidef:Gebouw ;
+    rdfs:range digidef:DateTimeValue ;
+.
+
+# SHACL
+digidef:GebouwOpeningShape a sh:PropertyShape ;
+    rdfs:isDefinedBy <https://www.digico.nu/rdf/def> ;
+    sh:path digidef:GebouwOpening ;
+    sh:class [
+        a nen2660:QuantityValue ;
+        sh:path rdf:value ;
+        sh:datatype xsd:dateTimeStamp ;  # We beperken ons tot xsd:dateTimeStamp
+    ] ;
+    sh:maxCount 1 ;
+.
+
+digidef:GebouwShape sh:property digidef:GebouwOpeningShape .
+```
+
+Het volgende is een voorbeeld van een gebouw met een openingsdatum.
+
+```turtle
+digiid:Gebouw_001 digidef:GebouwOpening digiid:GebouwOpening_001 .
+digiid:GebouwOpening_001 rdf:value "4200"^^xsd:integer .
+```
 
 ## Enumeraties
 
-## Grootheden en eenheden
+De NEN 2660-2 heeft een concept voor enumeraties: `nen2660:EnumerationType`. Elke enumeratie moet een instantie zijn van `nen2660:EnumerationType` en de elementen instanties van de enumeratie zelf. Hieronder zien we een minimaal voorbeeld van een enumeratie.
+
+```turtle
+digidef:Gebouwkleuren a nen2660:EnumerationType, rdfs:Class ;
+    rdfs:isDefinedBy <https://www.digico.nu/rdf/def> ;
+    skos:prefLabel "Building colours"@en, "Gebouwkleuren"@nl ;  # Meervoud voor groepen
+.
+
+digiid:Geel a digidef:Gebouwkleuren ;
+    rdfs:isDefinedBy <https://www.digico.nu/rdf/def> ;
+	skos:prefLabel "Yellow"@en , "Geel"@nl ;
+.
+
+digiid:Black a digidef:Gebouwkleuren ;
+    rdfs:isDefinedBy <https://www.digico.nu/rdf/def> ;
+	skos:prefLabel "Black"@en, "Zwart"@nl ;
+.
+```
+
+De NEN 2660-2 heeft geen concept om attributen met een enumeratie als waardetype te objectificeren. Daarom maken we ons eigen concept `digidef:EnumerationValue`. Dit is een geobjectificieerd attribuut met een `rdf:value` dat verwijst naar een `nen2660:EnumerationType`.
+
+```turtle
+digidef:EnumerationValue a rdfs:Class ;
+    rdfs:subClassOf nen2660:Objectification ;
+    rdfs:isDefinedBy <https://www.digico.nu/rdf/def> ;
+    skos:definition "The objectification of an enumeration value."@en ;
+    skos:prefLabel "Enumeration value"@en ;
+.
+
+digidef:EnumerationValue a sh:NodeShape ;
+    rdfs:isDefinedBy <https://www.digico.nu/rdf/def> ;
+    sh:property [
+        sh:path rdf:value ;
+        sh:class nen2660:EnumerationType ;
+    ] ;
+.
+```
+
+We modelleren een attribuut met een enumeratie als waardetype nu als volgt.
+
+```turtle
+# RDFS
+digidef:GebouwKleur a rdf:Property ;
+    rdfs:isDefinedBy <https://www.digico.nu/rdf/def> ;
+    skos:prefLabel "Building colour"@en, "Gebouwkleur"@nl ;
+    rdfs:domain digidef:Gebouw ;
+    rdfs:range digidef:EnumerationValue ;
+.
+
+# SHACL
+digidef:GebouwKleurShape a sh:PropertyShape ;
+    rdfs:isDefinedBy <https://www.digico.nu/rdf/def> ;
+    sh:path digidef:GebouwKleur ;
+    sh:class [
+        a digidef:EnumerationValue ;
+        sh:path rdf:value ;
+        sh:class digidef:Gebouwkleuren ;  # We beperken ons tot digidef:Gebouwkleuren
+        sh:maxCount 1 ;  # Verwijder deze regel of pas deze regel aan als meerdere waardes mogelijk zijn
+    ] ;
+    sh:maxCount 1 ;
+.
+
+digidef:GebouwShape sh:property digidef:GebouwKleurShape .
+```
+
+Het volgende is een voorbeeld van een gebouw met twee kleuren (dus met `sh:maxCount` > 1 voor `rdf:value`, of zelfs zonder een `sh:maxCount`).
+
+```turtle
+digiid:Gebouw_001 digidef:GebouwKleur digiid:GebouwKleur_001 .
+digiid:GebouwKleur_001 rdf:value digiid:Black .
+digiid:GebouwKleur_001 rdf:value digiid:Yellow .
+```
+
+## Eenheden
+
+In de NEN 2660-2 worden eenheden aangegeven via `nen2660:hasUnit`, welke verwijst naar een `qudt:Unit`. Een voorbeeld van een eenheid is bijvoorbeeld `unit:MilliM`. Voor een volledige lijst zie de [QUDT-ontologie](https://www.qudt.org/doc/DOC_VOCAB-UNITS.html). Eenheden hebben onder andere een `qudt:symbol` (hier: `"mm"`) en een `rdfs:label` (hier: `"Millimetre"@en`; er is geen @nl).
+
+Eenheden kunnen zowel op typeniveau als op instantieniveau worden aangegeven. Als gegevens binnen een gesloten systeem blijven waarbinnen interpretatie van gegevens strikt is vastgelegd (bijvoorbeeld in een informatiemanagementsysteem) dan volstaat het om de eenheden eenmalig op typeniveau te definiëren als metadata. Zodra gegevens gedeeld worden is het aan te raden de eenheden ook aan te geven op instantieniveau, en om dit een vereiste te maken. In onderstaande voorbeeld doen we beiden.
+
+De NEN 2660-2 schrijft voor om grootheden aan te geven via `nen2660:hasQuantityKind`, welke verwijst naar een `qudt:QuantityKind`. Hier gaan we verder niet in op het gebruik van grootheden, maar deze kunnen op dezelfde manier worden toegepast als eenheden.
+
+We modelleren attribuut `digidef:GebouwHoogte` opnieuw, maar geven nu expliciet de eenheid aan.
 
 ```turtle
 # RDFS
 digidef:GebouwHoogte a rdf:Property ;
+    rdfs:isDefinedBy <https://www.digico.nu/rdf/def> ;
     skos:prefLabel "Height"@en, "Hoogte"@nl ;
+	skos:definition "The height in meters."@en, "De hoogte in meters."@nl ;
     rdfs:domain digidef:Gebouw ;
     rdfs:range nen2660:QuantityValue ;
-    skos:definition "The height in mm."@en, "De hoogte in mm."@nl ;
-    nen2660:hasQuantityKind quantitykind:Length ;
-    nen2660:hasUnit unit:MilliM ;
+    nen2660:hasUnit unit:M ;  # Metadata; ter info
 .
 
 # SHACL
 digidef:GebouwHoogteShape a sh:PropertyShape ;
+    rdfs:isDefinedBy <https://www.digico.nu/rdf/def> ;
     sh:path digidef:GebouwHoogte ;
-    sh:class nen2660:QualityValue ;
+    sh:class nen2660:QuantityValue ;
     sh:maxCount 1 ;
-.
-digidef:bldng-123-sh sh:property digidef:bldng-hght-123-ps .
-```
-
-
-
-Zoals kan worden afgeleid uit de definitie van `nen2660:QuantityValue` worden alleen de datatypes `xsd:decimal`, `xsd:float` en `xsd:double` ondersteund.
-
-Het volgende is een voorbeeld van een gebouw met een hoogte.
-
-```turtle
-digiid:bldng-002 a digidef:bldng-123-c ;
-    digidef:bldng-hght-123-p digiid:bldng-002-hght ;
-.
-digiid:bldng-002-hght a nen2660:QuantityValue ;
-    rdf:value "10000"^^xsd:decimal ;
-    nen2660:hasQuantityKind quantitykind:Length ;
-    nen2660:hasUnit unit:MilliM ;
-.
-```
-
-In dit voorbeeld zijn de grootheid en de eenheid ook aangegeven. Aangezien beide kunnen worden afgeleid van `digidef:bldng-hght-123-p` is dat niet per se nodig. Het is echter wel explicieter, en garandeert dat dit duidelijk is op het moment dat de instantiedata zonder hun definities worden verstuurd of 
-
-Voor het aangeven van zowel grootheden (via `nen2660:hasQuantityKind`) als eenheden (via `nen2660:hasUnit`) wordt de QUDT-ontologie gebruikt. Een grootheid zoals `quantitykind:Length` heeft o.a. een `qudt:symbol` (hier: `"l"`) en een `rdfs:label` (hier: `"length"@en`; er is geen @nl). Zie [https://www.qudt.org/doc/DOC_VOCAB-QUANTITY-KINDS.html] voor een overzicht van grootheden. Een eenheid zoals `unit:MilliM` heeft o.a. een `qudt:symbol` (hier: `"mm"`) en een `rdfs:label` (hier: `"Millimetre"@en`; er is geen @nl). Zie [https://www.qudt.org/doc/DOC_VOCAB-UNITS.html] voor een overzicht van alle eenheden.
-
-Voor de volledigheid geven we hier ook de definitie van `nen2660:QuantityValue`.
-
-```turtle
-nen2660:QuantityValue
-  a sh:NodeShape ;
-  sh:property [
-      sh:path rdf:value ;
-      sh:or ( [ sh:datatype xsd:decimal ] [sh:datatype xsd:float] [ sh:datatype xsd:double ] );
+    sh:node [
+        sh:property [
+            sh:path rdf:value ;
+            sh:datatype xsd:decimal ;
+        ] ;
+        sh:property [
+            sh:path nen2660:hasUnit ;
+            sh:hasValue unit:M ;  # Verplicht op instantieniveau
+            sh:minCount 1 ;
+        ] ;
     ] ;
+.
+
+digidef:GebouwShape sh:property digidef:GebouwHoogteShape .
+```
+
+Het effect van het toevoegen van `nen2660:hasUnit` aan de `rdf:Property` en aan de `sh:PropertyShape` is sterk verschillend. In het eerste geval geldt het statement als interpreteerbare metadata. In het tweede geval verplicht je om bij alle instanties van dit attribuut de eenheid expliciet toe te voegen.
+
+Het volgende is een voorbeeld van een gebouw met een hoogte en een eenheid.
+
+```turtle
+digiid:Gebouw_001 digidef:GebouwHoogte digiid:GebouwHoogte_001 .
+digiid:GebouwHoogte_001
+    rdf:value "4.2"^^xsd:decimal ;
+    nen2660:hasUnit unit:M ;
 .
 ```
 
 # Relaties
 
-Een relatie wordt altijd tussen klasses gelegd.
+Een relatie wordt altijd tussen klasses gedefinieerd, en tussen instanties van klasses geïnstantieerd. We modelleren een geobjectificeerde relatie als een subklasse van een `nen2660:RelationReference`.
 
-Dit is een simpele relatie:
-
-```turtle
-# RDFS
-digidef:bldng-nghbr-123-p a rdf:Property ;
-  rdfs:domain digidef:bldng-123-c ;
-  rdfs:range digidef:bldng-123-c ;
-  skos:prefLabel "Neighbouring building"@en, "Naastgelegen gebouw"@nl ;
-.
-# SHACL
-digidef:bldng-nghbr-123-ps a sh:PropertyShape ;
-    sh:path digidef:bldng-nghbr-123-p ;
-    sh:datatype digidef:bldng-123-c;
-.
-digidef:bldng-123-sh sh:property digidef:bldng-nghbr-123-ps .
-```
-
-Het volgende is een voorbeeld van twee gebouwen die naast elkaar staan.
+Voor de volledigheid geven we hier eerst de definities van `nen2660:RelationReference`.
 
 ```turtle
-digiid:bldng-003 a digidef:bldng-123-c .
-digiid:bldng-004 a digidef:bldng-123-c .
-digiid:bldng-003 digidef:bldng-nghbr-123-p digiid:bldng-004 .
-```
-
-Bij een complexe relatie objectificeren we de relatie. Dit geeft ons de gelegenheid om de relatie uit te breiden met attributen, en om 
-
-Voor een complexe relatie geven we eerst de definities van `nen2660:RelationReference`.
-
-```turtle
+# Definities uit de NEN 2660-2
 nen2660:RelationReference
   a rdfs:Class ;
   rdfs:seeAlso nen2660-term:RelationReference ;
@@ -365,24 +482,58 @@ nen2660:RelationReference
 .
 ```
 
-Dit is een definitie van een complexe relatie:
+We modelleren een relatie in twee delen: als een attribuut (`rdf:Property`) die verwijst naar een geobjectificeerde relatie (een `rdfs:Class` die een subklasse is van `nen2660:RelationReference`). Onderstaande voorbeeld toont een relatie tussen twee gebouwen. 
 
 ```turtle
 # RDFS
-digidef:bldng-nghbr-123-c a rdfs:Class ;
-  rdfs:subClassOf nen2660:RelationReference ;
-  skos:prefLabel "Neighbouring building"@en, "Naastgelegen gebouw"@nl ;
+digidef:GebouwNaastgelegenGebouw a rdf:Property ;
+    rdfs:isDefinedBy <https://www.digico.nu/rdf/def> ;
+    skos:prefLabel "Neighbouring building"@en, "Naastgelegen gebouw"@nl ;
+    skos:definition "A building that is physically close to the reference building."@en, "Een gebouw dat vlakbij het referentiegebouw staat."@nl ;
+    rdfs:domain digidef:Gebouw ;
+    rdfs:range digidef:NaastgelegenGebouw ;
 .
-# Geen SHACL shapes 
+
+digidef:NaastgelegenGebouw a rdfs:Class ;
+    rdfs:isDefinedBy <https://www.digico.nu/rdf/def> ;
+    rdfs:subClassOf nen2660:RelationReference ;
+    skos:prefLabel "Neighbouring building"@en, "Naastgelegen gebouw"@nl ;
+    skos:definition "A building that is physically close to the reference building."@en, "Een gebouw dat vlakbij het referentiegebouw staat."@nl ;
+.
+
+# SHACL
+digidef:GebouwNaastgelegenGebouwShape a sh:PropertyShape ;
+    rdfs:isDefinedBy <https://www.digico.nu/rdf/def> ;
+    sh:path digidef:GebouwNaastgelegenGebouw ;
+    sh:class digidef:NaastgelegenGebouw ;
+.
+
+digidef:GebouwShape sh:property digidef:GebouwNaastgelegenGebouwShape .
+
+digidef:NaastgelegenGebouwShape a sh:NodeShape ;
+    rdfs:isDefinedBy <https://www.digico.nu/rdf/def> ;
+    sh:targetClass digidef:NaastgelegenGebouw ;
+.
+
+digidef:NaastgelegenGebouwValueShape a sh:PropertyShape ;
+    rdfs:isDefinedBy <https://www.digico.nu/rdf/def> ;
+    sh:path rdf:value ;
+    sh:class digidef:Gebouw ;
+    sh:minCount 1;
+    sh:maxCount 1;
+.
+
+digidef:NaastgelegenGebouwShape sh:property digidef:NaastgelegenGebouwValueShape .
 ```
 
-Het volgende is een voorbeeld van twee gebouwen die naast elkaar staan.
+Elke geobjectificeerde relatie moet via `rdf:value` verwijzen naar precies één resource, in dit geval een `digidef:Gebouw`. Dit is anders dan bij de attributen, waar een `rdf:value` mag ontbreken om een NULL-waarde aan te geven. In het geval van relaties onderkennen we geen NULL-waardes en mogen relaties zonder een waarde daarom niet bestaan.
+
+We geven zowel het attribuut als de relatie hetzelfde primaire label en definitie, omdat beide concepten samen de geobjectificeerde relatie vormen.
+
+Het volgende is een voorbeeld van een gebouw dat naast een ander gebouw staat.
 
 ```turtle
-digiid:bldng-005 a digidef:bldng-123-c .
-digiid:bldng-006 a digidef:bldng-123-c .
-digiid:bldng-nghbrs-001 a digidef:bldng-nghbr-123-c ;
-  rdf:value "digiid:bldng-005"^^xsd:anyURI ;
-  rdf:value "digiid:bldng-006"^^xsd:anyURI ;
-.
+digiid:Gebouw_002 a digidef:Gebouw .
+digiid:Gebouw_001 digidef:GebouwNaastgelegenGebouw digidef:NaastgelegenGebouw_001 .
+digidef:NaastgelegenGebouw_001 rdf:value digiid:Gebouw_002 .
 ```
