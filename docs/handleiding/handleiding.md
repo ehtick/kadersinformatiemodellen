@@ -1,11 +1,11 @@
 # Inleiding
 
-Het doel van dit document is om handvatten te bieden voor het ontwikkelen van RDF-structuren die:
+Het doel van dit document is om handvatten te bieden voor het ontwikkelen van concepten in RDF die:
 - voldoen aan de NEN 2660-2;
 - gebruikt kunnen worden in een beheerprogramma om een of meerdere ontologieën te ontwikkelen en beheren, waarbij de volledige geschiedenis van een ontologie wordt bijgehouden;
-- gebruikt kunnen worden in een beheerprogramma om instantiedata van een ontologie te creëren, te beheren en te verifiëren, waarbij de volledige geschiedenis van een instantie wordt bijgehouden;
+- gebruikt kunnen worden in een beheerprogramma om instantiedata van een ontologie te creëren, te beheren en te verifiëren, waarbij de volledige geschiedenis van een instantie wordt bijgehouden.
 
-Bij het ontwikkelen van dergelijke RDF-structuren moeten er een heleboel keuzes gemaakt worden. Sommige keuzes kunnen bovendien op meerdere manieren worden geïnterpreteerd. De NEN 2660-2 geeft hier richting aan, maar laat nog steeds veel keuzes en interpretaties open. Daar zijn ook goede redenen voor: een keuze dient vaak een bepaald doel. Dit document beschrijft een aantal specifieke keuzes en interpretaties. Deze zijn gemaakt met in gedachten de wens om via geautomatiseerde tooling een ontologie en de bijbehorende instantiedata te beheren. 
+Bij het ontwikkelen van dergelijke concepten moeten er veel keuzes gemaakt worden. Sommige keuzes kunnen bovendien op meerdere manieren worden geïnterpreteerd. De NEN 2660-2 geeft hier richting aan, maar laat nog steeds veel keuzes en interpretaties open. Daar zijn ook goede redenen voor: een keuze dient vaak een bepaald doel. Dit document beschrijft een aantal specifieke keuzes en interpretaties. Deze zijn gemaakt met in gedachten de wens om via geautomatiseerde tooling een ontologie en de bijbehorende instantiedata te beheren. De resulterende concepten zijn dan ook vrij uitgebreid ("verbose"). 
 
 Dit document is een hulpmiddel dat nog sterk in bewerking is. Het is niet volledig en is op geen enkele wijze normatief. 
 
@@ -14,7 +14,7 @@ Tot nog toe maken we in dit document alleen gebruik van RDFS en SHACL (op de def
 We gaan in dit document uit van automatische verwerking van RDF-data waarbij metadata worden bijgehouden zoals een bewerkingsgeschiedenis. Daarom:
 - houden we we RDFS en SHACL gescheiden;
 - objectificeren we entiteiten zoals attributen en relaties;
-- gebruiken we geen anonieme nodes;
+- maken we zo min mogelijk gebruik van anonieme nodes;
 - gebruiken we betekenisvrije codes voor naamgeving.
 
 > Merk op dat we in dit document betekenisvolle namen gebruiken in de codevoorbeelden. Dit doen we enkel en alleen ten behoeve van de leesbaarheid in dit document. Bij naamgeving raden we altijd aan betekenisvrije codes te gebruiken.
@@ -47,20 +47,21 @@ In Sectie 8.4 van de NEN 2660-2 worden meerdere opties beschreven voor naamgevin
 - mensvriendelijke labels zijn verplicht in de vorm van een `skos:prefLabel` met taaltags @en en @nl (zie ook Sectie 'Annotaties').
 - labels van concepten zijn bij voorkeur in enkelvoud (behalve bij aanduidingen van groepen).
 
-> Merk op dat we in dit document betekenisvolle namen gebruiken in de codevoorbeelden. Dit doen we enkel en alleen ten behoeve van de leesbaarheid in dit document. Bij naamgeving raden we altijd aan betekenisvrije codes te gebruiken.
+> **Merk op dat we in dit document betekenisvolle namen gebruiken in de codevoorbeelden. Dit doen we enkel en alleen ten behoeve van de leesbaarheid in dit document. Bij naamgeving raden we altijd aan betekenisvrije codes te gebruiken.**
 
 # Annotaties
 
-Annotaties geven betekenis aan data. Sectie 8.5 in de NEN 2660-2 beschrijft een aantal annotatiebindingen en schrijft voor hoe deze te gebruiken.
-
-In deze handleiding nemen we de volgende voorschriften over van de NEN 2660-2:
+Annotaties geven betekenis aan data. Sectie 8.5 in de NEN 2660-2 beschrijft een aantal annotatiebindingen en schrijft voor hoe deze te gebruiken. In deze handleiding nemen we de volgende annotaties over:
 - gebruik `skos:prefLabel` als primair label;
-- gebruik `skos:definition` voor textuele definities;
+- gebruik `skos:definition` voor tekstuele definities;
 - gebruik `rdfs:seeAlso` om te verwijzen naar een SKOS-schema waarin een concept gedefinieerd staat;
 - gebruik altijd taaltags (eventueel inclusief regio's). Voorbeelden: `"Bridge"@en, "Pechstrook"@nl-BE`.
 
-Aanvullend stellen we:
-- elk concept in een ontologie moet een primair label hebben met taaltags `@en` en `@nl`.
+De NEN 2660-2 spreekt geen voorkeur uit welke annotaties te gebruiken. De [NL-SBB](https://docs.geostandaarden.nl/nl-sbb/nl-sbb/#specificatie-begrip) doet dit wel in Sectie 4.3.2: daarin wordt gesteld dat elk concept een `skos:prefLabel` en een `skos:definition` met een taaltag moet hebben. We nemen dit hier over.
+
+Aanvullend stellen we dat in een ontologie elk concept:
+- een primair label moet hebben met taaltags `@en` en `@nl`;
+- een tekstuele definitie zou moeten hebben  met taaltags `@en` en `@nl`.
 
 # Ontologie
 
@@ -537,3 +538,45 @@ digiid:Gebouw_002 a digidef:Gebouw .
 digiid:Gebouw_001 digidef:GebouwNaastgelegenGebouw digidef:NaastgelegenGebouw_001 .
 digidef:NaastgelegenGebouw_001 rdf:value digiid:Gebouw_002 .
 ```
+
+# Temporele aspecten
+
+Een belangrijke uitgangspunt in dit document is het kunnen bijhouden en terughalen van de volledige geschiedenis van een entiteit (objecttype, object, etc.). Er bestaat een [IMBOR best practice om het temporele aspectenmodel van de NEN 3610 te implementeren](https://docs.crow.nl/imbor/best-practices/#). Onze aanpak is een aanpassing en uitbreiding van Optie B: 3½-D met RDF Reïficatie (sic).
+
+We gaan in dit document niet uit van geografische gegevens. Hoewel onze aanpak deels is gebaseerd op de NEN 3610, nemen we de NEN 3610 daarom niet volledig over. Zie Sectie [Aansluiting bij de NEN 3610](#aansluiting-bij-de-nen-3610) om een model wel te laten aansluiten bij de NEN 3610.
+
+De aanpak die hier wordt beschreven ondersteunt de volgende gebruiksscenario's:
+1. De volledige versie van een entiteit[^1] opvragen zoals deze was op een bepaald tijdstip.
+2. Alle versies van een entiteit opvragen.
+3. Van elke versie van een entiteit is het versienummer bekend, wanneer deze versie het meest recent gewijzigd is, en tot wanneer deze versie geldig is;
+4. De versieinformatie van een object(type) of relatie(type) geeft weer hoeveel wijzigingen er op attribuut(type)niveau zijn gedaan en wanneer voor het laatst. Anders gezegd: elke wijziging van een attribuut(type) leidt er niet alleen toe dat de versieinformatie van het attribuut(type) zelf wordt bijgewerkt, maar ook van het object(type) of relatie(type) waar het attribuut(type) bijhoort.
+
+[^1]: object(type), relatie(type), attribuut(type) of enumeratie(element)
+
+## Aanpassingen en uitbreidingen ten opzichte van de best practice
+
+Onze aanpak verschilt op de volgende vlakken van de IMBOR best practice:
+1. we gaan uit van één tijdsdimensie (of tijdlijn) in plaats van twee;
+2. we houden versienummering bij voor alle entiteiten;
+3. we houden ook registratietijdstippen bij voor een object(type) of relatie(type).
+
+We lichten alle drie de verschillen hier toe.
+
+We modelleren versieinformatie via `nen3610:Registratie` bij. Dit concept bevat de attributen `
+
+**Één tijdlijn**
+
+De NEN 3610 past twee dimensies van temporaliteit (in de NEN 3610 tijdlijnen genoemd) toe:
+1. wanneer een waarde geldig is, of was, in de werkelijke wereld. Dit wordt de geldigheidstijdlijn genoemd;
+2. wanneer een waarde geregistreerd is. Dit wordt de registratietijdlijn genoemd.
+
+In ons gebruiksscenario verwachten we het onderscheid tussen geldigheid en registratie niet nodig te hebben. In dit document gaan we daarom uit van één tijdlijn. Dit is een versimpeling ten opzichte van de NEN 3610. We stellen daarom de periode van geldigheid en registratie aan elkaar gelijk. Een waarde is geldig vanaf het moment dat het is geregistreerd, tot het moment dat het anders wordt geregistreerd. We gebruiken alleen de registratieattributen `nen3610:tijdstipRegistratie` en `nen3610:eindRegistratie`. We zouden ook de geldigheidsattributen `nen3610:beginGeldigbeheid` en `nen3610:eindGeldigbeheid` kunnen gebruiken, maar deze zouden altijd dezelfde waardes hebben als de registratieattributen en laten we daarom achterwege. 
+
+Het is vrij eenvoudig om wél onderscheid te maken tussen de twee tijdlijnen: door ook gebruik te maken van de geldigheidsattributen `nen3610:beginGeldigbeheid` en `nen3610:eindGeldigbeheid`, direct naast de registratieattributen. Het enige dat verandert is de logica wanneer waardes worden gewijzigd, waarbij dan ook rekening moet worden gehouden vanaf en tot wanneer een waarde geldig is.
+
+**Versienummering**
+
+We houden van elk object(type), relatie(type), attribuut(type) of enumeratie(element) versieinformatie bij. Dit doen we door 
+
+# Aansluiting bij de NEN 3610
+
